@@ -5,17 +5,20 @@ function resizeHeader() {
   var header = document.getElementById("header")
   var toggle= document.getElementById("toggle-switch")
   var slider = document.getElementById("slider")
+  var label = document.getElementById("label-switch")
   var scrollTreshold = 50;
   var scrollValue = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollValue > scrollTreshold || scrollValue > scrollTreshold) { 
     header.classList.add('small-header');
     toggle.classList.add('small-toggle');
-    slider.classList.add('small-slider');
+    slider.classList.add('small-slider'); 
+    label.classList.add('small-label');
   } else{
     header.classList.remove('small-header');
     toggle.classList.remove('small-toggle');
     slider.classList.remove('small-slider');
+    label.classList.remove('small-label');
   }
 }
 
@@ -43,8 +46,15 @@ function updateClock() {
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
   seconds = seconds < 10 ? "0" + seconds : seconds;
+  
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = " : " + minutes;
+  document.getElementById("seconds").innerHTML = " : " +  seconds;
+}
 
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+function toggleDropdown() {
+  console.log("toggled");
+  console.log("actual style : "+ document.getElementById("dropdown").style.display);
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }

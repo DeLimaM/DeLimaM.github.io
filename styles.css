@@ -90,7 +90,7 @@ label {
   border-width: 2px;
   border-color: var(--color-accent);
   cursor: pointer;
-  transition: border-width 0.15s ease, border-radius 0.15s ease, border-color 0.3s ease, height 0.2s ease, width 0.15s ease;
+  transition: border-width 0.15s ease, border-radius 0.15s ease, border-color 0.3s ease, height 0.2s ease, width 0.15s ease, transform 0.3s ease;
 }
 
 label:hover {
@@ -144,14 +144,25 @@ input:checked ~ #slider::before {
   transform: scale(0.8);
 }
 
+.small-label {
+  transform: scale(0.8);
+}
+
 /* Styles de l'horloge */
 .clock {
   width: 10%;
-  font-size: 20px;
+  font-size: 100%;
   font-weight: bold;
   color: var(--color-font);
   transition: color 0.3s ease;
   margin-left: 1%;
+  white-space: nowrap;
+}
+
+@media (max-width: 1050px) {
+  #clock #seconds {
+    display: none;
+  }
 }
   
 /* Styles de l'en-tête */
@@ -162,7 +173,7 @@ header {
   background-color: var(--color-tertiary);
   position: fixed;
   transition: height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-  height: 100px;
+  height: 10%;
   width: 100%;
   font-size: 22px;
   border-color: var(--color-accent);
@@ -172,8 +183,7 @@ header {
 }
 
 .small-header {
-  height: 50px;
-  font-size: 18px;
+  height: 5%;
 }
   
 nav {
@@ -184,8 +194,8 @@ nav {
 
 nav ul {
   display: flex;
-  justify-content: space-between;
-  margin: 0;
+  justify-content: space-around;
+  margin: 0 20%;
   padding: 0;
   list-style: none;
 }
@@ -204,7 +214,7 @@ nav ul li a {
   position: relative;
 }
 
-a::before {
+nav ul li a::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -218,7 +228,7 @@ a::before {
   transition: background-color 0.3s ease, transform 0.3s ease-in-out;
 }
 
-a:hover::before {
+nav ul li a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -231,7 +241,8 @@ nav ul li a:hover {
 
 /* Styles de la section Présentation */
 #presentation {
-  height: 450px;
+  height: 30%;
+  padding-top: 5%;
   display: flex;
   align-items: self-end;
   justify-content: center;   
@@ -257,7 +268,7 @@ nav ul li a:hover {
   
 /* Styles de la section À propos */
 #about {
-  padding: 20px 0;
+  padding: 5%;
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color 0.3s ease;
@@ -324,5 +335,83 @@ footer {
   border-radius: 1px;
   border-top-style: solid;
   border-width: 2px;
+}
+
+/* Mobile */
+
+.dropdown {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .clock {
+    display: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--color-font);
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--color-font);
+    margin: 5px 0;
+  }
+
+  .dropdown {
+    display: none;
+    background-color: var(--color-primary);
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+  }
+
+  .dropdown a {
+    display: block;
+    color: var(--color-font);
+    text-decoration: none;
+    padding: 2% 5%;
+  }
+
+  .dropdown a:hover {
+    color: var(--color-accent);
+  }
+
+  #toggle-switch {
+    transform: scale(0.8);
+  }
+
+  .small-toggle {
+    transform: scale(0.6);
+  }
+
+  .small-slider {
+    transform: scale(0.8);
+  }
+
+  .small-label {
+    transform: scale(0.8);
+  }
+
+  .project-item {
+    margin: 2%;
+    padding: 0;
+  }
+
+  .project-item-content {
+    display: block;
+  }
 }
   

@@ -9,10 +9,15 @@
 </head>
 <body class="dark-theme">
   <header id="header">
-        <div class="clock">
-          <span id="hours">00</span> :
-          <span id="minutes">00</span> :
+        <div id="clock" class="clock">
+          <span id="hours">00</span>
+          <span id="minutes">00</span>
           <span id="seconds">00</span>
+        </div>
+        <div class="hamburger" onclick="toggleDropdown()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <nav>
           <ul>
@@ -22,11 +27,16 @@
           </ul>
         </nav>
         <div id="toggle-switch">
-          <label>
+          <label id="label-switch">
             <input type = "checkbox" onclick="toggleTheme()">
             <span id="slider" type="slider"></span>
           </label>
-        </div> 
+        </div>
+        <div class="dropdown" id="dropdown">
+          <a href="#about">À propos</a>
+          <a href="#projects">Projets</a>
+          <a href="#contact">Contact et liens</a>
+        </div>
   </header>
 
   <section id="presentation">
