@@ -10,9 +10,11 @@
 <body class="dark-theme">
   <header id="header">
         <div id="clock" class="clock">
-          <span id="hours">00</span>
-          <span id="minutes">00</span>
-          <span id="seconds">00</span>
+          <div id="clock-content">
+            <span id="hours">00</span>
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+          </div>
         </div>
         <div class="hamburger" onclick="toggleDropdown()">
           <span></span>
@@ -31,6 +33,7 @@
             <input type = "checkbox" onclick="toggleTheme()">
             <span id="slider" type="slider"></span>
           </label>
+        </div>
         </div>
         <div class="dropdown" id="dropdown">
           <a href="#about">À propos</a>
@@ -59,43 +62,57 @@
   </section>
 
   <section id="projects">
-    <div class="project">
       <h2>Projets</h2>
-      <div class="project-item">
-        <h3>Projet 1</h3>
-        <div class="project-item-content">
-            <img src="images/project1.jpg" alt="Projet 1">
-            <div class="project-description">
-                <p>
-                    Lorem ipsum dolor sit amet. 
-                    Qui labore dolorum eos perspiciatis molestias ex corrupti ipsum qui dolores aperiam est autem pariatur. 
-                    Ut autem iusto sed dicta vitae et facilis voluptatibus qui dignissimos velit quo sequi galisum et minima nesciunt et natus molestias.
-                    Sed quae esse vel neque optio id reiciendis sequi. Et architecto architecto eos nobis quisquam aut deleniti numquam ad earum beatae et eaque accusantium. 
-                    Qui ipsa voluptatem quo ullam porro aut blanditiis ipsum et consequatur cumque. Eum officia enim ut inventore consequatur et esse voluptatem.
-                    Ut nemo deserunt cum inventore molestiae ex dolores nihil ad dolorem reprehenderit non minus perferendis At adipisci omnis? 
-                    Vel deleniti adipisci non placeat internos est unde fuga ex perspiciatis voluptate in ullam sapiente?
-                </p>
+      <section class="project-collapsible">
+        <input type="checkbox" name="checkbox-personal" id="collapsible-checkbox-educational" checked="checked">
+        <label for="collapsible-checkbox-educational" class="collapsible-label">Educational projects</label>
+        <div id="educational-projects" class="collapsible">
+
+          <div class="project-item">
+            <h3>Projet 1</h3>
+            <div class="project-item-content">
+                <img src="images/project1.jpg" alt="Projet 1">
+                <div class="project-description">
+                    <p>
+                        Lorem ipsum dolor sit amet. 
+                        Qui labore dolorum eos perspiciatis molestias ex corrupti ipsum qui dolores aperiam est autem pariatur. 
+                        Ut autem iusto sed dicta vitae et facilis voluptatibus qui dignissimos velit quo sequi galisum et minima nesciunt et natus molestias.
+                        Sed quae esse vel neque optio id reiciendis sequi. Et architecto architecto eos nobis quisquam aut deleniti numquam ad earum beatae et eaque accusantium. 
+                        Qui ipsa voluptatem quo ullam porro aut blanditiis ipsum et consequatur cumque. Eum officia enim ut inventore consequatur et esse voluptatem.
+                        Ut nemo deserunt cum inventore molestiae ex dolores nihil ad dolorem reprehenderit non minus perferendis At adipisci omnis? 
+                        Vel deleniti adipisci non placeat internos est unde fuga ex perspiciatis voluptate in ullam sapiente?
+                    </p>
+                </div>
             </div>
+          </div>
+
         </div>
-      </div>
-      <div class="project-item">
-        <h3>Projet 2</h3>
-        <div class="project-item-content">
-            <img src="images/project2.jpg" alt="Projet 2">
-            <div class="project-description">
-                <p>
-                    Lorem ipsum dolor sit amet. 
-                    Qui labore dolorum eos perspiciatis molestias ex corrupti ipsum qui dolores aperiam est autem pariatur. 
-                    Ut autem iusto sed dicta vitae et facilis voluptatibus qui dignissimos velit quo sequi galisum et minima nesciunt et natus molestias.
-                    Sed quae esse vel neque optio id reiciendis sequi. Et architecto architecto eos nobis quisquam aut deleniti numquam ad earum beatae et eaque accusantium. 
-                    Qui ipsa voluptatem quo ullam porro aut blanditiis ipsum et consequatur cumque. Eum officia enim ut inventore consequatur et esse voluptatem.
-                    Ut nemo deserunt cum inventore molestiae ex dolores nihil ad dolorem reprehenderit non minus perferendis At adipisci omnis? 
-                    Vel deleniti adipisci non placeat internos est unde fuga ex perspiciatis voluptate in ullam sapiente?
-                </p>
+      </section>
+      <section class="project-collapsible">
+        <input type="checkbox" name="checkbox-educational" id="collapsible-checkbox-personal" checked="checked">
+        <label for="collapsible-checkbox-personal" class="collapsible-label">Personal projects</label>
+        <div id="personal-projects" class="collapsible">
+
+          <div class="project-item">
+            <h3>Projet 2</h3>
+            <div class="project-item-content">
+                <img src="images/project2.jpg" alt="Projet 2">
+                <div class="project-description">
+                    <p>
+                        Lorem ipsum dolor sit amet. 
+                        Qui labore dolorum eos perspiciatis molestias ex corrupti ipsum qui dolores aperiam est autem pariatur. 
+                        Ut autem iusto sed dicta vitae et facilis voluptatibus qui dignissimos velit quo sequi galisum et minima nesciunt et natus molestias.
+                        Sed quae esse vel neque optio id reiciendis sequi. Et architecto architecto eos nobis quisquam aut deleniti numquam ad earum beatae et eaque accusantium. 
+                        Qui ipsa voluptatem quo ullam porro aut blanditiis ipsum et consequatur cumque. Eum officia enim ut inventore consequatur et esse voluptatem.
+                        Ut nemo deserunt cum inventore molestiae ex dolores nihil ad dolorem reprehenderit non minus perferendis At adipisci omnis? 
+                        Vel deleniti adipisci non placeat internos est unde fuga ex perspiciatis voluptate in ullam sapiente?
+                    </p>
+                </div>
             </div>
-        </div>
+          </div>
+
       </div>
-    </div>
+      </section>
   </section>
 
   <section id="contact">

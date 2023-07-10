@@ -41,7 +41,11 @@ body {
     width: 100%;
     height: 100%;
     margin-bottom: auto;
-    transition: background-color 0.3s ease;
+    --color-switch-delay: 0.5s;
+    --header-resizing-delay: 0.2s;
+    --toggle-switch-delay: 0.3s;
+    --side-div-width: 0;
+    transition: all var(--color-switch-delay) ease;
 }
 
 h2 {
@@ -55,53 +59,42 @@ h2 {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: none;
+  background-color: none;
+  transition: background-color var(--color-switch-delay) ease;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-tertiary);
   border-radius: 3px;
+  transition: background-color var(--color-switch-delay) ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-secondary);
-  border: var(--color-accent);
+  transition: background-color var(--color-switch-delay) ease;
 }
 
 /* Styles du switch de theme */
-#toggle-switch {
-  position: relative;
-  width: 10%;
+#toggle-switch{
   height: 100%;
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s;
+  justify-content: right;
   margin-right: 1%;
-  justify-content: flex-end;
+  font-size: 8px;
+  transition: font-size var(--header-resizing-delay) ease;
 }
 
-label {
-  position: absolute;
-  width: 80px;
-  height: 40px;
+.small-toggle{
+  font-size: 5px !important;
+  transition: font-size var(--header-resizing-delay) ease;
+}
+
+#label-switch {
+  position:absolute;
+  width: 12.5em;
+  height: 6.25em;
   background-color: var(--color-secondary);
-  border-radius: 20px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: var(--color-accent);
+  border-radius: 3.125em;
   cursor: pointer;
-  transition: border-width 0.15s ease, border-radius 0.15s ease, border-color 0.3s ease, height 0.2s ease, width 0.15s ease, transform 0.3s ease;
-}
-
-label:hover {
-  border-width: 3px;
-  border-radius: 25px;
-  width: 84px;
-  height: 42px;
-}
-
-input:checked ~ #slider {
-  background-color: #e2e2e2;
 }
 
 input {
@@ -113,50 +106,44 @@ input {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  transition: 0.3s;
+  border-radius: 3.125em;
+  transition: transform var(--toggle-switch-delay) ease, background-color var(--toggle-switch-delay) ease;
 }
 
-#slider::before {
+input:checked ~ #slider {
+  background-color: var(--color-secondary);
+}
+
+#slider:before {
   content: "";
   position: absolute;
-  top: 5.2px;
-  left: 6.4px;
-  width: 30px;
-  height: 30px;
+  top: 0.813em;
+  left: 1em;
+  width: 4.688em;
+  height: 4.688em;
   border-radius: 50%;
-  box-shadow: inset 11.2px -1.6px 0px 0px var(--color-font);
+  box-shadow: inset 1.75em -0.25em 0em 0em var(--color-accent);
   background-color: var(--color-secondary);
-  transition: 0.3s;
+  transition: transform var(--toggle-switch-delay) ease, background-color var(--toggle-switch-delay) ease;
 }
 
-input:checked ~ #slider::before {
-  transform: translateX(130%);
-  background-color: #333333;
+input:checked ~ #slider:before {
+  transform: translateX(5.938em);
+  background-color: var(--color-accent);
   box-shadow: none;
 }
 
-.small-toggle {
-  transform: scale(0.8);
-}
-
-.small-slider {
-  transform: scale(0.8);
-}
-
-.small-label {
-  transform: scale(0.8);
-}
-
 /* Styles de l'horloge */
-.clock {
-  width: 10%;
-  font-size: 100%;
+.clock { 
+  margin-left: 1%;
+  height: 100%;
+}
+
+#clock-content {
+  width: 100%;
   font-weight: bold;
   color: var(--color-font);
-  transition: color 0.3s ease;
-  margin-left: 1%;
-  white-space: nowrap;
+  transition: color var(--color-switch-delay) ease;
 }
 
 @media (max-width: 1050px) {
@@ -168,18 +155,24 @@ input:checked ~ #slider::before {
 /* Styles de l'en-tête */
 header {
   display : flex;
-  align-items: center;
-  justify-content: space-between; 
+  align-items: center; 
   background-color: var(--color-tertiary);
   position: fixed;
-  transition: height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-  height: 10%;
+  top: 0;
+  transition: height var(--header-resizing-delay) ease, background-color var(--color-switch-delay) ease, border-color var(--color-switch-delay) ease;
+  height: 100px;
   width: 100%;
   font-size: 22px;
   border-color: var(--color-accent);
-  border-radius: 1px;
   border-bottom-style: solid;
   border-width: 2px;
+}
+
+#toggle-switch,
+.clock {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 .small-header {
@@ -187,9 +180,7 @@ header {
 }
   
 nav {
-  transition: transform 0.2s ease;
-  transform: translateY(0);
-  flex-grow: 1;
+  flex: 4;
 }
 
 nav ul {
@@ -201,7 +192,6 @@ nav ul {
 }
   
 nav ul li {
-  margin: auto;
   width: 33.33%;
   text-align: center;
 }
@@ -209,34 +199,18 @@ nav ul li {
 nav ul li a {
   text-decoration:none;
   color: var(--color-font);
+  box-shadow: inset 0 0 0 0 var(--color-accent);
+  border-radius: 10px;
+  padding: 0 15px;
+  margin: 0 -15px;
   font-weight: bold;
-  transition: font-size 0.3s ease, color 0.3s ease;
   position: relative;
-}
-
-nav ul li a::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  border-radius: 5px;
-  background-color: var(--color-accent);
-  bottom: 0;
-  left: 0;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: background-color 0.3s ease, transform 0.3s ease-in-out;
-}
-
-nav ul li a:hover::before {
-  transform-origin: left;
-  transform: scaleX(1);
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-  font-size: 110%;
-  color: var(--color-accent);
-  transition: color 0.3s ease;
+  color: var(--color-primary);
+  box-shadow: inset 200px 0 0 0 var(--color-accent);
 }
 
 /* Styles de la section Présentation */
@@ -247,7 +221,7 @@ nav ul li a:hover {
   align-items: self-end;
   justify-content: center;   
   background-color: var(--color-primary);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--color-switch-delay) ease;
 }
   
 .presentation-content {
@@ -259,7 +233,7 @@ nav ul li a:hover {
   border-style: solid;
   border-radius: 3px;
   border-color: var(--color-accent);
-  transition: border-color 0.3s ease;
+  transition: border-color var(--color-switch-delay) ease;
 }
   
 .presentation-content h1 {
@@ -271,23 +245,81 @@ nav ul li a:hover {
   padding: 5%;
   text-align: center;
   background-color: var(--color-secondary);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--color-switch-delay) ease;
 }
   
 /* Styles de la section Projets */
+.project-collapsible > input[type = "checkbox"] {
+  display: block;
+  width: 100%;
+  position: absolute;
+  border-color: var(--color-accent);
+  border-radius: 5px;
+  border-style: solid;
+  border-top: 0;
+  left: -100vw;
+}
+
+.project-collapsible .collapsible {
+  overflow-y: hidden;
+  height: 0;
+}
+
+.project-collapsible > input[type = "checkbox"]:checked ~ .collapsible {
+  height: auto;
+  overflow: visible;
+}
+
+.project-collapsible .collapsible-label {
+  display: block;
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--color-secondary);
+  border-width: 2px;
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.project-collapsible .collapsible-label:hover {
+  background-color: var(--color-tertiary);
+  border-color: var(--color-accent);
+  border-style: solid;
+  cursor: pointer;
+  transition: background-color var(--color-switch-delay) ease;
+}
+
+.project-collapsible .collapsible-label:before {
+  content: "▶";
+  float: right;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.project-collapsible .collapsible-label:hover:before {
+  content: "▼";
+}
+
+.project-collapsible > input[type = "checkbox"]:checked ~ .collapsible-label:before {
+  content: "▼";
+}
+
+.project-collapsible > input[type = "checkbox"]:checked ~ .collapsible-label:hover:before {
+  content: "▶";
+}
+
 #projects {
   background-color: var(--color-primary);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--color-switch-delay) ease;
   padding: 20px 0;
-}
-  
-.project {
   text-align: center;
 }
   
 .project-item {
   border-color: var(--color-secondary);
-  transition: border-color 0.3s ease;
+  transition: border-color var(--color-switch-delay) ease;
   border-radius: 10px;
   border-style: solid;
   border-width: 3px;
@@ -321,13 +353,13 @@ nav ul li a:hover {
   padding: 20px 0;
   text-align: center;
   background-color: var(--color-secondary);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--color-switch-delay) ease;
 }
   
 /* Styles du footer */
 footer {
   background-color:var(--color-tertiary);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--color-switch-delay) ease;
   color: var(--color-font);
   text-align: center;
   padding: 20px;
@@ -338,7 +370,6 @@ footer {
 }
 
 /* Mobile */
-
 .dropdown {
   display: none;
 }
@@ -353,7 +384,6 @@ footer {
   }
 
   .hamburger {
-    display: block;
     text-align: right;
     padding: 10px;
     cursor: pointer;
@@ -362,20 +392,24 @@ footer {
 
   .hamburger span {
     display: block;
-    width: 24px;
-    height: 3px;
-    background-color: var(--color-font);
-    margin: 5px 0;
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-accent);
+    margin: 5px;
   }
 
   .dropdown {
     display: none;
-    background-color: var(--color-primary);
+    background-color: var(--color-tertiary);
     padding: 20px;
     position: absolute;
     top: 100%;
-    right: 0;
     width: 100%;
+    border-top-style: solid;
+    border-top-color: var(--color-accent);
+    border-top-width: 2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   .dropdown a {
@@ -389,20 +423,8 @@ footer {
     color: var(--color-accent);
   }
 
-  #toggle-switch {
-    transform: scale(0.8);
-  }
-
   .small-toggle {
-    transform: scale(0.6);
-  }
-
-  .small-slider {
-    transform: scale(0.8);
-  }
-
-  .small-label {
-    transform: scale(0.8);
+    font-size: 4px !important;
   }
 
   .project-item {
