@@ -10,9 +10,9 @@
 
 /* Themes */
 .dark-theme {
-   --color-primary: #0d0d0d;
-   --color-secondary: #333;
-   --color-tertiary: #1e1e1e;
+   --color-primary: #1a1a1a;
+   --color-secondary: #263d3d;
+   --color-tertiary: #333333;
    --color-accent: #38d8a3;
    --color-font: #F5F5F5;
 }
