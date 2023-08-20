@@ -1,4 +1,4 @@
-/* Animations */
+/* #region Animations */
 @keyframes fadeInAnimation {
   0% {
       opacity: 0;
@@ -7,8 +7,9 @@
       opacity: 1;
    }
 }
+/* #endregion */
 
-/* Themes */
+/* #region Themes */
 .dark-theme {
    --color-primary: #1a1a1a;
    --color-secondary: #333333;
@@ -20,12 +21,13 @@
 .light-theme {
    --color-primary: #ffffff;
    --color-secondary: #e2e2e2;
-   --color-tertiary: #b6b6b6;
+   --color-tertiary: #9edbff;
    --color-accent: #0035c5;
    --color-font: #333333;
 }
+/* #endregion */ 
 
-/* Styles généraux */
+/* #region General */
 body {
     font-family: Arial, sans-serif; 
     background-color: var(--color-primary);
@@ -52,8 +54,9 @@ h2 {
     font-size: 32px;
     padding: 20px;
 }
+/* #endregion */ 
 
-/* Style de scrollbar */
+/* #region Scrollbar */
 ::-webkit-scrollbar {
   width: 15px;
 }
@@ -65,7 +68,6 @@ h2 {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-tertiary);
-  border-radius: 3px;
   transition: background-color var(--color-switch-delay) ease;
 }
 
@@ -73,8 +75,9 @@ h2 {
   background: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
 }
+/* #endregion */ 
 
-/* Styles du switch de theme */
+/* #region Theme switch */
 #toggle-switch{
   height: 100%;
   justify-content: right;
@@ -133,8 +136,9 @@ input:checked ~ #slider:before {
   background-color: var(--color-accent);
   box-shadow: none;
 }
+/* #endregion */ 
 
-/* Styles de l'horloge */
+/* #region Clock */
 .clock { 
   margin-left: 1%;
   height: 100%;
@@ -146,14 +150,9 @@ input:checked ~ #slider:before {
   color: var(--color-font);
   transition: color var(--color-switch-delay) ease;
 }
-
-@media (max-width: 1050px) {
-  #clock #seconds {
-    display: none;
-  }
-}
+/* #endregion */ 
   
-/* Styles de l'en-tête */
+/* #region Header */
 header {
   display : flex;
   align-items: center; 
@@ -187,6 +186,7 @@ nav {
 nav ul {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin: 0 20%;
   padding: 0;
   list-style: none;
@@ -195,6 +195,7 @@ nav ul {
 nav ul li {
   width: 33.33%;
   text-align: center;
+  align-items: center;
 }
   
 nav ul li a {
@@ -209,12 +210,31 @@ nav ul li a {
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
-  color: var(--color-primary);
-  box-shadow: inset 200px 0 0 0 var(--color-accent);
+nav ul li a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 4px;
+  background-color: var(--color-accent);
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Styles de la section Présentation */
+nav ul li a:hover {
+  color: var(--color-accent);
+}
+
+nav ul li a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+/* #endregion */ 
+
+/* #region Presentation section */
 #presentation {
   height: 30%;
   padding-top: 5%;
@@ -240,16 +260,18 @@ nav ul li a:hover {
 .presentation-content h1 {
   font-size: 50px;
 }
+/* #endregion */ 
   
-/* Styles de la section À propos */
+/* #region About section */
 #about {
   padding: 5%;
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
 }
+/* #endregion */ 
   
-/* Styles de la section Projets */
+/* #region Projects section */
 .project-collapsible > input[type = "checkbox"] {
   display: block;
   width: 100%;
@@ -348,16 +370,18 @@ nav ul li a:hover {
 .project-description {
   margin: 20px;
 }
+/* #endregion */ 
   
-/* Styles de la section Contact */
+/* #region Contact section */
 #contact {
   padding: 20px 0;
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
 }
+/* #endregion */ 
   
-/* Styles du footer */
+/* #region Footer */
 footer {
   background-color:var(--color-tertiary);
   transition: background-color var(--color-switch-delay) ease;
@@ -369,10 +393,21 @@ footer {
   border-top-style: solid;
   border-width: 2px;
 }
+/* #endregion */ 
 
-/* Mobile */
+/* #region Mobile */
 .dropdown {
   display: none;
+}
+
+@media (max-width: 1050px) {
+  #clock #seconds {
+    display: none;
+  }
+
+  header {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -437,4 +472,5 @@ footer {
     display: block;
   }
 }
+/* #endregion */ 
   
