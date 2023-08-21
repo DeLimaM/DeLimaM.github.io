@@ -19,11 +19,11 @@
 }
 
 .light-theme {
-   --color-primary: #ffffff;
-   --color-secondary: #e2e2e2;
-   --color-tertiary: #9edbff;
-   --color-accent: #0035c5;
-   --color-font: #333333;
+  --color-primary: #E0F7FA;   /* Light Cyan */
+  --color-secondary: #B2EBF2; /* Lighter Cyan */
+  --color-tertiary: #80DEEA;  /* Lightest Cyan */
+  --color-accent: #008C9E;    /* Dark Cyan */
+  --color-font: #333333;      /* Dark Gray for Text */
 }
 /* #endregion */ 
 
@@ -147,7 +147,7 @@ input:checked ~ #slider:before {
 #clock-content {
   width: 100%;
   font-weight: bold;
-  color: var(--color-font);
+  color: var(--color-accent);
   transition: color var(--color-switch-delay) ease;
 }
 /* #endregion */ 
