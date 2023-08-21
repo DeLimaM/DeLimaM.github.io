@@ -54,6 +54,11 @@ h2 {
     font-size: 32px;
     padding: 20px;
 }
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
 /* #endregion */ 
 
 /* #region Scrollbar */
@@ -265,6 +270,8 @@ nav ul li a:hover::before {
 /* #region About section */
 #about {
   padding: 5%;
+  font-size: 18px;
+  line-height: 1.8;
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
