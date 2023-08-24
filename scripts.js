@@ -1,36 +1,20 @@
 setInterval(updateClock, 100);
 let sections;
-let menuItems;
 
 document.addEventListener('DOMContentLoaded', function () {
   initSwiper();
   sections = document.querySelectorAll('.tracked-section');
-  menuItems = document.querySelectorAll('.menu-item');
-  enableScrollListener();
-});
 
-function updateTrackedSections() {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (sectionTop <= window.pageYOffset + 50 && sectionTop + sectionHeight > window.pageYOffset + 50) {
-      current = section.getAttribute('id');
-    }
+  window.addEventListener('scroll', function () {
+    resizeHeader();
   });
-  menuItems.forEach(item => {
-    item.classList.remove('active');
-    if (item.classList.contains(current)) {
-      item.classList.add('active');
-    }
-  });
-}
+});
 
 function resizeHeader() {
   var header = document.getElementById("header")
   var toggle = document.getElementById("toggle-switch")
   var scrollTreshold = 50;
-  var scrollValue = window.pageYOffset || document.documentElement.scrollTop;
+  var scrollValue = window.scrollY || document.documentElement.scrollTop;
   if (scrollValue > scrollTreshold) {
     header.classList.add('small-header');
     toggle.classList.add('small-toggle');
@@ -38,13 +22,6 @@ function resizeHeader() {
     header.classList.remove('small-header');
     toggle.classList.remove('small-toggle');
   }
-}
-
-function enableScrollListener() {
-  window.addEventListener('scroll', function () { 
-    resizeHeader();
-    updateTrackedSections();
-  });
 }
 
 function toggleTheme() {
@@ -106,6 +83,11 @@ function initSwiper() {
   });
 }
 
-function scrollToYPosition(yPosition) {
-  window.scrollTo(0, yPosition);
+function scrollToSection(sectionId) {
+  var section = document.getElementById(sectionId);
+  window.scrollTo(0,0);
+  section.scrollIntoView({
+    behavior: 'instant',
+    block: 'start'
+  });
 }
