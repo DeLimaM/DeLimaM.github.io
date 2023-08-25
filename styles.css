@@ -812,6 +812,14 @@ footer {
     margin: 0;
   }
 
+  .swiper-slide {
+    padding : 0 5px 5px 5px;
+  }
+
+  .project-textcontent {
+    padding: 5px;
+  }
+
   .project-description {
     font-size: 16px;
   }
