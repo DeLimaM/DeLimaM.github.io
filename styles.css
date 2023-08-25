@@ -158,6 +158,7 @@ h3 {
   height: 100%;
   margin: auto;
   width: 90vw;
+  z-index: -1;
 }
 
 .line {
@@ -445,7 +446,7 @@ nav ul li {
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
-  max-width: 100%;
+  width: 100%;
   height: 100vh;
 }
 
@@ -557,6 +558,8 @@ nav ul li {
   font-size: 18px;
   line-height: 1.8;
   color: var(--color-font);
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-accent);
 }
 
 .project-status i {
@@ -578,6 +581,7 @@ nav ul li {
 .project-img {
   flex: 2;
   border-radius: 10px;
+  padding-right: 10px;
 }
 
 .project-img img {
@@ -599,7 +603,7 @@ nav ul li {
   display: flex;
   align-items: center;
   flex: 5;
-  padding-left: 20px;
+  padding : 10px 0 10px 10px;
   font-size: 18px;
   line-height: 1.8;
   color: var(--color-font);
@@ -611,6 +615,8 @@ nav ul li {
   justify-content: center;
   align-items: center;
   width: 100%;
+  border-top-style: solid;
+  border-top-color: var(--color-accent);
 }
 
 .project-link i {
@@ -830,6 +836,47 @@ footer {
 
   .project-link {
     font-size: 16px;
+  }
+
+  .section {
+    padding: 0;
+    margin: 0;
+  }
+
+  .presentation-content {
+    margin: 150px 0;
+  }
+
+  .about-content p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .projects-content {
+    padding: 0;
+    margin: 0;
+  }
+
+  .stacking-section {
+    padding: 10px;
+  }
+
+  .swiper {
+    width: 100%;
+    height: fit-content;
+  }
+
+  h2 {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .project-link {
+    padding-top: 15px;
+  }
+
+  .project-status {
+    padding-bottom: 15px;
   }
 }
 
