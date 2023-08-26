@@ -505,7 +505,6 @@ nav ul li {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 
 .swiper-slide {
@@ -750,6 +749,10 @@ footer {
 
   .project-img {
     display: none;
+  }
+
+  .projects-content{
+    justify-content: space-evenly;
   }
 }
 
