@@ -158,7 +158,7 @@ h3 {
   height: 100%;
   margin: auto;
   width: 90vw;
-  z-index: 1;
+  z-index: -1;
 }
 
 .line {
@@ -505,6 +505,7 @@ nav ul li {
   height: 100%;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .swiper-slide {
@@ -638,7 +639,7 @@ nav ul li {
 
 .swiper-pagination {
   position: relative;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .swiper-pagination-bullet {
@@ -750,10 +751,6 @@ footer {
   .project-img {
     display: none;
   }
-
-  .projects-content{
-    justify-content: space-evenly;
-  }
 }
 
 @media (max-width: 767px) {
@@ -838,12 +835,19 @@ footer {
   section {
     padding: 0;
     margin: 0;
-    height: fit-content;
+  }
+  
+  #about {
+    position: relative;
   }
 
   .about-content p {
     padding: 0;
     margin: 0;
+  }
+
+  #projects {
+    margin-top: 50px;
   }
 
   .projects-content {
@@ -855,7 +859,6 @@ footer {
     padding: 10px;
     min-height: fit-content;
     max-height: max-content;
-    position: relative;
   }
 
   .swiper {
