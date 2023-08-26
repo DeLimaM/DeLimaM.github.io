@@ -158,7 +158,7 @@ h3 {
   height: 100%;
   margin: auto;
   width: 90vw;
-  z-index: -1;
+  z-index: 1;
 }
 
 .line {
@@ -340,7 +340,7 @@ header {
   border-bottom-style: solid;
   border-width: 2px;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 2;
 }
 
 #toggle-switch,
@@ -447,7 +447,7 @@ nav ul li {
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .about-content p {
@@ -503,6 +503,9 @@ nav ul li {
 
 .projects-content {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .swiper-slide {
@@ -803,15 +806,6 @@ footer {
     font-size: 4px !important;
   }
 
-  .project-item {
-    margin: 2%;
-    padding: 0;
-  }
-
-  .project-item-content {
-    display: block;
-  }
-
   .contact-content {
     flex-direction: column;
     padding: 0;
@@ -838,13 +832,10 @@ footer {
     font-size: 16px;
   }
 
-  .section {
+  section {
     padding: 0;
     margin: 0;
-  }
-
-  .presentation-content {
-    margin: 150px 0;
+    height: fit-content;
   }
 
   .about-content p {
@@ -859,6 +850,9 @@ footer {
 
   .stacking-section {
     padding: 10px;
+    min-height: fit-content;
+    max-height: max-content;
+    position: relative;
   }
 
   .swiper {
