@@ -57,7 +57,7 @@ function toggleDropdown() {
 
 function initSwiper() {
   const swiper = new Swiper('.swiper', {
-    loop: true,
+    loop: false,
     slidePerView: 1,
     centeredSlides: true,
     spaceBetween: 50,
