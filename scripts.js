@@ -57,14 +57,10 @@ function toggleDropdown() {
 
 function initSwiper() {
   const swiper = new Swiper('.swiper', {
-    loop: false,
+    loop: true,
     slidePerView: 1,
     centeredSlides: true,
     spaceBetween: 50,
-
-    autoplay: {
-      delay: 5000,
-    },
 
     keyboard : {
       enabled: true,

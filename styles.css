@@ -55,13 +55,13 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: var(--color-primary);
   color: var(--color-font);
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 75%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -74,18 +74,20 @@ body {
   --side-div-width: 0;
 }
 
+p{
+  font-size: 1.4em;
+}
+
 section {
   padding: 20px;
 }
 
 h2 {
-  font-size: 32px;
-  padding: 20px;
+  font-size: 3.2em;
 }
 
 h3 {
-  font-size: 24px;
-  padding: 20px;
+  font-size: 2.4em;
 }
 
 /* Links */
@@ -137,7 +139,6 @@ h3 {
 .stacking-section {
   box-sizing: border-box;
   position: sticky;
-  top: 50px;
   min-height: calc(100vh - 50px);
   box-shadow: 0px -1px 3px var(--color-tertiary), 0 -1px 2px var(--color-tertiary);
 }
@@ -339,7 +340,7 @@ header {
   transition: height var(--header-resizing-delay) ease, background-color var(--color-switch-delay) ease, border-color var(--color-switch-delay) ease;
   height: 100px;
   width: 100%;
-  font-size: 22px;
+  font-size: 2.2em;
   border-color: var(--color-accent);
   border-bottom-style: solid;
   border-width: 2px;
@@ -430,7 +431,7 @@ nav ul li {
 
 .presentation-content {
   text-align: center;
-  font-size: 25px;
+  font-size: 2.5em;
   padding: 20px 50px;
   margin: 250px 0;
   z-index: 1;
@@ -445,17 +446,13 @@ nav ul li {
 
 /* #region About section */
 #about {
-  font-size: 18px;
   line-height: 1.8;
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
   width: 100%;
   min-height: 100vh;
-}
-
-.about-content p {
-  padding: 50px;
+  top: 50px;
 }
 
 .grid {
@@ -463,6 +460,7 @@ nav ul li {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   padding: 20px;
+  justify-content: center;
 }
 
 .cell {
@@ -474,8 +472,17 @@ nav ul li {
   transition: background-color var(--color-switch-delay) ease;
 }
 
+.cell#me {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.cell#me p {
+  max-width: 1200px;
+}
+
 .cell-title {
-  font-size: 24px;
+  font-size: 1.8em;
   font-weight: bold;
   padding-bottom: 20px;
   border-bottom-style: solid;
@@ -483,18 +490,32 @@ nav ul li {
 }
 
 .cell-content {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding-top: 20px;
-  font-size: 18px;
   line-height: 1.8;
   color: var(--color-font);
 }
 
-.cell-content svg {
-  padding: 0 10px;
-  height: 70px;
-  width: 70px;
+.cell-content-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 10px;
 }
 
+.cell-content-item svg {
+  height: 60px;
+  width: 60px;
+}
+
+.cell-content-item p {
+  line-height: 1.8;
+  color: var(--color-font);
+}
 /* #endregion */
 
 /* #region Projects section */
@@ -503,6 +524,7 @@ nav ul li {
   transition: background-color var(--color-switch-delay) ease;
   text-align: center;
   height: 100vh;
+  top: 50px;
 }
 
 .projects-content {
@@ -534,9 +556,9 @@ nav ul li {
 }
 
 .project-title {
+  font-size: 1.8em;
   height: 50px;
   margin: 20px 0;
-  font-size: 24px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -558,10 +580,10 @@ nav ul li {
 }
 
 .project-status {
+  font-size: 1.6em;
   flex: 1;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
   line-height: 1.8;
   color: var(--color-font);
   border-bottom-style: solid;
@@ -569,7 +591,6 @@ nav ul li {
 }
 
 .project-status i {
-  font-size: 20px;
   margin-left: 8px;
   transition: color var(--color-switch-delay) ease;
 }
@@ -611,12 +632,12 @@ nav ul li {
   align-items: center;
   justify-content: center;
   padding : 10px 0 10px 10px;
-  font-size: 18px;
   line-height: 1.8;
   color: var(--color-font);
 }
 
 .project-link {
+  font-size: 1.3em;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -627,14 +648,13 @@ nav ul li {
 }
 
 .project-link i {
-  font-size: 24px;
   margin-right: 8px;
   transition: color var(--color-switch-delay) ease;
 }
 
 .swiper {
-  width: 80vw;
-  height: 70vh;
+  width: 80%;
+  height: 80%;
 }
 
 .swipper-wrapper {
@@ -643,7 +663,6 @@ nav ul li {
 
 .swiper-pagination {
   position: relative;
-  margin-top: 10px;
   z-index: 1;
 }
 
@@ -693,7 +712,7 @@ nav ul li {
   flex-wrap: wrap;
   padding: 30px 15px;
   margin: 30px;
-  font-size: 22px;
+  font-size: 1.6em;
 }
 
 .contact-item {
@@ -701,7 +720,6 @@ nav ul li {
 }
 
 .contact-item i {
-  font-size: 24px;
   margin-right: 8px;
   transition: color var(--color-switch-delay) ease;
 }
@@ -759,6 +777,12 @@ footer {
 }
 
 @media (max-width: 767px) {
+  /* general */
+  body {
+    font-size: 70%;
+  }
+
+  /* header */
   .clock {
     display: none;
   }
@@ -811,67 +835,39 @@ footer {
     font-size: 4px !important;
   }
 
-  .swiper-slide {
-    padding : 0 5px 5px 5px;
+  /* about */
+  #about {
+    position: relative;
+    top: 0;
+  }
+  
+  /* projects */
+  .swiper {
+    width: 90vw;
+    height: 72vh;
   }
 
-  .project-textcontent {
-    padding: 5px;
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
+
+  .swiper-slide{
+    padding: 8px;
+  }
+
+  .project-content {
+    padding: 0;
+    margin: 0;
   }
 
   .project-description {
-    font-size: 16px;
-  }
-
-  .project-status {
-    font-size: 16px;
-  }
-
-  .project-link {
-    font-size: 16px;
-  }
-
-  section {
-    padding: 0;
-    margin: 0;
-  }
-  
-  #about {
-    position: relative;
-  }
-
-  .about-content p {
-    padding: 0;
+    padding: 0 8px;
     margin: 0;
   }
 
-  #projects {
-    position: relative;
-    min-height: calc(110vh + 50px);
-  }
-
-  .stacking-section {
-    padding: 10px;
-    min-height: fit-content;
-    max-height: max-content;
-  }
-
-  .swiper {
-    width: 100%;
-    height: max-content
-  }
-
-  h2 {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  .project-link {
-    padding-top: 15px;
-  }
-
-  .project-status {
-    padding-bottom: 15px;
+  .project-title {
+    padding: 0;
+    margin: 0;
   }
 }
 
