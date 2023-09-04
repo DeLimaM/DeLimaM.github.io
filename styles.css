@@ -54,6 +54,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body {
   background-color: var(--color-primary);
   color: var(--color-font);
@@ -139,7 +148,7 @@ h3 {
 .stacking-section {
   box-sizing: border-box;
   position: sticky;
-  min-height: calc(100vh - 50px);
+  min-height: 100vh;
   box-shadow: 0px -1px 3px var(--color-tertiary), 0 -1px 2px var(--color-tertiary);
 }
 
@@ -664,6 +673,7 @@ nav ul li {
 .swiper-pagination {
   position: relative;
   z-index: 1;
+  margin-top: 20px;
 }
 
 .swiper-pagination-bullet {
