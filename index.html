@@ -14,36 +14,41 @@
 
 <body class="dark-theme">
   <header id="header">
-    <div id="clock" class="clock">
-      <div id="clock-content">
-        <span id="hours">00</span>
-        <span id="minutes">00</span>
-        <span id="seconds">00</span>
+    <div class="header-content">
+      <div id="clock" class="clock">
+        <div id="clock-content">
+          <span id="hours">00</span>
+          <span id="minutes">00</span>
+          <span id="seconds">00</span>
+        </div>
+      </div>
+      <div class="hamburger" onclick="toggleDropdown()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a class="menu-item" onclick="scrollToSection('about')">À propos</a></li>
+          <li><a class="menu-item" onclick="scrollToSection('projects')">Projets</a></li>
+          <li><a class="menu-item" onclick="scrollToSection('bottom-section')">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="toggle-switch">
+        <label id="label-switch">
+          <input type="checkbox" onclick="toggleTheme()">
+          <span id="slider" type="slider"></span>
+        </label>
       </div>
     </div>
-    <div class="hamburger" onclick="toggleDropdown()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav>
-      <ul>
-        <li><a class="menu-item" onclick="scrollToSection('about')">À propos</a></li>
-        <li><a class="menu-item" onclick="scrollToSection('projects')">Projets</a></li>
-        <li><a class="menu-item" onclick="scrollToSection('bottom-section')">Contact</a></li>
-      </ul>
-    </nav>
-    <div id="toggle-switch">
-      <label id="label-switch">
-        <input type="checkbox" onclick="toggleTheme()">
-        <span id="slider" type="slider"></span>
-      </label>
-    </div>
-    </div>
     <div class="dropdown" id="dropdown">
-      <a class="menu-item" onclick="scrollToSection('about')">À propos</a>
-      <a class="menu-item" onclick="scrollToSection('projects')">Projets</a>
-      <a class="menu-item" onclick="scrollToSection('bottom-section')">Contact et liens</a>
+      <a class="menu-item" onclick="scrollToSection('about');toggleDropdown();">À propos</a>
+      <a class="menu-item" onclick="scrollToSection('projects');toggleDropdown();">Projets</a>
+      <a class="menu-item" onclick="scrollToSection('bottom-section');toggleDropdown();">Contact et liens</a>
+    </div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
     </div>
   </header>
 
@@ -70,16 +75,16 @@
           </div>
           <div class="cell-content">
             <p>
-              Je suis un étudiant en informatique de 19 ans, qui a soif d'apprendre et 
+              Je suis un étudiant en informatique de 19 ans, qui a soif d'apprendre et
               de découvrir de nouvelles choses.
               J'aime passer le temps en travaillant sur des projets personnels,
               qui me permettent de gagner en expérience et en compétences.
               Parmi les derniers en date, ce site, qui servira de vitrine pour mes projets.
               <br>
-              Je suis actuellement en 2<sup>ème</sup> année de BUT Informatique à l'IUT 
+              Je suis actuellement en 2<sup>ème</sup> année de BUT Informatique à l'IUT
               de Dijon.
               <br>
-              Je recherche actuellement un stage au début 2024, 
+              Je recherche actuellement un stage au début 2024,
               et suis interéssé par une potentielle alternance en 3<sup>ème</sup> année.
             </p>
           </div>
@@ -398,33 +403,35 @@
     <section id="contact">
       <div class="contact-content section-content">
         <h2>Contact et liens</h2>
-        <div class="contact-item">
-          <div>
-            <i class="fas fa-phone"></i>
-            <span>Téléphone</span>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div>
+              <i class="fas fa-phone"></i>
+              <span>Téléphone</span>
+            </div>
+            <hr>
+            <div>07 68 26 26 29</div>
           </div>
-          <hr>
-          <div>07 68 26 26 29</div>
-        </div>
 
-        <div class="contact-item">
-          <div>
-            <i class="fas fa-envelope"></i>
-            <span>Email</span>
+          <div class="contact-item">
+            <div>
+              <i class="fas fa-envelope"></i>
+              <span>Email</span>
+            </div>
+            <hr>
+            <div><a class="link"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=martin.delimaa@gmail.com">martin.delimaa@gmail.com</a>
+            </div>
           </div>
-          <hr>
-          <div><a class="link"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=martin.delimaa@gmail.com">martin.delimaa@gmail.com</a>
-          </div>
-        </div>
 
-        <div class="contact-item">
-          <div>
-            <i class="fab fa-github"></i>
-            <span>GitHub</span>
+          <div class="contact-item">
+            <div>
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </div>
+            <hr>
+            <div><a class="link" href="https://github.com/DeLimaM">github.com/DeLimaM</a></div>
           </div>
-          <hr>
-          <div><a class="link" href="https://github.com/DeLimaM">github.com/DeLimaM</a></div>
         </div>
       </div>
     </section>
