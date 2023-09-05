@@ -55,12 +55,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
   width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 body {
@@ -87,19 +82,15 @@ p{
   font-size: 1.4em;
 }
 
-section {
-  padding: 20px;
-}
-
 h2 {
-  font-size: 3.2em;
+  font-size: 3em;
 }
 
 h3 {
   font-size: 2.4em;
 }
 
-/* Links */
+/* #region Links */
 .link {
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
   position: relative;
@@ -143,24 +134,28 @@ h3 {
   transform: scaleX(0);
   transition-delay: 0s;
 }
+/* #endregion */
 
-/* Stacking sections */
+/* #region Stacking sections */
 .stacking-section {
   box-sizing: border-box;
   position: sticky;
-  min-height: 100vh;
+  overflow: hidden;
+  height: 100vh;
   box-shadow: 0px -1px 3px var(--color-tertiary), 0 -1px 2px var(--color-tertiary);
 }
 
 #bottom-section {
   background-color: var(--color-secondary);
-  min-height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
+  top: 50px;
   display: flex;
   width: 100%;
   padding: 0;
   margin: 0;
   flex-direction: column;
 }
+/* #endregion */
 /* #endregion */
 
 /* #region Animated background */
@@ -455,7 +450,6 @@ nav ul li {
 
 /* #region About section */
 #about {
-  line-height: 1.8;
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
@@ -546,7 +540,7 @@ nav ul li {
 .swiper-slide {
   height: 100%;
   display: flex;
-  max-width: 100vw;
+  max-width: 90vw;
   position: relative;
   border-radius: 20px;
   background-color: var(--color-secondary);
@@ -567,7 +561,7 @@ nav ul li {
 .project-title {
   font-size: 1.8em;
   height: 50px;
-  margin: 20px 0;
+  margin: 0.3em 0;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -575,13 +569,14 @@ nav ul li {
 }
 
 .project-content {
-  height: 100%;
+  overflow: hidden;
+  height: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 2em;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 1em;
   border-style: solid;
   border-color: var(--color-accent);
   background-color: var(--color-primary);
@@ -600,7 +595,7 @@ nav ul li {
 }
 
 .project-status i {
-  margin-left: 8px;
+  margin-left: 0.8em;
   transition: color var(--color-switch-delay) ease;
 }
 
@@ -616,14 +611,14 @@ nav ul li {
 
 .project-img {
   flex: 2;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 1em;
+  padding: 1em;
 }
 
 .project-img img {
   max-width: 500px;
   max-height: 500px;
-  border-radius: 10px;
+  border-radius: 1em;
   box-shadow: 0px 0px 15px var(--color-secondary);
 }
 
@@ -640,7 +635,7 @@ nav ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding : 10px 0 10px 10px;
+  padding : 1em 0 1em 1em;
   line-height: 1.8;
   color: var(--color-font);
 }
@@ -657,13 +652,13 @@ nav ul li {
 }
 
 .project-link i {
-  margin-right: 8px;
+  margin-right: 0.8em;
   transition: color var(--color-switch-delay) ease;
 }
 
 .swiper {
   width: 80%;
-  height: 80%;
+  height: 75%;
 }
 
 .swipper-wrapper {
@@ -673,7 +668,6 @@ nav ul li {
 .swiper-pagination {
   position: relative;
   z-index: 1;
-  margin-top: 20px;
 }
 
 .swiper-pagination-bullet {
@@ -708,6 +702,10 @@ nav ul li {
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
   flex: 0.9;
+}
+
+#contact h2 {
+  font-size: 1.8em;
 }
 
 .contact-content {
@@ -849,6 +847,7 @@ footer {
   #about {
     position: relative;
     top: 0;
+    height: fit-content;
   }
   
   /* projects */
