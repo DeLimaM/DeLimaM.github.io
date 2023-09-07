@@ -81,11 +81,12 @@ function initSwiper() {
 }
 
 function scrollToSection(sectionId) {
-  var section = document.getElementById(sectionId);
-  window.scrollTo(0,0);
-  section.scrollIntoView({
-    behavior: 'instant',
-    block: 'start'
+  const section = document.getElementById(sectionId);
+  window.scrollTo(0,0,behavior='instant');
+  const yValue = section.getBoundingClientRect().top + window.scrollY - 50;
+  window.scrollTo({
+    top: yValue,
+    behavior: 'instant'
   });
 }
 

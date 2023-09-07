@@ -148,7 +148,6 @@ h3 {
 #bottom-section {
   background-color: var(--color-secondary);
   height: calc(100vh - 50px);
-  top: 50px;
   display: flex;
   width: 100%;
   padding: 0;
@@ -791,7 +790,7 @@ footer {
   }
 
   header {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .project-img {
