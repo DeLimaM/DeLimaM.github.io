@@ -3,8 +3,8 @@ let sections;
 
 document.addEventListener('DOMContentLoaded', function () {
   initSwiper();
+  setSavedTheme();
   sections = document.querySelectorAll('.tracked-section');
-
   window.addEventListener('scroll', function () {
     resizeHeader();
     refreshProgressBar();
@@ -25,6 +25,16 @@ function resizeHeader() {
   }
 }
 
+function setSavedTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const themeCheckbox = document.getElementById('theme-checkbox');
+  if (savedTheme) {
+    if (savedTheme==='light-theme') {
+      themeCheckbox.click();
+    }
+  }
+}
+
 function toggleTheme() {
   var body = document.querySelector('body');
   if (body.classList.contains('dark-theme')) {
@@ -34,6 +44,7 @@ function toggleTheme() {
     body.classList.remove('light-theme');
     body.classList.add('dark-theme');
   }
+  localStorage.setItem('theme', body.classList);
 }
 
 function updateClock() {

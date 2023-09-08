@@ -35,16 +35,11 @@
 }
 
 .light-theme {
-  --color-primary: #E0F7FA;
-  /* Light Cyan */
-  --color-secondary: #B2EBF2;
-  /* Lighter Cyan */
-  --color-tertiary: #80DEEA;
-  /* Lightest Cyan */
-  --color-accent: #008C9E;
-  /* Dark Cyan */
+  --color-primary: #FFFFFF;
+  --color-secondary: #fdf8ea;
+  --color-tertiary: #CCD5AE;
+  --color-accent: #95721f;
   --color-font: #333333;
-  /* Dark Gray for Text */
 }
 
 /* #endregion */
@@ -623,7 +618,7 @@ nav ul li {
 }
 
 .project-status i.fa-spinner {
-  color: orangered;
+  color: var(--color-accent);
   transition: color var(--color-switch-delay) ease;
 }
 
