@@ -1,10 +1,8 @@
 setInterval(updateClock, 100);
-let sections;
 
 document.addEventListener('DOMContentLoaded', function () {
   initSwiper();
   setSavedTheme();
-  sections = document.querySelectorAll('.tracked-section');
   window.addEventListener('scroll', function () {
     resizeHeader();
     refreshProgressBar();
@@ -12,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function resizeHeader() {
-  var header = document.getElementById("header")
-  var toggle = document.getElementById("toggle-switch")
-  var scrollTreshold = 50;
-  var scrollValue = window.scrollY || document.documentElement.scrollTop;
+  let header = document.getElementById("header")
+  let toggle = document.getElementById("toggle-switch")
+  let scrollTreshold = 50;
+  let scrollValue = window.scrollY || document.documentElement.scrollTop;
   if (scrollValue > scrollTreshold) {
     header.classList.add('small-header');
     toggle.classList.add('small-toggle');
@@ -36,7 +34,7 @@ function setSavedTheme() {
 }
 
 function toggleTheme() {
-  var body = document.querySelector('body');
+  let body = document.querySelector('body');
   if (body.classList.contains('dark-theme')) {
     body.classList.remove('dark-theme');
     body.classList.add('light-theme');
@@ -48,10 +46,10 @@ function toggleTheme() {
 }
 
 function updateClock() {
-  var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  var seconds = now.getSeconds();
+  let now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
 
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -63,7 +61,7 @@ function updateClock() {
 }
 
 function toggleDropdown() {
-  var dropdown = document.getElementById("dropdown");
+  let dropdown = document.getElementById("dropdown");
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
 
@@ -102,8 +100,8 @@ function scrollToSection(sectionId) {
 }
 
 function refreshProgressBar() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
   document.getElementById("progress-bar").style.width = scrolled + "%";
 }
