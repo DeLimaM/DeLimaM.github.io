@@ -22,29 +22,29 @@
           <span id="seconds">00</span>
         </div>
       </div>
-      <div class="hamburger" onclick="toggleDropdown()">
+      <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <nav>
         <ul>
-          <li><a class="menu-item" onclick="scrollToSection('about')">À propos</a></li>
-          <li><a class="menu-item" onclick="scrollToSection('projects')">Projets</a></li>
-          <li><a class="menu-item" onclick="scrollToSection('bottom-section')">Contact</a></li>
+          <li><a class="menu-item menu-item-about">À propos</a></li>
+          <li><a class="menu-item menu-item-projects">Projets</a></li>
+          <li><a class="menu-item menu-item-contact">Contact</a></li>
         </ul>
       </nav>
       <div id="toggle-switch">
         <label id="label-switch">
-          <input type="checkbox" id="theme-checkbox" onclick="toggleTheme()">
+          <input type="checkbox" id="theme-checkbox">
           <span id="slider" type="slider"></span>
         </label>
       </div>
     </div>
     <div class="dropdown" id="dropdown">
-      <a class="menu-item" onclick="scrollToSection('about');toggleDropdown();">À propos</a>
-      <a class="menu-item" onclick="scrollToSection('projects');toggleDropdown();">Projets</a>
-      <a class="menu-item" onclick="scrollToSection('bottom-section');toggleDropdown();">Contact et liens</a>
+      <a class="menu-item-dropdown menu-item-about">À propos</a>
+      <a class="menu-item-dropdown menu-item-projects">Projets</a>
+      <a class="menu-item-dropdown menu-item-contact">Contact et liens</a>
     </div>
     </div>
     <div class="progress-container">

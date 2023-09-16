@@ -1,14 +1,46 @@
 setInterval(updateClock, 100);
 
+//on page load
 document.addEventListener('DOMContentLoaded', function () {
   initSwiper();
   setSavedTheme();
+
+  // Add scroll events
   window.addEventListener('scroll', function () {
     resizeHeader();
     refreshProgressBar();
   });
+
+  // Add click events
+  document.getElementById('hamburger').addEventListener('click', function () {
+    toggleDropdown();
+  });
+  document.querySelectorAll('.menu-item-about').forEach(item => {
+    item.addEventListener('click', function () {
+      scrollToSection('about');
+    });
+  });
+  document.querySelectorAll('.menu-item-projects').forEach(item => {
+    item.addEventListener('click', function () {
+      scrollToSection('projects');
+    });
+  });
+  document.querySelectorAll('.menu-item-contact').forEach(item => {
+    item.addEventListener('click', function () {
+      scrollToSection('contact');
+    });
+  });
+  document.querySelectorAll('.menu-item-dropdown').forEach(item => {
+    item.addEventListener('click', function () {
+      toggleDropdown();
+    });
+  });
+  document.getElementById('theme-checkbox').addEventListener('click', function () {
+    toggleTheme();
+  });
 });
 
+// handle the resize event for the header
 function resizeHeader() {
   let header = document.getElementById("header")
   let toggle = document.getElementById("toggle-switch")
@@ -23,16 +55,19 @@ function resizeHeader() {
   }
 }
 
+// set the theme based on the saved theme
 function setSavedTheme() {
   const savedTheme = localStorage.getItem('theme');
   const themeCheckbox = document.getElementById('theme-checkbox');
   if (savedTheme) {
     if (savedTheme==='light-theme') {
       themeCheckbox.click();
+      toggleTheme();
     }
   }
 }
 
+// toggle the theme
 function toggleTheme() {
   let body = document.querySelector('body');
   if (body.classList.contains('dark-theme')) {
@@ -45,6 +80,7 @@ function toggleTheme() {
   localStorage.setItem('theme', body.classList);
 }
 
+// update the clock
 function updateClock() {
   let now = new Date();
   let hours = now.getHours();
@@ -60,11 +96,13 @@ function updateClock() {
   document.getElementById("seconds").innerHTML = " : " + seconds;
 }
 
+// toggle the dropdown menu
 function toggleDropdown() {
   let dropdown = document.getElementById("dropdown");
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
 
+// initialize the swiper
 function initSwiper() {
   const swiper = new Swiper('.swiper', {
     loop: true,
@@ -89,6 +127,7 @@ function initSwiper() {
   });
 }
 
+// scroll to a section
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   window.scrollTo(0,0,behavior='instant');
@@ -99,6 +138,7 @@ function scrollToSection(sectionId) {
   });
 }
 
+// refresh the progress bar
 function refreshProgressBar() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
