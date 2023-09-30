@@ -30,7 +30,13 @@
       <nav>
         <ul>
           <li><a class="menu-item menu-item-about">Qui suis-je ?</a></li>
-          <li><a class="menu-item menu-item-projects">Projets</a></li>
+          <li>
+            <a class="menu-item menu-item-projects">Projets</a>
+            <ul>
+              <li><a class="link-projects-perso">Projets perso</a></li>
+              <li><a class="link-projects-edu">Projets éducatifs</a></li>
+            </ul>
+          </li>
           <li><a class="menu-item menu-item-contact">Contact</a></li>
         </ul>
       </nav>
@@ -43,7 +49,8 @@
     </div>
     <div class="dropdown" id="dropdown">
       <a class="menu-item-dropdown menu-item-about">Qui suis-je</a>
-      <a class="menu-item-dropdown menu-item-projects">Projets</a>
+      <a class="menu-item-dropdown link-projects-perso">Projets personnels</a>
+      <a class="menu-item-dropdown link-projects-edu">Projets éducatifs</a>
       <a class="menu-item-dropdown menu-item-contact">Contact et liens</a>
     </div>
     </div>
@@ -85,7 +92,7 @@
               de Dijon.
               <br>
               Je recherche actuellement un stage au début 2024,
-              et suis interéssé par une potentielle alternance en 3<sup>ème</sup> année.
+              et suis intéressé par une potentielle alternance en 3<sup>ème</sup> année.
             </p>
           </div>
         </div>
@@ -316,18 +323,22 @@
     </div>
   </section>
 
-  <section id="projects" class="stacking-section">
-    <div class="lines">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+  <section id="projects-perso" class="stacking-section projects">
+    <div id="blurry-lines-up">
+      <div class='light line-up1'></div>
+      <div class='light line-up2'></div>
+      <div class='light line-up3'></div>
+      <div class='light line-up4'></div>
+      <div class='light line-up5'></div>
+      <div class='light line-up6'></div>
+      <div class='light line-up7'></div>
+      <div class='light line-up8'></div>
+      <div class='light line-up9'></div>
     </div>
     <div class="projects-content section-content">
-      <h2>Projets</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
+      <h2>Projets personnels</h2>
+      <div class="swiper swiper-perso">
+        <div class="swiper-wrapper swiper-wrapper-perso">
           <div class="swiper-slide">
             <div class="project-title">Site portfolio</div>
             <div class="project-content">
@@ -395,9 +406,108 @@
           </div>
         </div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev swiper-button-prev-perso"></div>
+      <div class="swiper-button-next swiper-button-next-perso"></div>
+      <div class="swiper-pagination swiper-pagination-perso"></div>
+    </div>
+  </section>
+
+  <section id="projects-edu" class="stacking-section projects">
+    <div id="blurry-lines-down">
+      <div class='light line-down1'></div>
+      <div class='light line-down2'></div>
+      <div class='light line-down3'></div>
+      <div class='light line-down4'></div>
+      <div class='light line-down5'></div>
+      <div class='light line-down6'></div>
+      <div class='light line-down7'></div>
+      <div class='light line-down8'></div>
+      <div class='light line-down9'></div>
+    </div>
+    <div class="projects-content section-content">
+      <h2>Projets éducatifs</h2>
+      <div class="swiper swiper-edu">
+        <div class="swiper-wrapper swiper-wrapper-edu">
+          <div class="swiper-slide">
+            <div class="project-title">Un petit jeu en 2D</div>
+            <div class="project-content">
+              <div class="project-img">
+                <img src="images/but1s2_01.png" alt="Screenshot of the game">
+              </div>
+              <div class="project-textcontent">
+                <div class="project-status">Langage utilisé : C#</div>
+                <div class="project-description">
+                  <p>
+                    Il s'agit d'un petit jeu en 2D réalisé en C# avec l'aide d'un framework fourni par l'IUT.
+                    <br>
+                    Ce projet à été très formateur, car de me familiariser avec 
+                    les contraintes de développement d'un jeu vidéo, mais aussi de travail en équipe. J'ai ainsi pu appréhender 
+                    les problématiques de respect des délais, de répartition des tâches, de communication, etc.
+                    <br>
+                    Techniquement, j'ai surtout appris à bien structurer un programme, 
+                    mais ai aussi approfondi mes connaissances en C# et en programmation orientée objet.
+                  </p>
+                </div>
+                <div class="project-link">
+                  Première année de BUT, Semestre 2
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-title">Algorithmes et graphes</div>
+            <div class="project-content">
+              <div class="project-img">
+                <img src="images/but1s2_02.png" alt="Screenshot app used to display taverns created by graphs">
+              </div>
+              <div class="project-textcontent">
+                <div class="project-status">Langage utilisé : C#</div>
+                <div class="project-description">
+                  <p>
+                    La problématique de ce projet était de colorier un graphe à travers 4 heuristiques : l'algorithme de coloration glouton,
+                    l'algorithme DSATUR, l'algorithme de Welsh-Powell et l'algorithme Largest Degree Ordering.
+                    <br>
+                    Ce projet m'a permis de concrétiser les notions vues en cours, et de me familiariser avec les problématiques de performance. 
+                    <br>
+                    Techniquement, j'ai surtout appris à modéliser et manipuler des graphes, 
+                    mais ai aussi approfondi mes connaissances en C# et en programmation orientée objet.
+                  </p>
+                </div>
+                <div class="project-link">
+                  Première année de BUT, Semestre 2
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-title">Organisation d'un travail d'équipe</div>
+            <div class="project-content">
+              <div class="project-img">
+                <img src="images/but1s2_03.png" alt="Screenshot of the site">
+              </div>
+              <div class="project-textcontent">
+                <div class="project-status">Langages utilisés : HTML,CSS</div>
+                <div class="project-description">
+                  <p>
+                    Ce projet avait pour but de nous faire travailler en équipe sur la création d'une start-up comprenant un site vitrine.
+                    <br>
+                    Ce projet m'a permis d'appréhender le travail d'équipe, et de découvrir les problématiques de gestion de projet et de respect des échéances.
+                    Le challenge de la répartition des tâches a également été rencontré.
+                    <br>
+                    Techniquement, j'ai surtout approfondi mes connaissances en HTML et CSS.
+                  </p>
+                </div>
+                <div class="project-link">
+                  Première année de BUT, Semestre 2
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <div class="swiper-button-prev swiper-button-prev-edu"></div>
+      <div class="swiper-button-next swiper-button-next-edu"></div>
+      <div class="swiper-pagination swiper-pagination-edu"></div>
     </div>
   </section>
 

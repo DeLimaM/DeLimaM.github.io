@@ -2,8 +2,15 @@ setInterval(updateClock, 100);
 
 //on page load
 document.addEventListener('DOMContentLoaded', function () {
-  initSwiper();
+  // initialize swipers
+  initSwiper('edu');
+  initSwiper('perso');
+
+  // set the saved theme
   setSavedTheme();
+
+  // update projects links based on the device
+  updateProjectsLinks();
 
   // Add scroll events
   window.addEventListener('scroll', function () {
@@ -22,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   document.querySelectorAll('.menu-item-projects').forEach(item => {
     item.addEventListener('click', function () {
-      scrollToSection('projects');
+      scrollToSection('projects-perso');
     });
   });
   document.querySelectorAll('.menu-item-contact').forEach(item => {
@@ -37,6 +44,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   document.getElementById('theme-checkbox').addEventListener('click', function () {
     toggleTheme();
+  });
+  document.querySelectorAll('.link-projects-perso').forEach(item => {
+    item.addEventListener('click', function () {
+      scrollToSection('projects-perso');
+    });
+  });
+  document.querySelectorAll('.link-projects-edu').forEach(item => {
+    item.addEventListener('click', function () {
+      scrollToSection('projects-edu');
+    });
   });
 });
 
@@ -103,8 +120,8 @@ function toggleDropdown() {
 }
 
 // initialize the swiper
-function initSwiper() {
-  const swiper = new Swiper('.swiper', {
+function initSwiper(suffix) {
+  const swiper = new Swiper('.swiper-'+suffix, {
     loop: true,
     slidePerView: 1,
     centeredSlides: true,
@@ -116,13 +133,13 @@ function initSwiper() {
     },
 
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination-'+suffix,
       clickable: true,
     },
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      nextEl: '.swiper-button-next-'+suffix,
+      prevEl: '.swiper-button-prev-'+suffix,
     },
   });
 }
@@ -144,4 +161,18 @@ function refreshProgressBar() {
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
   document.getElementById("progress-bar").style.width = scrolled + "%";
+}
+
+// update projects links
+function updateProjectsLinks() {
+  const links = document.querySelectorAll('.project-link .link');
+  console.log(links);
+  var mediaQuery = window.matchMedia('(max-width: 767px)');
+
+  if (mediaQuery.matches) {
+    console.log('mobile');
+    links.forEach(link => {
+      link.innerHTML = 'Lien Github';
+    });
+  }
 }
