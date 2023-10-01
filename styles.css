@@ -539,7 +539,7 @@ h3 {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: none;
+  background-color: var(--color-primary);
   transition: background-color var(--color-switch-delay) ease;
 }
 
@@ -787,7 +787,7 @@ nav a:hover {
 .presentation-content {
   text-align: center;
   font-size: 2.5em;
-  padding: 20px 50px;
+  padding: 20px 40px;
   margin: 250px 0;
   z-index: 1;
   border-width: 3px;
@@ -795,6 +795,7 @@ nav a:hover {
   border-radius: 3px;
   border-color: var(--color-accent);
   background-color: var(--color-primary);
+  box-shadow: 0px 0px 10px var(--color-accent);
   transition: border-color var(--color-switch-delay) ease, background-color var(--color-switch-delay) ease;
 }
 /* #endregion */
@@ -812,18 +813,21 @@ nav a:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
+  grid-gap: 10px;
+  padding: 0 20px;
   justify-content: center;
 }
 
 .cell {
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   border-style: solid;
   border-color: var(--color-accent);
   background-color: var(--color-primary);
-  transition: background-color var(--color-switch-delay) ease;
+  box-shadow: 0px 0px 10px var(--color-tertiary);
+  transition: background-color var(--color-switch-delay) ease, 
+              border-color var(--color-switch-delay) ease, 
+              box-shadow var(--color-switch-delay) ease;
 }
 
 .cell#me {
@@ -903,11 +907,11 @@ nav a:hover {
 
 .swiper-slide-active {
   background-color: var(--color-secondary);
-  background-image: linear-gradient(90deg, var(--color-secondary), var(--color-accent),var(--color-secondary));
-  background-size: 40px 100%;
+  background-image: linear-gradient(85deg, var(--color-secondary), var(--color-accent),var(--color-secondary));
+  background-size: 30px 100%;
   background-repeat: no-repeat;
   background-position: right -40px top 0px;
-  animation: movingGradient 1s ease-in-out forwards;
+  animation: movingGradient 0.75s ease-in-out forwards;
 }
 
 .project-title {
@@ -1122,7 +1126,7 @@ footer {
 
 /* #endregion */
 
-/* #region Mobile */
+/* #region Responsive */
 .dropdown {
   display: none;
 }
@@ -1206,6 +1210,13 @@ footer {
 
   .small-toggle {
     font-size: 4px !important;
+  }
+
+  /* presentation */
+  .presentation-content {
+    padding: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 
   /* about */
