@@ -137,15 +137,15 @@ body {
 }
 
 p{
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2.4em;
 }
 
 h3 {
-  font-size: 2.4em;
+  font-size: 2.2em;
 }
 
 /* #region Links */
@@ -694,7 +694,7 @@ nav ul {
   list-style-type: none;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--color-tertiary);
+  background-color: transparent;
   border-radius: 5px;
   transition: background-color var(--color-switch-delay) ease;
 } 
@@ -723,6 +723,7 @@ nav ul li ul{
 nav ul li:hover ul {
   visibility: visible;
   opacity: 1;
+  background-color: var(--color-tertiary);
   transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -972,8 +973,8 @@ nav a:hover {
 }
 
 .project-img img {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 20vw;
+  max-height: 20vw;
   border-radius: 1em;
   box-shadow: 0px 0px 15px var(--color-secondary);
 }
@@ -987,6 +988,7 @@ nav a:hover {
 }
 
 .project-description {
+  font-size: ;
   flex: 8;
   display: flex;
   align-items: center;
@@ -1127,6 +1129,10 @@ footer {
 /* #endregion */
 
 /* #region Responsive */
+
+/* screens and dpi */
+/* 1920x1080 and >= 150 dpi */
+
 .dropdown {
   display: none;
 }
