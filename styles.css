@@ -123,7 +123,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   font-family: 'Lexend Exa', sans-serif;
-  font-size: 70%;
+  font-size: 1vw;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -141,11 +141,11 @@ p{
 }
 
 h2 {
-  font-size: 2.4em;
+  font-size: 2em;
 }
 
 h3 {
-  font-size: 2.2em;
+  font-size: 1.8em;
 }
 
 /* #region Links */
@@ -200,12 +200,12 @@ h3 {
   box-sizing: border-box;
   position: sticky;
   overflow: hidden;
-  box-shadow: 0px -1px 3px var(--color-tertiary), 0 -1px 2px var(--color-tertiary);
+  box-shadow: 0px -1px 3em var(--color-tertiary), 0 -1px 2px var(--color-tertiary);
 }
 
 #bottom-section {
   background-color: var(--color-secondary);
-  height: calc(100vh - 50px);
+  height: 94vh;
   display: flex;
   width: 100%;
   padding: 0;
@@ -560,12 +560,12 @@ h3 {
   height: 100%;
   justify-content: right;
   margin-right: 1%;
-  font-size: 8px;
+  font-size: 0.4em;
   transition: font-size var(--header-resizing-delay) ease;
 }
 
 .small-toggle {
-  font-size: 5px !important;
+  font-size: 0.2em !important;
   transition: font-size var(--header-resizing-delay) ease;
 }
 
@@ -638,9 +638,9 @@ header {
   position: fixed;
   top: 0;
   transition: height var(--header-resizing-delay) ease, background-color var(--color-switch-delay) ease, border-color var(--color-switch-delay) ease;
-  height: 100px;
+  height: 12vh;
   width: 100%;
-  font-size: 2.2em;
+  font-size: 1.6em;
   box-sizing: border-box;
   z-index: 2;
 }
@@ -678,7 +678,7 @@ header {
 }
 
 .small-header {
-  height: 50px;
+  height: 6vh;
 }
 
 nav {
@@ -690,7 +690,7 @@ nav ul {
   position: relative;
   display: flex;
   margin: 0 15%;
-  padding: 0 30px;
+  padding: 0 2vw;
   list-style-type: none;
   justify-content: space-around;
   align-items: center;
@@ -706,7 +706,7 @@ nav ul li:not(:last-child) {
 nav ul li {
   align-content: center;
   white-space: nowrap;
-  padding: 10px 0;
+  padding: 1.5vh 0;
 }
 
 nav ul li ul{
@@ -714,7 +714,7 @@ nav ul li ul{
   opacity: 0;
   position: absolute;
   display: block;
-  margin: 10px 0 0 0;
+  margin: 8px 0 0 0;
   padding: 0;
   list-style-type: none;
   box-shadow: 0px 0px 15px var(--color-secondary);
@@ -731,7 +731,7 @@ nav a {
   color: var(--color-font);
   text-decoration: none;
   user-select: none;
-  margin: 10px;
+  margin: 1.8vw;
   transition: color var(--color-switch-delay) ease;
   border-radius: 5px;
   border: 2px solid transparent;
@@ -787,9 +787,9 @@ nav a:hover {
 
 .presentation-content {
   text-align: center;
-  font-size: 2.5em;
-  padding: 20px 40px;
-  margin: 250px 0;
+  font-size: 2em;
+  padding: 3vh 6vh;
+  margin: auto 0;
   z-index: 1;
   border-width: 3px;
   border-style: solid;
@@ -808,19 +808,19 @@ nav a:hover {
   transition: background-color var(--color-switch-delay) ease;
   width: 100%;
   min-height: 100vh;
-  top: 50px;
+  top: 6vh;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  padding: 0 20px;
+  grid-gap: 1vw;
+  padding: 0 2vw;
   justify-content: center;
 }
 
 .cell {
-  padding: 15px;
+  padding: 1vh 1vw;
   border-radius: 10px;
   border-style: solid;
   border-color: var(--color-accent);
@@ -837,13 +837,13 @@ nav a:hover {
 }
 
 .cell#me p {
-  max-width: 1200px;
+  max-width: 90vw;
 }
 
 .cell-title {
   font-size: 1.8em;
   font-weight: bold;
-  padding-bottom: 20px;
+  padding-bottom: 1vh;
   border-bottom-style: solid;
   border-bottom-color: var(--color-accent);
 }
@@ -852,7 +852,7 @@ nav a:hover {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 1vh;
   line-height: 1.8;
   color: var(--color-font);
 }
@@ -867,8 +867,8 @@ nav a:hover {
 }
 
 .cell-content-item svg {
-  height: 60px;
-  width: 60px;
+  height: 4em;
+  width: 4em  ;
 }
 
 .cell-content-item p {
@@ -882,8 +882,8 @@ nav a:hover {
   background-color: var(--color-primary);
   transition: background-color var(--color-switch-delay) ease;
   text-align: center;
-  height: calc(100vh - 50px);
-  top: 50px;
+  height: 94vh;
+  top: 6vh;
 }
 
 .projects-content {
@@ -916,10 +916,9 @@ nav a:hover {
 }
 
 .project-title {
-  font-size: 1.8em;
-  height: 50px;
-  margin: 0.3em 0;
+  margin: 0.8vh 0;
   font-weight: bold;
+  font-size: 1.4em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -941,7 +940,7 @@ nav a:hover {
 }
 
 .project-status {
-  font-size: 1.6em;
+  font-size: 1em;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -988,7 +987,7 @@ nav a:hover {
 }
 
 .project-description {
-  font-size: ;
+  font-size: 0.9vw;
   flex: 8;
   display: flex;
   align-items: center;
@@ -1000,7 +999,7 @@ nav a:hover {
 }
 
 .project-link {
-  font-size: 1.3em;
+  font-size: 1em;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -1029,8 +1028,11 @@ nav a:hover {
   border: solid 3px var(--color-tertiary);
   background: var(--color-secondary);
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4vh;
   margin: 0;
-  padding: 0;
 }
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -1064,7 +1066,6 @@ nav a:hover {
 
 /* #region Contact section */
 #contact {
-  padding-bottom: 50px;
   text-align: center;
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
@@ -1083,7 +1084,7 @@ nav a:hover {
   flex-wrap: wrap;
   padding: 30px 15px;
   margin: 30px;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 .contact-item {
@@ -1118,7 +1119,7 @@ footer {
   transition: background-color var(--color-switch-delay) ease;
   color: var(--color-font);
   text-align: center;
-  padding: 30px;
+  padding: 5vh;
   border: var(--color-accent);
   border-radius: 1px;
   border-top-style: solid;
@@ -1129,15 +1130,19 @@ footer {
 /* #endregion */
 
 /* #region Responsive */
-
-/* screens and dpi */
-/* 1920x1080 and >= 150 dpi */
-
 .dropdown {
   display: none;
 }
 
 @media (max-width: 1050px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  .project-description {
+    font-size: 1em;
+  }
+
   #clock #seconds {
     display: none;
   }
@@ -1154,15 +1159,11 @@ footer {
 @media (max-width: 767px) {
   /* general */
   body {
-    font-size: 65%;
+    font-size: 0.8em;
   }
 
-  h2 {
-    font-size: 2.4em;
-  }
-
-  h3 {
-    font-size: 2em;
+  .project-description {
+    font-size: 0.8em;
   }
 
   /* header */
@@ -1240,30 +1241,6 @@ footer {
 
   .swiper-button-next, .swiper-button-prev {
     display: none;
-  }
-
-  .swiper-slide{
-    padding: 2px;
-  }
-
-  .project-content {
-    padding: 0;
-    margin: 0;
-  }
-
-  .project-description {
-    padding: 5px;
-    margin: 0;
-  }
-
-  .project-title {
-    padding: 0;
-    margin: 0;
-  }
-
-  .project-link {
-    padding: 0;
-    margin: 0;
   }
 
   .project-link i {

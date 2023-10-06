@@ -148,7 +148,7 @@ function initSwiper(suffix) {
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   window.scrollTo(0,0,behavior='instant');
-  const yValue = section.getBoundingClientRect().top + window.scrollY - 50;
+  const yValue = section.getBoundingClientRect().top + window.scrollY - (6 * window.innerHeight / 100);
   window.scrollTo({
     top: yValue,
     behavior: 'instant'
