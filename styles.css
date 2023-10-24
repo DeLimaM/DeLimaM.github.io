@@ -828,7 +828,8 @@ nav a:hover {
   box-shadow: 0px 0px 10px var(--color-tertiary);
   transition: background-color var(--color-switch-delay) ease, 
               border-color var(--color-switch-delay) ease, 
-              box-shadow var(--color-switch-delay) ease;
+              box-shadow var(--color-switch-delay) ease,
+              opacity 0.5s ease;
 }
 
 .cell#me {
@@ -904,6 +905,9 @@ nav a:hover {
   transition: background-color var(--color-switch-delay) ease;
   flex-direction: column;
   padding: 0 20px 20px 20px;
+  transition: background-color var(--color-switch-delay) ease, 
+              border-color var(--color-switch-delay) ease,
+              opacity 0.5s ease;
 }
 
 .swiper-slide-active {

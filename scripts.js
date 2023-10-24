@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
   initSwiper('edu');
   initSwiper('perso');
 
+  // set up the observers
+  swiperObserver();
+  cellsObserver();
+
   // set the saved theme
   setSavedTheme();
 
@@ -56,6 +60,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// set up the observer for the swipers
+function swiperObserver() {
+  let options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.4
+  };
+  let swiperElements = document.querySelectorAll('.swiper-slide.swiper-slide-active, .swiper-button-next, .swiper-button-prev', '.swiper-pagination');
+  let observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+      } else {
+          entry.target.style.opacity = 0;
+      }
+    });
+  }, options);
+  swiperElements.forEach(element => {
+    observer.observe(element);
+  });
+}
+
+// set up the observer for the cells
+function cellsObserver() {
+  let cells = document.querySelectorAll('.cell');
+  let options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.6
+  };
+  let observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+      } else {
+          entry.target.style.opacity = 0;
+      }
+    });
+  }, options);
+  cells.forEach(cell => {
+    observer.observe(cell);
+  });
+}
 
 // handle the resize event for the header
 function resizeHeader() {
@@ -166,11 +214,9 @@ function refreshProgressBar() {
 // update projects links
 function updateProjectsLinks() {
   const links = document.querySelectorAll('.project-link .link');
-  console.log(links);
   var mediaQuery = window.matchMedia('(max-width: 767px)');
 
   if (mediaQuery.matches) {
-    console.log('mobile');
     links.forEach(link => {
       link.innerHTML = 'Lien Github';
     });
