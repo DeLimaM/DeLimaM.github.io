@@ -66,7 +66,7 @@ function swiperObserver() {
   let options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.4
+    threshold: 0
   };
   let swiperElements = document.querySelectorAll('.swiper-slide.swiper-slide-active, .swiper-button-next, .swiper-button-prev', '.swiper-pagination');
   let observer = new IntersectionObserver(entries => {
@@ -89,7 +89,7 @@ function cellsObserver() {
   let options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.6
+    threshold: 0
   };
   let observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

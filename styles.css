@@ -134,6 +134,7 @@ body {
   --header-resizing-delay: 0.2s;
   --toggle-switch-delay: 0.3s;
   --side-div-width: 0;
+  --div-fade-in-delay: 0.4s;
 }
 
 p{
@@ -829,7 +830,7 @@ nav a:hover {
   transition: background-color var(--color-switch-delay) ease, 
               border-color var(--color-switch-delay) ease, 
               box-shadow var(--color-switch-delay) ease,
-              opacity 0.5s ease;
+              opacity var(--div-fade-in-delay) ease-in-out;
 }
 
 .cell#me {
@@ -853,23 +854,24 @@ nav a:hover {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   padding-top: 1vh;
+  padding-bottom: 1vh;
   line-height: 1.8;
   color: var(--color-font);
 }
 
 .cell-content-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  margin: 0 10px;
+  padding: 0.5vw;
+  margin: auto 0.5vw;
 }
 
-.cell-content-item svg {
-  height: 4em;
-  width: 4em  ;
+.cell-content-item img {
+  height: 4rem;
+  width: 4rem;
 }
 
 .cell-content-item p {
@@ -907,7 +909,7 @@ nav a:hover {
   padding: 0 20px 20px 20px;
   transition: background-color var(--color-switch-delay) ease, 
               border-color var(--color-switch-delay) ease,
-              opacity 0.5s ease;
+              opacity var(--div-fade-in-delay) ease-in-out;
 }
 
 .swiper-slide-active {
@@ -1072,12 +1074,11 @@ nav a:hover {
 #contact {
   text-align: center;
   background-color: var(--color-secondary);
-  transition: background-color var(--color-switch-delay) ease;
   flex: 0.9;
+  transition: background-color var(--color-switch-delay) ease;
 }
 
 .contact-items {
-  transition: border-color var(--color-switch-delay) ease;
   border-style: solid;
   border-color: var(--color-primary);
   border-width: 3px;
@@ -1089,6 +1090,7 @@ nav a:hover {
   padding: 30px 15px;
   margin: 30px;
   font-size: 1.2em;
+  transition: border-color var(--color-switch-delay) ease;
 }
 
 .contact-item {
@@ -1114,6 +1116,14 @@ nav a:hover {
   transition: color var(--color-switch-delay) ease;
 }
 
+#note {
+  margin-top: 5vh;
+  font-size: 0.8em;
+  color: var(--color-font);
+  transition: color var(--color-switch-delay) ease;
+  border: var(--color-accent) solid 2px;
+  border-radius: 10px;
+}
 /* #endregion */
 
 /* #region Footer */
