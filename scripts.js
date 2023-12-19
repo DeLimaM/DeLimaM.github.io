@@ -127,7 +127,6 @@ function setSavedTheme() {
   if (savedTheme) {
     if (savedTheme==='light-theme') {
       themeCheckbox.click();
-      toggleTheme();
     }
   }
 }
