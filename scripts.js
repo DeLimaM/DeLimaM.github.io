@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initSwiper('edu');
   initSwiper('perso');
 
-  // set up the observers
-  swiperObserver();
-  cellsObserver();
-
   // set the saved theme
   setSavedTheme();
 
@@ -61,50 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// set up the observer for the swipers
-function swiperObserver() {
-  let options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0
-  };
-  let swiperElements = document.querySelectorAll('.swiper-slide.swiper-slide-active, .swiper-button-next, .swiper-button-prev', '.swiper-pagination');
-  let observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-      } else {
-          entry.target.style.opacity = 0;
-      }
-    });
-  }, options);
-  swiperElements.forEach(element => {
-    observer.observe(element);
-  });
-}
-
-// set up the observer for the cells
-function cellsObserver() {
-  let cells = document.querySelectorAll('.cell');
-  let options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0
-  };
-  let observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-      } else {
-          entry.target.style.opacity = 0;
-      }
-    });
-  }, options);
-  cells.forEach(cell => {
-    observer.observe(cell);
-  });
-}
-
 // handle the resize event for the header
 function resizeHeader() {
   let header = document.getElementById("header")
@@ -122,13 +74,12 @@ function resizeHeader() {
 
 // set the theme based on the saved theme
 function setSavedTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  const themeCheckbox = document.getElementById('theme-checkbox');
+  let body = document.querySelector('body');
+  let savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
-    if (savedTheme==='light-theme') {
-      themeCheckbox.click();
-    }
+    body.classList = savedTheme;
   }
+  document.getElementById('theme-checkbox').checked = body.classList.contains('light-theme');
 }
 
 // toggle the theme
