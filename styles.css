@@ -1128,12 +1128,12 @@ nav a:hover {
 /* #region Footer */
 footer {
   flex: 0.1;
-  background-color: var(--color-tertiary);
+  background-color: var(--color-primary);
   transition: background-color var(--color-switch-delay) ease;
   color: var(--color-font);
   text-align: center;
   padding: 5vh;
-  border: var(--color-accent);
+  border: var(--color-secondary);
   border-radius: 1px;
   border-top-style: solid;
   border-width: 2px;
