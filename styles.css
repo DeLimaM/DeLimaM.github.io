@@ -634,7 +634,7 @@ input:checked~#slider:before {
 
 /* #region Header */
 header {
-  background-color: var(--color-tertiary);
+  background-color: var(--color-primary);
   position: fixed;
   top: 0;
   transition: height var(--header-resizing-delay) ease, background-color var(--color-switch-delay) ease, border-color var(--color-switch-delay) ease;
@@ -657,7 +657,7 @@ header {
 .progress-container {
   width: 100%;
   height: 3px;
-  background: transparent;
+  background: var(--color-secondary);
   margin: 0;
   padding: 0;
 }
@@ -723,7 +723,7 @@ nav ul li ul{
 nav ul li:hover ul {
   visibility: visible;
   opacity: 1;
-  background-color: var(--color-tertiary);
+  background-color: var(--color-secondary);
   transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
