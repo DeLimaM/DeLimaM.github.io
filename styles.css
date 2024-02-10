@@ -24,62 +24,166 @@
   }
 }
 
-@-webkit-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+@-webkit-keyframes floatUp {
+  0% {
+    top: 100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: -100vh;
+    opacity: 0;
+  }
 }
-@-moz-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+@-moz-keyframes floatUp {
+  0% {
+    top: 100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: -100vh;
+    opacity: 0;
+  }
 }
-@-o-keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+@-o-keyframes floatUp {
+  0% {
+    top: 100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: -100vh;
+    opacity: 0;
+  }
 }
-@keyframes floatUp{
-  0%{top: 100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: -100vh; opacity: 0;}
+@keyframes floatUp {
+  0% {
+    top: 100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: -100vh;
+    opacity: 0;
+  }
 }
 
-@-webkit-keyframes floatDown{
-  0%{top: -100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: 100vh; opacity: 0;}
+@-webkit-keyframes floatDown {
+  0% {
+    top: -100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+  }
 }
-@-moz-keyframes floatDown{
-  0%{top: -100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: 100vh; opacity: 0;}
+@-moz-keyframes floatDown {
+  0% {
+    top: -100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+  }
 }
-@-o-keyframes floatDown{
-  0%{top: -100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: 100vh; opacity: 0;}
+@-o-keyframes floatDown {
+  0% {
+    top: -100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+  }
 }
-@keyframes floatDown{
-  0%{top: -100vh; opacity: 0;}
-  25%{opacity: 1;}
-  50%{top: 0vh; opacity: .8;}
-  75%{opacity: 1;}
-  100%{top: 100vh; opacity: 0;}
+@keyframes floatDown {
+  0% {
+    top: -100vh;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0vh;
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+  }
 }
 /* #endregion */
 
@@ -89,13 +193,13 @@
   --color-secondary: #333333;
   --color-tertiary: #263d3d;
   --color-accent: #38d8a3;
-  --color-font: #F5F5F5;
+  --color-font: #f5f5f5;
 }
 
 .light-theme {
-  --color-primary: #FFFFFF;
+  --color-primary: #ffffff;
   --color-secondary: #fdf8ea;
-  --color-tertiary: #CCD5AE;
+  --color-tertiary: #ccd5ae;
   --color-accent: #95721f;
   --color-font: #333333;
 }
@@ -103,8 +207,8 @@
 
 /* #region General */
 @font-face {
-  font-family: 'Lexend Exa';
-  src: url('fonts/LexendExa.ttf');
+  font-family: "Lexend Exa";
+  src: url("fonts/LexendExa.ttf");
 }
 
 * {
@@ -121,7 +225,7 @@ body {
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  font-family: 'Lexend Exa', sans-serif;
+  font-family: "Lexend Exa", sans-serif;
   font-size: calc(0.5em + 0.3vw + 0.3vh);
   margin: 0;
   padding: 0;
@@ -136,7 +240,7 @@ body {
   --div-fade-in-delay: 0.4s;
 }
 
-p{
+p {
   font-size: 1.2em;
 }
 
@@ -200,7 +304,9 @@ h3 {
   box-sizing: border-box;
   position: sticky;
   overflow: hidden;
-  box-shadow: 0px -1px 3em var(--color-tertiary), 0 -1px 2px var(--color-tertiary);
+  box-shadow:
+    0px -1px 3em var(--color-tertiary),
+    0 -1px 2px var(--color-tertiary);
 }
 
 #bottom-section {
@@ -238,23 +344,30 @@ h3 {
   overflow: hidden;
   box-shadow: 0 0 5px var(--color-tertiary);
   margin-right: 30px;
-  transition: background-color var(--color-switch-delay) ease, box-shadow var(--color-switch-delay) ease;
+  transition:
+    background-color var(--color-switch-delay) ease,
+    box-shadow var(--color-switch-delay) ease;
 }
 
 .line::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 15vh;
   width: 100%;
   top: -30%;
   left: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--color-accent) 75%, var(--color-font) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    var(--color-accent) 75%,
+    var(--color-font) 100%
+  );
   -webkit-animation: drop 6s infinite forwards cubic-bezier(0.4, 0.5, 0, 1);
   -moz-animation: drop 6s infinite forwards cubic-bezier(0.4, 0.5, 0, 1);
   -o-animation: drop 6s infinite forwards cubic-bezier(0.4, 0.5, 0, 1);
   animation: drop 6s infinite forwards cubic-bezier(0.4, 0.5, 0, 1);
-  transition : background-color var(--color-switch-delay) ease;
+  transition: background-color var(--color-switch-delay) ease;
 }
 
 .line:nth-child(1) {
@@ -302,7 +415,7 @@ h3 {
 .light {
   position: absolute;
   width: 0px;
-  opacity: .65;
+  opacity: 0.65;
   box-shadow: var(--color-accent) 0px 0px 8px 2px;
   opacity: 0;
   top: 100vh;
@@ -310,23 +423,25 @@ h3 {
   left: 0px;
   right: 0px;
   margin: auto;
-  transition: opacity var(--color-switch-delay) ease, box-shadow var(--color-switch-delay) ease;
+  transition:
+    opacity var(--color-switch-delay) ease,
+    box-shadow var(--color-switch-delay) ease;
 }
 /* #endregion */
 
 /* #region blurry lines up */
-.line-up1{
+.line-up1 {
   -webkit-animation: floatUp 8s infinite linear;
   -moz-animation: floatUp 8s infinite linear;
   -o-animation: floatUp 8s infinite linear;
   animation: floatUp 8s infinite linear;
-   -webkit-transform: scale(1.0);
-   -moz-transform: scale(1.0);
-   -o-transform: scale(1.0);
-  transform: scale(1.0);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 
-.line-up2{
+.line-up2 {
   -webkit-animation: floatUp 11s infinite linear;
   -moz-animation: floatUp 11s infinite linear;
   -o-animation: floatUp 11s infinite linear;
@@ -338,19 +453,19 @@ h3 {
   left: 15%;
 }
 
-.line-up3{
+.line-up3 {
   -webkit-animation: floatUp 6.5s infinite linear;
   -moz-animation: floatUp 6.5s infinite linear;
   -o-animation: floatUp 6.5s infinite linear;
   animation: floatUp 6.5s infinite linear;
-  -webkit-transform: scale(.5);
-  -moz-transform: scale(.5);
-  -o-transform: scale(.5);
-  transform: scale(.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
   left: -15%;
 }
 
-.line-up4{
+.line-up4 {
   -webkit-animation: floatUp 8.5s infinite linear;
   -moz-animation: floatUp 8.5s infinite linear;
   -o-animation: floatUp 8.5s infinite linear;
@@ -362,7 +477,7 @@ h3 {
   left: -34%;
 }
 
-.line-up5{
+.line-up5 {
   -webkit-animation: floatUp 12s infinite linear;
   -moz-animation: floatUp 12s infinite linear;
   -o-animation: floatUp 12s infinite linear;
@@ -374,19 +489,19 @@ h3 {
   left: -57%;
 }
 
-.line-up6{
+.line-up6 {
   -webkit-animation: floatUp 7s infinite linear;
   -moz-animation: floatUp 7s infinite linear;
   -o-animation: floatUp 7s infinite linear;
   animation: floatUp 7s infinite linear;
-  -webkit-transform: scale(.8);
-  -moz-transform: scale(.8);
-  -o-transform: scale(.8);
-  transform: scale(.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
   left: -91%;
 }
 
-.line-up7{
+.line-up7 {
   -webkit-animation: floatUp 9.3s infinite linear;
   -moz-animation: floatUp 9.3s infinite linear;
   -o-animation: floatUp 9.3s infinite linear;
@@ -398,7 +513,7 @@ h3 {
   left: 37%;
 }
 
-.line-up8{
+.line-up8 {
   -webkit-animation: floatUp 8.7s infinite linear;
   -moz-animation: floatUp 8.7s infinite linear;
   -o-animation: floatUp 8.7s infinite linear;
@@ -410,7 +525,7 @@ h3 {
   left: 62%;
 }
 
-.line-up9{
+.line-up9 {
   -webkit-animation: floatUp 8.1s infinite linear;
   -moz-animation: floatUp 8.1s infinite linear;
   -o-animation: floatUp 8.1s infinite linear;
@@ -424,18 +539,18 @@ h3 {
 /* #endregion */
 
 /* #region blurry lines down */
-.line-down1{
+.line-down1 {
   -webkit-animation: floatDown 8s infinite linear;
   -moz-animation: floatDown 8s infinite linear;
   -o-animation: floatDown 8s infinite linear;
   animation: floatDown 8s infinite linear;
-   -webkit-transform: scale(1.0);
-   -moz-transform: scale(1.0);
-   -o-transform: scale(1.0);
-  transform: scale(1.0);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 
-.line-down2{
+.line-down2 {
   -webkit-animation: floatDown 11s infinite linear;
   -moz-animation: floatDown 11s infinite linear;
   -o-animation: floatDown 11s infinite linear;
@@ -447,19 +562,19 @@ h3 {
   left: 15%;
 }
 
-.line-down3{
+.line-down3 {
   -webkit-animation: floatDown 6.5s infinite linear;
   -moz-animation: floatDown 6.5s infinite linear;
   -o-animation: floatDown 6.5s infinite linear;
   animation: floatDown 6.5s infinite linear;
-  -webkit-transform: scale(.5);
-  -moz-transform: scale(.5);
-  -o-transform: scale(.5);
-  transform: scale(.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
   left: -15%;
 }
 
-.line-down4{
+.line-down4 {
   -webkit-animation: floatDown 8.5s infinite linear;
   -moz-animation: floatDown 8.5s infinite linear;
   -o-animation: floatDown 8.5s infinite linear;
@@ -471,7 +586,7 @@ h3 {
   left: -34%;
 }
 
-.line-down5{
+.line-down5 {
   -webkit-animation: floatDown 12s infinite linear;
   -moz-animation: floatDown 12s infinite linear;
   -o-animation: floatDown 12s infinite linear;
@@ -483,19 +598,19 @@ h3 {
   left: -57%;
 }
 
-.line-down6{
+.line-down6 {
   -webkit-animation: floatDown 7s infinite linear;
   -moz-animation: floatDown 7s infinite linear;
   -o-animation: floatDown 7s infinite linear;
   animation: floatDown 7s infinite linear;
-  -webkit-transform: scale(.8);
-  -moz-transform: scale(.8);
-  -o-transform: scale(.8);
-  transform: scale(.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
   left: -91%;
 }
 
-.line-down7{
+.line-down7 {
   -webkit-animation: floatDown 9.3s infinite linear;
   -moz-animation: floatDown 9.3s infinite linear;
   -o-animation: floatDown 9.3s infinite linear;
@@ -507,7 +622,7 @@ h3 {
   left: 37%;
 }
 
-.line-down8{
+.line-down8 {
   -webkit-animation: floatDown 8.7s infinite linear;
   -moz-animation: floatDown 8.7s infinite linear;
   -o-animation: floatDown 8.7s infinite linear;
@@ -519,7 +634,7 @@ h3 {
   left: 62%;
 }
 
-.line-down9{
+.line-down9 {
   -webkit-animation: floatDown 8.1s infinite linear;
   -moz-animation: floatDown 8.1s infinite linear;
   -o-animation: floatDown 8.1s infinite linear;
@@ -589,10 +704,12 @@ input {
   width: 100%;
   height: 100%;
   border-radius: 3.125em;
-  transition: transform var(--toggle-switch-delay) ease, background-color var(--toggle-switch-delay) ease;
+  transition:
+    transform var(--toggle-switch-delay) ease,
+    background-color var(--toggle-switch-delay) ease;
 }
 
-input:checked~#slider {
+input:checked ~ #slider {
   background-color: var(--color-secondary);
 }
 
@@ -606,10 +723,12 @@ input:checked~#slider {
   border-radius: 50%;
   box-shadow: inset 1.75em -0.25em 0em 0em var(--color-accent);
   background-color: var(--color-secondary);
-  transition: transform var(--toggle-switch-delay) ease, background-color var(--toggle-switch-delay) ease;
+  transition:
+    transform var(--toggle-switch-delay) ease,
+    background-color var(--toggle-switch-delay) ease;
 }
 
-input:checked~#slider:before {
+input:checked ~ #slider:before {
   transform: translateX(5.938em);
   background-color: var(--color-accent);
   box-shadow: none;
@@ -637,7 +756,10 @@ header {
   background-color: var(--color-primary);
   position: fixed;
   top: 0;
-  transition: height var(--header-resizing-delay) ease, background-color var(--color-switch-delay) ease, border-color var(--color-switch-delay) ease;
+  transition:
+    height var(--header-resizing-delay) ease,
+    background-color var(--color-switch-delay) ease,
+    border-color var(--color-switch-delay) ease;
   height: 12vh;
   width: 100%;
   font-size: 1.6em;
@@ -666,7 +788,7 @@ header {
   height: 3px;
   background: var(--color-accent);
   width: 0%;
-  transition:width 0.1s ease-in-out;
+  transition: width 0.1s ease-in-out;
 }
 
 #toggle-switch,
@@ -683,7 +805,7 @@ header {
 
 nav {
   display: inline-block;
-  flex : 4;
+  flex: 4;
 }
 
 nav ul {
@@ -697,7 +819,7 @@ nav ul {
   background-color: transparent;
   border-radius: 5px;
   transition: background-color var(--color-switch-delay) ease;
-} 
+}
 
 nav ul li:not(:last-child) {
   margin-right: 20px;
@@ -709,7 +831,7 @@ nav ul li {
   padding: 1.5vh 0;
 }
 
-nav ul li ul{
+nav ul li ul {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -724,7 +846,9 @@ nav ul li:hover ul {
   visibility: visible;
   opacity: 1;
   background-color: var(--color-secondary);
-  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    visibility 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 nav a {
@@ -747,7 +871,7 @@ nav a:hover {
 }
 
 .menu-item-projects:hover {
-  cursor:default;
+  cursor: default;
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   transition: color var(--color-switch-delay) ease;
@@ -797,7 +921,9 @@ nav a:hover {
   border-color: var(--color-accent);
   background-color: var(--color-primary);
   box-shadow: 0px 0px 10px var(--color-accent);
-  transition: border-color var(--color-switch-delay) ease, background-color var(--color-switch-delay) ease;
+  transition:
+    border-color var(--color-switch-delay) ease,
+    background-color var(--color-switch-delay) ease;
 }
 /* #endregion */
 
@@ -826,10 +952,11 @@ nav a:hover {
   border-color: var(--color-accent);
   background-color: var(--color-primary);
   box-shadow: 0px 0px 10px var(--color-tertiary);
-  transition: background-color var(--color-switch-delay) ease, 
-              border-color var(--color-switch-delay) ease, 
-              box-shadow var(--color-switch-delay) ease,
-              opacity var(--div-fade-in-delay) ease-in-out;
+  transition:
+    background-color var(--color-switch-delay) ease,
+    border-color var(--color-switch-delay) ease,
+    box-shadow var(--color-switch-delay) ease,
+    opacity var(--div-fade-in-delay) ease-in-out;
 }
 
 .cell#me {
@@ -906,14 +1033,20 @@ nav a:hover {
   transition: background-color var(--color-switch-delay) ease;
   flex-direction: column;
   padding: 0 20px 20px 20px;
-  transition: background-color var(--color-switch-delay) ease, 
-              border-color var(--color-switch-delay) ease,
-              opacity var(--div-fade-in-delay) ease-in-out;
+  transition:
+    background-color var(--color-switch-delay) ease,
+    border-color var(--color-switch-delay) ease,
+    opacity var(--div-fade-in-delay) ease-in-out;
 }
 
 .swiper-slide-active {
   background-color: var(--color-secondary);
-  background-image: linear-gradient(85deg, var(--color-secondary), var(--color-accent),var(--color-secondary));
+  background-image: linear-gradient(
+    85deg,
+    var(--color-secondary),
+    var(--color-accent),
+    var(--color-secondary)
+  );
   background-size: 30px 100%;
   background-repeat: no-repeat;
   background-position: right -40px top 0px;
@@ -997,9 +1130,9 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding : 1em 0 1em 1em;
+  padding: 1em 0 1em 1em;
   max-width: 100%;
-  line-height: 1.5  ;
+  line-height: 1.5;
   color: var(--color-font);
 }
 
@@ -1122,6 +1255,7 @@ nav a:hover {
   transition: color var(--color-switch-delay) ease;
   border: var(--color-accent) solid 2px;
   border-radius: 10px;
+  padding: 0 1em;
 }
 /* #endregion */
 
@@ -1245,14 +1379,15 @@ footer {
     top: 0;
     height: fit-content;
   }
-  
+
   /* projects */
   .swiper {
     width: 90vw;
     height: 72vh;
   }
 
-  .swiper-button-next, .swiper-button-prev {
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
 
@@ -1269,7 +1404,7 @@ footer {
   }
 
   .project-link.link::before {
-    content : "Lien Github";
+    content: "Lien Github";
   }
 }
 
