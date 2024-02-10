@@ -1,445 +1,557 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/swiper-bundle.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script type="text/javascript" src="static/swiper-bundle.js"></script>
+    <script src="scripts.js"></script>
+    <title>Portfolio</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/swiper-bundle.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <script type="text/javascript" src="static/swiper-bundle.js"></script>
-  <script src="scripts.js"></script>
-  <title>Portfolio</title>
-</head>
-
-<body class="dark-theme">
-  <header id="header">
-    <div class="header-content">
-      <div id="clock" class="clock">
-        <div id="clock-content">
-          <span id="hours">00</span>
-          <span id="minutes">00</span>
-          <span id="seconds">00</span>
-        </div>
-      </div>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav>
-        <ul>
-          <li><a class="menu-item menu-item-about">Qui suis-je ?</a></li>
-          <li>
-            <a class="menu-item menu-item-projects">Projets</a>
-            <ul>
-              <li><a class="link-projects-perso">Projets perso</a></li>
-              <li><a class="link-projects-edu">Projets éducatifs</a></li>
-            </ul>
-          </li>
-          <li><a class="menu-item menu-item-contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div id="toggle-switch">
-        <label id="label-switch">
-          <input type="checkbox" id="theme-checkbox">
-          <span id="slider" type="slider"></span>
-        </label>
-      </div>
-    </div>
-    <div class="dropdown" id="dropdown">
-      <a class="menu-item-dropdown menu-item-about">Qui suis-je</a>
-      <a class="menu-item-dropdown link-projects-perso">Projets personnels</a>
-      <a class="menu-item-dropdown link-projects-edu">Projets éducatifs</a>
-      <a class="menu-item-dropdown menu-item-contact">Contact et liens</a>
-    </div>
-    </div>
-    <div class="progress-container">
-      <div class="progress-bar" id="progress-bar"></div>
-    </div>
-  </header>
-
-  <section id="presentation" class="stacking-section">
-    <div class="lines">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <div class="presentation-content section-content">
-      <h1>Martin De Lima</h1>
-    </div>
-  </section>
-
-  <section id="about" class="stacking-section">
-    <div class="about-content section-content">
-      <h2>Qui suis-je ?</h2>
-      <div class="grid">
-        <div class="cell" id="me">
-          <div class="cell-title">
-            Qui suis-je ?
-          </div>
-          <div class="cell-content">
-            <p>
-              Je suis un étudiant en informatique de 19 ans, qui a soif d'apprendre et
-              de découvrir de nouvelles choses.
-              <br>
-              Actuellement en 2ème année de BUT Informatique à l'IUT de Dijon,
-              je me suis découvert une prédilection pour le langage Python et le développement web,
-              mais je suis toujours ouvert à de nouvelles technologies.
-              <br>
-              J'aime passer le temps en travaillant sur des projets personnels,
-              qui me permettent de gagner en expérience et en compétences.
-              Parmi les derniers en date, ce site, qui servira de vitrine pour mes projets.
-              <br>
-              J'oriente actuellement mon apprentissage personnel vers le développement web, en me fixant des projets me permettant de découvrir les technologies du domaine,
-              comme Typescript, React, NodeJS, etc.
-            </p>
+  <body class="dark-theme">
+    <header id="header">
+      <div class="header-content">
+        <div id="clock" class="clock">
+          <div id="clock-content">
+            <span id="hours">00</span>
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
           </div>
         </div>
-        <div class="cell" id="langages">
-          <div class="cell-title">
-            Langages
-          </div>
-          <div class="cell-content">
-            <div class="cell-content-item" id="python-logo">
-              <img src="/icons/languages/python-logo.svg" alt="the python logo">
-            </div>
-            <div class="cell-content-item" id="js-logo">
-              <img src="/icons/languages/javascript-logo.svg" alt="the javascript logo">
-            </div>
-            <div class="cell-content-item" id="csharp-logo">
-              <img src="/icons/languages/csharp-logo.svg" alt="the csharp logo">
-            </div>
-            <div class="cell-content-item" id="html-logo">
-              <img src="/icons/languages/html-logo.svg" alt="the html logo">
-            </div>
-            <div class="cell-content-item" id="css-logo">
-              <img src="/icons/languages/css-logo.svg" alt="the css logo">
-            </div>
-            <div class="cell-content-item" id="php-logo">
-              <img src="/icons/languages/php-logo.svg" alt="the php logo">
-            </div>
-          </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="cell" id="ide">
-          <div class="cell-title">
-            Technologies & Frameworks connus
-          </div>
-          <div class="cell-content">
-            <div class="cell-content-item" id="react">
-              <img src="/icons/frameworks/react-logo.svg" alt="the react logo">
-            </div>
-            <div class="cell-content-item" id="flask">
-              <img src="/icons/frameworks/flask-logo.svg" alt="the flask logo">
-            </div>
-            <div class="cell-content-item" id="nodejs">
-              <img src="/icons/frameworks/nodejs-logo.svg" alt="the nodejs logo">
-            </div>
-          </div>
+        <nav>
+          <ul>
+            <li><a class="menu-item menu-item-about">Qui suis-je ?</a></li>
+            <li>
+              <a class="menu-item menu-item-projects">Projets</a>
+              <ul>
+                <li><a class="link-projects-perso">Projets perso</a></li>
+                <li><a class="link-projects-edu">Projets éducatifs</a></li>
+              </ul>
+            </li>
+            <li><a class="menu-item menu-item-contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div id="toggle-switch">
+          <label id="label-switch">
+            <input type="checkbox" id="theme-checkbox" />
+            <span id="slider" type="slider"></span>
+          </label>
         </div>
       </div>
-    </div>
-    </div>
-  </section>
-
-  <section id="projects-perso" class="stacking-section projects">
-    <div id="blurry-lines-up">
-      <div class='light line-up1'></div>
-      <div class='light line-up2'></div>
-      <div class='light line-up3'></div>
-      <div class='light line-up4'></div>
-      <div class='light line-up5'></div>
-      <div class='light line-up6'></div>
-      <div class='light line-up7'></div>
-      <div class='light line-up8'></div>
-      <div class='light line-up9'></div>
-    </div>
-    <div class="projects-content section-content">
-      <h2>Projets personnels</h2>
-      <div class="swiper swiper-perso">
-        <div class="swiper-wrapper swiper-wrapper-perso">
-          <div class="swiper-slide">
-            <div class="project-title">Planificateur de tâches en React et Typescript</div>
-            <div class="project-content">
-              <div class="project-img">
-                <img src="images/Todos.PNG" alt="Screenshot of this app">
-              </div>
-              <div class="project-textcontent">
-                <div class="project-status">En cours<i class="fa-solid fa-spinner"></i></div>
-                <div class="project-description">
-                  <p>
-                    C'est une application web réalisée en Typescript utilisant React, qui permet de planifier ses tâches.
-                    Elle me permet de découvrir React et Typescript, et d'approfondir mes connaissances en développement web.
-                    <br>
-                    Je compte ajouter de nouvelles fonctionnalités, comme la possibilité de créer des comptes utilisateurs, d'ajouter des ressources aux tâches, de leur apposer des tags, etc.
-                    Ce projet me permet de me familiariser avec l'utilisation de React et Nodjs, et le développement web en général.
-                  </p>
-                </div>
-                <div class="project-link">
-                  <i class="fab fa-github"></i>
-                  <a class="link" target="_blank"
-                    href="https://github.com/DeLimaM/ToDos">github.com/DeLimaM/ToDos</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="project-title">Site portfolio</div>
-            <div class="project-content">
-              <div class="project-img">
-                <img src="images/SitePortfolio.PNG" alt="Screenshot of this website">
-              </div>
-              <div class="project-textcontent">
-                <div class="project-status">Terminé<i class="fa-solid fa-check"></i></div>
-                <div class="project-description">
-                  <p>
-                    C'est un site portfolio réalisé durant l'été 2023, servant à me présenter
-                    moi-même et mes projets. Il est réalisé en HTML/CSS/JS,
-                    avec l'aide de la librairie <a class="link" target="_blank"
-                      href="https://swiperjs.com/">SwiperJS</a> pour le
-                    slider.
-                    <br>
-                    Il est hébergé sur GitHub Pages, et est disponible l'adresse à laquelle vous vous trouvez.
-                    Ce projet m'a permis de me familiariser avec le développement web, notamment avec le Javascript.
-                    Je continue de l'améliorer et le mettre à jour au fur et à mesure de mon apprentissage.
-                  </p>
-                </div>
-                <div class="project-link">
-                  <i class="fab fa-github"></i>
-                  <a class="link" target="_blank"
-                    href="https://github.com/DeLimaM/DeLimaM.github.io">github.com/DeLimaM/DeLimaM.github.io</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="project-title">iCloudAlbumManager</div>
-            <div class="project-content">
-              <div class="project-img">
-                <img src="images/iCloudAlbumManager.PNG" alt="Screenshot of the main page of the app">
-              </div>
-              <div class="project-textcontent">
-                <div class="project-status">Terminé<i class="fa-solid fa-check"></i></div>
-                <div class="project-description">
-                  <p>
-                    C'est un projet commencé durant l'été 2023,
-                    qui représente ma première tentative dans la réalisation d'un logiciel :
-                    une application permettant de gérer localement ses albums photos iCloud.
-                    <br>
-                    Le backend est réalisé en Python, avec l'aide de la librairie
-                    <a class="link" target="_blank" href="https://github.com/picklepete/pyicloud">PyiCloud</a>.
-                    <br>
-                    Le frontend est réalisé en HTML/CSS/JS, avec l'aide de
-                    <a class="link" target="_blank" href="https://flask.palletsprojects.com/en/3.0.x/">Flask</a>.
-                    J'ai beaucoup appris en travaillant sur ce projet, qui me permet de découvrir la structure d'une application web, 
-                    mais aussi d'approfondir mes connaissances en Javascript.
-                  </p>
-                </div>
-                <div class="project-link">
-                  <i class="fab fa-github"></i>
-                  <a class="link" target="_blank"
-                    href="https://github.com/DeLimaM/iCloudAlbumManager">github.com/DeLimaM/iCloudAlbumManager</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="dropdown" id="dropdown">
+        <a class="menu-item-dropdown menu-item-about">Qui suis-je</a>
+        <a class="menu-item-dropdown link-projects-perso">Projets personnels</a>
+        <a class="menu-item-dropdown link-projects-edu">Projets éducatifs</a>
+        <a class="menu-item-dropdown menu-item-contact">Contact et liens</a>
       </div>
-      <div class="swiper-button-prev swiper-button-prev-perso"></div>
-      <div class="swiper-button-next swiper-button-next-perso"></div>
-      <div class="swiper-pagination swiper-pagination-perso"></div>
-    </div>
-  </section>
-
-  <section id="projects-edu" class="stacking-section projects">
-    <div id="blurry-lines-down">
-      <div class='light line-down1'></div>
-      <div class='light line-down2'></div>
-      <div class='light line-down3'></div>
-      <div class='light line-down4'></div>
-      <div class='light line-down5'></div>
-      <div class='light line-down6'></div>
-      <div class='light line-down7'></div>
-      <div class='light line-down8'></div>
-      <div class='light line-down9'></div>
-    </div>
-    <div class="projects-content section-content">
-      <h2>Projets éducatifs</h2>
-      <div class="swiper swiper-edu">
-        <div class="swiper-wrapper swiper-wrapper-edu">
-          <div class="swiper-slide">
-            <div class="project-title">Un jeu de cartes en C#</div>
-            <div class="project-content">
-              <div class="project-img">
-                <img src="images/but2s3_01.png" alt="Screenshot of the game">
-              </div>
-              <div class="project-textcontent">
-                <div class="project-status">Langage utilisé : C#</div>
-                <div class="project-description">
-                  <p>
-                    Il s'agit d'un jeu de carte réalisé dans le cadre d'un travail de groupe en C# et WPF.
-                    <br>
-                    Ce projet a été réalisé en utilisant la méthode Agile et Scrum, ce qui m'a permis de découvrir
-                    les enjeux de la gestion de projet, mais aussi des problématiques de communication avec un client.
-                    <br>
-                    Techniquement, ce programme a été très formateur, car il nous a permis de concrétiser nos apprentissages théorique en une application complète.
-                  </p>
-                </div>
-                <div class="project-link">
-                  Seconde année de BUT, Semestre 3
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="project-title">Un petit jeu en 2D</div>
-            <div class="project-content">
-              <div class="project-img">
-                <img src="images/but1s2_01.png" alt="Screenshot of the game">
-              </div>
-              <div class="project-textcontent">
-                <div class="project-status">Langage utilisé : C#</div>
-                <div class="project-description">
-                  <p>
-                    Il s'agit d'un petit jeu en 2D réalisé en C# avec l'aide d'un framework fourni par l'IUT.
-                    <br>
-                    Ce projet a été très formateur, car il m'a permis de me familiariser avec
-                    les contraintes de développement d'un jeu vidéo, mais aussi de travail en équipe. J'ai ainsi pu
-                    appréhender
-                    les problématiques de respect des délais, de répartition des tâches, de communication, etc.
-                    <br>
-                    Techniquement, j'ai surtout appris à bien structurer un programme,
-                    mais ai aussi approfondi mes connaissances en C# et en programmation orientée objet.
-                  </p>
-                </div>
-                <div class="project-link">
-                  Première année de BUT, Semestre 2
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="project-title">Algorithmes et graphes</div>
-            <div class="project-content">
-              <div class="project-img">
-                <img src="images/but1s2_02.png" alt="Screenshot app used to display taverns created by graphs">
-              </div>
-              <div class="project-textcontent">
-                <div class="project-status">Langage utilisé : C#</div>
-                <div class="project-description">
-                  <p>
-                    La problématique de ce projet était de colorier un graphe à travers 4 heuristiques : l'algorithme de
-                    coloration glouton,
-                    l'algorithme DSATUR, l'algorithme de Welsh-Powell et l'algorithme Largest Degree Ordering.
-                    <br>
-                    Ce projet m'a permis de concrétiser les notions vues en cours, et de me familiariser avec les
-                    problématiques de performance.
-                    <br>
-                    Techniquement, j'ai surtout appris à modéliser et manipuler des graphes,
-                    mais ai aussi approfondi mes connaissances en C# et en programmation orientée objet.
-                  </p>
-                </div>
-                <div class="project-link">
-                  Première année de BUT, Semestre 2
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="project-title">Organisation d'un travail d'équipe</div>
-            <div class="project-content">
-              <div class="project-img">
-                <img src="images/but1s2_03.png" alt="Screenshot of the site">
-              </div>
-              <div class="project-textcontent">
-                <div class="project-status">Langages utilisés : HTML,CSS</div>
-                <div class="project-description">
-                  <p>
-                    Ce projet avait pour but de nous faire travailler en équipe sur la création d'une start-up
-                    comprenant un site vitrine.
-                    <br>
-                    Ce projet m'a permis d'appréhender le travail d'équipe, et de découvrir les problématiques de
-                    gestion de projet et de respect des échéances.
-                    Le challenge de la répartition des tâches a également été rencontré.
-                    <br>
-                    Techniquement, j'ai surtout approfondi mes connaissances en HTML et CSS.
-                  </p>
-                </div>
-                <div class="project-link">
-                  Première année de BUT, Semestre 2
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
       </div>
-      <div class="swiper-button-prev swiper-button-prev-edu"></div>
-      <div class="swiper-button-next swiper-button-next-edu"></div>
-      <div class="swiper-pagination swiper-pagination-edu"></div>
-    </div>
-  </section>
+    </header>
 
-  <section id="bottom-section" class="stacking-section">
-    <section id="contact">
-      <div class="contact-content section-content">
-        <h2>Contact et liens</h2>
-        <div class="contact-items">
-          <div class="contact-item">
-            <div>
-              <i class="fas fa-phone"></i>
-              <span>Téléphone</span>
+    <section id="presentation" class="stacking-section">
+      <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="presentation-content section-content">
+        <h1>Martin De Lima</h1>
+      </div>
+    </section>
+
+    <section id="about" class="stacking-section">
+      <div class="about-content section-content">
+        <h2>Qui suis-je ?</h2>
+        <div class="grid">
+          <div class="cell" id="me">
+            <div class="cell-title">Qui suis-je ?</div>
+            <div class="cell-content">
+              <p>
+                Je suis un étudiant en informatique de 19 ans, qui a soif
+                d'apprendre et de découvrir de nouvelles choses.
+                <br />
+                Actuellement en 2ème année de BUT Informatique à l'IUT de Dijon,
+                je me suis découvert une prédilection pour le langage Python et
+                le développement web, mais je suis toujours ouvert à de
+                nouvelles technologies.
+                <br />
+                J'aime passer le temps en travaillant sur des projets
+                personnels, qui me permettent de gagner en expérience et en
+                compétences. Parmi les derniers en date, ce site, qui servira de
+                vitrine pour mes projets.
+                <br />
+                J'oriente actuellement mon apprentissage personnel vers le
+                développement web, en me fixant des projets me permettant de
+                découvrir les technologies du domaine, comme Typescript, React,
+                NodeJS, etc.
+              </p>
             </div>
-            <hr>
-            <div>07 68 26 26 29</div>
           </div>
-
-          <div class="contact-item">
-            <div>
-              <i class="fas fa-envelope"></i>
-              <span>Email</span>
-            </div>
-            <hr>
-            <div><a class="link" target="_blank"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=martin.delimaa@gmail.com">martin.delimaa@gmail.com</a>
+          <div class="cell" id="langages">
+            <div class="cell-title">Langages</div>
+            <div class="cell-content">
+              <div class="cell-content-item" id="python-logo">
+                <img
+                  src="/icons/languages/python-logo.svg"
+                  alt="the python logo"
+                />
+              </div>
+              <div class="cell-content-item" id="js-logo">
+                <img
+                  src="/icons/languages/javascript-logo.svg"
+                  alt="the javascript logo"
+                />
+              </div>
+              <div class="cell-content-item" id="csharp-logo">
+                <img
+                  src="/icons/languages/csharp-logo.svg"
+                  alt="the csharp logo"
+                />
+              </div>
+              <div class="cell-content-item" id="html-logo">
+                <img src="/icons/languages/html-logo.svg" alt="the html logo" />
+              </div>
+              <div class="cell-content-item" id="css-logo">
+                <img src="/icons/languages/css-logo.svg" alt="the css logo" />
+              </div>
+              <div class="cell-content-item" id="php-logo">
+                <img src="/icons/languages/php-logo.svg" alt="the php logo" />
+              </div>
             </div>
           </div>
-
-          <div class="contact-item">
-            <div>
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
+          <div class="cell" id="ide">
+            <div class="cell-title">Technologies & Frameworks connus</div>
+            <div class="cell-content">
+              <div class="cell-content-item" id="react">
+                <img
+                  src="/icons/frameworks/react-logo.svg"
+                  alt="the react logo"
+                />
+              </div>
+              <div class="cell-content-item" id="flask">
+                <img
+                  src="/icons/frameworks/flask-logo.svg"
+                  alt="the flask logo"
+                />
+              </div>
+              <div class="cell-content-item" id="nodejs">
+                <img
+                  src="/icons/frameworks/nodejs-logo.svg"
+                  alt="the nodejs logo"
+                />
+              </div>
             </div>
-            <hr>
-            <div><a class="link" target="_blank" href="https://github.com/DeLimaM">github.com/DeLimaM</a></div>
-          </div>
-
-          <div class="contact-item">
-            <div>
-              <i class="fa-brands fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </div>
-            <hr>
-            <div><a class="link" target="_blank"
-                href="https://www.linkedin.com/in/delimamartin">linkedin.com/in/delimamartin</a></div>
-          </div>
-
-          <div id="note">
-            <p>
-              Malentendant et porteur d'appareils auditifs, 
-              je préfère être contacté par message écrit, 
-              mais peut néanmoins répondre au téléphone.
-            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2023 Martin De Lima. Tous droits réservés.</p>
-    </footer>
-  </section>
-</body>
+    <section id="projects-perso" class="stacking-section projects">
+      <div id="blurry-lines-up">
+        <div class="light line-up1"></div>
+        <div class="light line-up2"></div>
+        <div class="light line-up3"></div>
+        <div class="light line-up4"></div>
+        <div class="light line-up5"></div>
+        <div class="light line-up6"></div>
+        <div class="light line-up7"></div>
+        <div class="light line-up8"></div>
+        <div class="light line-up9"></div>
+      </div>
+      <div class="projects-content section-content">
+        <h2>Projets personnels</h2>
+        <div class="swiper swiper-perso">
+          <div class="swiper-wrapper swiper-wrapper-perso">
+            <div class="swiper-slide">
+              <div class="project-title">
+                Planificateur de tâches en React et Typescript
+              </div>
+              <div class="project-content">
+                <div class="project-img">
+                  <img src="images/Todos.PNG" alt="Screenshot of this app" />
+                </div>
+                <div class="project-textcontent">
+                  <div class="project-status">
+                    En cours<i class="fa-solid fa-spinner"></i>
+                  </div>
+                  <div class="project-description">
+                    <p>
+                      C'est une application web réalisée en Typescript utilisant
+                      React, qui permet de planifier ses tâches. Elle me permet
+                      de découvrir React et Typescript, et d'approfondir mes
+                      connaissances en développement web.
+                      <br />
+                      Je compte ajouter de nouvelles fonctionnalités, comme la
+                      possibilité de créer des comptes utilisateurs, d'ajouter
+                      des ressources aux tâches, de leur apposer des tags, etc.
+                      Ce projet me permet de me familiariser avec l'utilisation
+                      de React et Nodejs, et le développement web en général.
+                    </p>
+                  </div>
+                  <div class="project-link">
+                    <i class="fab fa-github"></i>
+                    <a
+                      class="link"
+                      target="_blank"
+                      href="https://github.com/DeLimaM/ToDos"
+                      >github.com/DeLimaM/ToDos</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-title">Site portfolio</div>
+              <div class="project-content">
+                <div class="project-img">
+                  <img
+                    src="images/SitePortfolio.PNG"
+                    alt="Screenshot of this website"
+                  />
+                </div>
+                <div class="project-textcontent">
+                  <div class="project-status">
+                    Terminé<i class="fa-solid fa-check"></i>
+                  </div>
+                  <div class="project-description">
+                    <p>
+                      C'est un site portfolio réalisé durant l'été 2023, servant
+                      à me présenter moi-même et mes projets. Il est réalisé en
+                      HTML/CSS/JS, avec l'aide de la librairie
+                      <a
+                        class="link"
+                        target="_blank"
+                        href="https://swiperjs.com/"
+                        >SwiperJS</a
+                      >
+                      pour le slider.
+                      <br />
+                      Il est hébergé sur GitHub Pages, et est disponible
+                      l'adresse à laquelle vous vous trouvez. Ce projet m'a
+                      permis de me familiariser avec le développement web,
+                      notamment avec le Javascript. Je continue de l'améliorer
+                      et le mettre à jour au fur et à mesure de mon
+                      apprentissage.
+                    </p>
+                  </div>
+                  <div class="project-link">
+                    <i class="fab fa-github"></i>
+                    <a
+                      class="link"
+                      target="_blank"
+                      href="https://github.com/DeLimaM/DeLimaM.github.io"
+                      >github.com/DeLimaM/DeLimaM.github.io</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-title">iCloudAlbumManager</div>
+              <div class="project-content">
+                <div class="project-img">
+                  <img
+                    src="images/iCloudAlbumManager.PNG"
+                    alt="Screenshot of the main page of the app"
+                  />
+                </div>
+                <div class="project-textcontent">
+                  <div class="project-status">
+                    Terminé<i class="fa-solid fa-check"></i>
+                  </div>
+                  <div class="project-description">
+                    <p>
+                      C'est un projet commencé durant l'été 2023, qui représente
+                      ma première tentative dans la réalisation d'un logiciel :
+                      une application permettant de gérer localement ses albums
+                      photos iCloud.
+                      <br />
+                      Le backend est réalisé en Python, avec l'aide de la
+                      librairie
+                      <a
+                        class="link"
+                        target="_blank"
+                        href="https://github.com/picklepete/pyicloud"
+                        >PyiCloud</a
+                      >.
+                      <br />
+                      Le frontend est réalisé en HTML/CSS/JS, avec l'aide de
+                      <a
+                        class="link"
+                        target="_blank"
+                        href="https://flask.palletsprojects.com/en/3.0.x/"
+                        >Flask</a
+                      >. J'ai beaucoup appris en travaillant sur ce projet, qui
+                      me permet de découvrir la structure d'une application web,
+                      mais aussi d'approfondir mes connaissances en Javascript.
+                    </p>
+                  </div>
+                  <div class="project-link">
+                    <i class="fab fa-github"></i>
+                    <a
+                      class="link"
+                      target="_blank"
+                      href="https://github.com/DeLimaM/iCloudAlbumManager"
+                      >github.com/DeLimaM/iCloudAlbumManager</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev swiper-button-prev-perso"></div>
+        <div class="swiper-button-next swiper-button-next-perso"></div>
+        <div class="swiper-pagination swiper-pagination-perso"></div>
+      </div>
+    </section>
 
+    <section id="projects-edu" class="stacking-section projects">
+      <div id="blurry-lines-down">
+        <div class="light line-down1"></div>
+        <div class="light line-down2"></div>
+        <div class="light line-down3"></div>
+        <div class="light line-down4"></div>
+        <div class="light line-down5"></div>
+        <div class="light line-down6"></div>
+        <div class="light line-down7"></div>
+        <div class="light line-down8"></div>
+        <div class="light line-down9"></div>
+      </div>
+      <div class="projects-content section-content">
+        <h2>Projets éducatifs</h2>
+        <div class="swiper swiper-edu">
+          <div class="swiper-wrapper swiper-wrapper-edu">
+            <div class="swiper-slide">
+              <div class="project-title">Un jeu de cartes en C#</div>
+              <div class="project-content">
+                <div class="project-img">
+                  <img
+                    src="images/but2s3_01.png"
+                    alt="Screenshot of the game"
+                  />
+                </div>
+                <div class="project-textcontent">
+                  <div class="project-status">Langage utilisé : C#</div>
+                  <div class="project-description">
+                    <p>
+                      Il s'agit d'un jeu de carte réalisé dans le cadre d'un
+                      travail de groupe en C# et WPF.
+                      <br />
+                      Ce projet a été réalisé en utilisant la méthode Agile et
+                      Scrum, ce qui m'a permis de découvrir les enjeux de la
+                      gestion de projet, mais aussi des problématiques de
+                      communication avec un client.
+                      <br />
+                      Techniquement, ce programme a été très formateur, car il
+                      nous a permis de concrétiser nos apprentissages théorique
+                      en une application complète.
+                    </p>
+                  </div>
+                  <div class="project-link">
+                    Seconde année de BUT, Semestre 3
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-title">Un petit jeu en 2D</div>
+              <div class="project-content">
+                <div class="project-img">
+                  <img
+                    src="images/but1s2_01.png"
+                    alt="Screenshot of the game"
+                  />
+                </div>
+                <div class="project-textcontent">
+                  <div class="project-status">Langage utilisé : C#</div>
+                  <div class="project-description">
+                    <p>
+                      Il s'agit d'un petit jeu en 2D réalisé en C# avec l'aide
+                      d'un framework fourni par l'IUT.
+                      <br />
+                      Ce projet a été très formateur, car il m'a permis de me
+                      familiariser avec les contraintes de développement d'un
+                      jeu vidéo, mais aussi de travail en équipe. J'ai ainsi pu
+                      appréhender les problématiques de respect des délais, de
+                      répartition des tâches, de communication, etc.
+                      <br />
+                      Techniquement, j'ai surtout appris à bien structurer un
+                      programme, mais ai aussi approfondi mes connaissances en
+                      C# et en programmation orientée objet.
+                    </p>
+                  </div>
+                  <div class="project-link">
+                    Première année de BUT, Semestre 2
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-title">Algorithmes et graphes</div>
+              <div class="project-content">
+                <div class="project-img">
+                  <img
+                    src="images/but1s2_02.png"
+                    alt="Screenshot app used to display taverns created by graphs"
+                  />
+                </div>
+                <div class="project-textcontent">
+                  <div class="project-status">Langage utilisé : C#</div>
+                  <div class="project-description">
+                    <p>
+                      La problématique de ce projet était de colorier un graphe
+                      à travers 4 heuristiques : l'algorithme de coloration
+                      glouton, l'algorithme DSATUR, l'algorithme de Welsh-Powell
+                      et l'algorithme Largest Degree Ordering.
+                      <br />
+                      Ce projet m'a permis de concrétiser les notions vues en
+                      cours, et de me familiariser avec les problématiques de
+                      performance.
+                      <br />
+                      Techniquement, j'ai surtout appris à modéliser et
+                      manipuler des graphes, mais ai aussi approfondi mes
+                      connaissances en C# et en programmation orientée objet.
+                    </p>
+                  </div>
+                  <div class="project-link">
+                    Première année de BUT, Semestre 2
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="project-title">
+                Organisation d'un travail d'équipe
+              </div>
+              <div class="project-content">
+                <div class="project-img">
+                  <img
+                    src="images/but1s2_03.png"
+                    alt="Screenshot of the site"
+                  />
+                </div>
+                <div class="project-textcontent">
+                  <div class="project-status">Langages utilisés : HTML,CSS</div>
+                  <div class="project-description">
+                    <p>
+                      Ce projet avait pour but de nous faire travailler en
+                      équipe sur la création d'une start-up comprenant un site
+                      vitrine.
+                      <br />
+                      Ce projet m'a permis d'appréhender le travail d'équipe, et
+                      de découvrir les problématiques de gestion de projet et de
+                      respect des échéances. Le challenge de la répartition des
+                      tâches a également été rencontré.
+                      <br />
+                      Techniquement, j'ai surtout approfondi mes connaissances
+                      en HTML et CSS.
+                    </p>
+                  </div>
+                  <div class="project-link">
+                    Première année de BUT, Semestre 2
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev swiper-button-prev-edu"></div>
+        <div class="swiper-button-next swiper-button-next-edu"></div>
+        <div class="swiper-pagination swiper-pagination-edu"></div>
+      </div>
+    </section>
+
+    <section id="bottom-section" class="stacking-section">
+      <section id="contact">
+        <div class="contact-content section-content">
+          <h2>Contact et liens</h2>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div>
+                <i class="fas fa-phone"></i>
+                <span>Téléphone</span>
+              </div>
+              <hr />
+              <div>07 68 26 26 29</div>
+            </div>
+
+            <div class="contact-item">
+              <div>
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+              </div>
+              <hr />
+              <div>
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=martin.delimaa@gmail.com"
+                  >martin.delimaa@gmail.com</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </div>
+              <hr />
+              <div>
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://github.com/DeLimaM"
+                  >github.com/DeLimaM</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </div>
+              <hr />
+              <div>
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/delimamartin"
+                  >linkedin.com/in/delimamartin</a
+                >
+              </div>
+            </div>
+
+            <div id="note">
+              <p>
+                Malentendant et porteur d'appareils auditifs, je préfère être
+                contacté par message écrit, mais peut néanmoins répondre au
+                téléphone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2023 Martin De Lima. Tous droits réservés.</p>
+      </footer>
+    </section>
+  </body>
 </html>
