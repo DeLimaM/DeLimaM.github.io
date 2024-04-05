@@ -1435,6 +1435,11 @@ footer {
     height: fit-content;
   }
 
+  /* experience */
+  #cell-experience {
+    font-size: 60%;
+  }
+
   /* projects */
   .swiper {
     width: 90vw;
