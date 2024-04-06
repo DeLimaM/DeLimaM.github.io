@@ -399,7 +399,9 @@ h3 {
   grid-column-start: 1;
   grid-column-end: 3;
 }
+/* #endregion */
 
+/* #region Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -410,23 +412,29 @@ table {
 }
 
 thead td {
-  padding: 0.5em;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 110%;
   border: none;
+  color: var(--color-accent);
 }
 
 td {
+  padding: 0.1em 0.2em;
   border-right: var(--color-tertiary) 2px solid;
   border-left: var(--color-tertiary) 2px solid;
   transition: border-color 0.1s ease, background-color 0.1s ease;
 }
 
-td:first-child {
+tr td:first-child {
   border-left: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
-td:last-child {
+tr td:last-child {
   border-right: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 tr:not(.table-header):hover td {
@@ -980,7 +988,8 @@ nav a:hover {
   transition: color var(--color-switch-delay) ease;
 }
 
-.menu-item-projects:hover {
+.menu-item-projects:hover,
+.menu-item-about:hover {
   cursor: default;
   background-color: var(--color-accent);
   border-color: var(--color-accent);
@@ -1047,18 +1056,9 @@ nav a:hover {
   background-color: var(--color-secondary);
   transition: background-color var(--color-switch-delay) ease;
   width: 100%;
+  font-size: 110%;
   min-height: 100vh;
   top: 6vh;
-}
-
-.exp {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0.5em;
-  max-height: 90%;
-  border: solid 3px var(--color-tertiary);
-  border-radius: 20px;
 }
 /* #endregion */
 
@@ -1436,8 +1436,9 @@ footer {
   }
 
   /* experience */
-  #cell-experience {
-    font-size: 60%;
+  #cell-experience,
+  #cell-diplomes {
+    font-size: 70%;
   }
 
   /* projects */
