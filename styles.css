@@ -236,8 +236,7 @@ body {
   --color-switch-delay: 0.5s;
   --header-resizing-delay: 0.2s;
   --toggle-switch-delay: 0.3s;
-  --side-div-width: 0;
-  --div-fade-in-delay: 0.4s;
+  --progress-bar-transition: 0.4s;
 }
 
 p {
@@ -347,10 +346,6 @@ h3 {
   background-color: var(--color-primary);
   box-shadow: 0px 0px 10px var(--color-tertiary);
   max-height: 100%;
-  transition: background-color var(--color-switch-delay) ease,
-    border-color var(--color-switch-delay) ease,
-    box-shadow var(--color-switch-delay) ease,
-    opacity var(--div-fade-in-delay) ease-in-out;
 }
 
 .cell p {
@@ -408,7 +403,6 @@ table {
   border-spacing: 0;
   margin: 0;
   padding: 0;
-  transition: color var(--color-switch-delay) ease;
 }
 
 thead td {
@@ -467,8 +461,6 @@ tr:not(.table-header):hover td {
   overflow: hidden;
   box-shadow: 0 0 5px var(--color-tertiary);
   margin-right: 30px;
-  transition: background-color var(--color-switch-delay) ease,
-    box-shadow var(--color-switch-delay) ease;
 }
 
 .line::after {
@@ -489,7 +481,6 @@ tr:not(.table-header):hover td {
   -moz-animation: drop 6s infinite forwards cubic-bezier(0.4, 0.5, 0, 1);
   -o-animation: drop 6s infinite forwards cubic-bezier(0.4, 0.5, 0, 1);
   animation: drop 6s infinite forwards cubic-bezier(0.4, 0.5, 0, 1);
-  transition: background-color var(--color-switch-delay) ease;
 }
 
 .line:nth-child(1) {
@@ -545,8 +536,6 @@ tr:not(.table-header):hover td {
   left: 0px;
   right: 0px;
   margin: auto;
-  transition: opacity var(--color-switch-delay) ease,
-    box-shadow var(--color-switch-delay) ease;
 }
 /* #endregion */
 
@@ -776,17 +765,14 @@ tr:not(.table-header):hover td {
 
 ::-webkit-scrollbar-track {
   background-color: var(--color-primary);
-  transition: background-color var(--color-switch-delay) ease;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-tertiary);
-  transition: background-color var(--color-switch-delay) ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-secondary);
-  transition: background-color var(--color-switch-delay) ease;
 }
 
 /* #endregion */
@@ -825,8 +811,7 @@ input {
   width: 100%;
   height: 100%;
   border-radius: 3.125em;
-  transition: transform var(--toggle-switch-delay) ease,
-    background-color var(--toggle-switch-delay) ease;
+  transition: transform var(--toggle-switch-delay) ease;
 }
 
 input:checked ~ #slider {
@@ -843,8 +828,7 @@ input:checked ~ #slider {
   border-radius: 50%;
   box-shadow: inset 1.75em -0.25em 0em 0em var(--color-accent);
   background-color: var(--color-secondary);
-  transition: transform var(--toggle-switch-delay) ease,
-    background-color var(--toggle-switch-delay) ease;
+  transition: transform var(--toggle-switch-delay) ease;
 }
 
 input:checked ~ #slider:before {
@@ -865,7 +849,6 @@ input:checked ~ #slider:before {
   width: 100%;
   font-weight: bold;
   color: var(--color-accent);
-  transition: color var(--color-switch-delay) ease;
 }
 
 /* #endregion */
@@ -875,9 +858,7 @@ header {
   background-color: var(--color-primary);
   position: fixed;
   top: 0;
-  transition: height var(--header-resizing-delay) ease,
-    background-color var(--color-switch-delay) ease,
-    border-color var(--color-switch-delay) ease;
+  transition: height var(--header-resizing-delay) ease;
   height: 12vh;
   width: 100%;
   font-size: 1.6em;
@@ -906,7 +887,7 @@ header {
   height: 3px;
   background: var(--color-accent);
   width: 0%;
-  transition: width 0.3s ease-in-out;
+  transition: width var(--progress-bar-transition) ease-in-out;
 }
 
 #toggle-switch,
@@ -936,7 +917,6 @@ nav ul {
   align-items: center;
   background-color: transparent;
   border-radius: 5px;
-  transition: background-color var(--color-switch-delay) ease;
 }
 
 nav ul li:not(:last-child) {
@@ -974,7 +954,6 @@ nav a {
   text-decoration: none;
   user-select: none;
   margin: 1.5vw;
-  transition: color var(--color-switch-delay) ease;
   border-radius: 5px;
   border: 2px solid transparent;
   background-color: transparent;
@@ -985,7 +964,6 @@ nav a:hover {
   cursor: pointer;
   background-color: var(--color-accent);
   border-color: var(--color-accent);
-  transition: color var(--color-switch-delay) ease;
 }
 
 .menu-item-projects:hover,
@@ -993,7 +971,6 @@ nav a:hover {
   cursor: default;
   background-color: var(--color-accent);
   border-color: var(--color-accent);
-  transition: color var(--color-switch-delay) ease;
 }
 
 .menu-item-dropdown {
@@ -1007,7 +984,6 @@ nav a:hover {
 
 .menu-item-dropdown:hover {
   color: var(--color-accent);
-  transition: color 0.3s ease-in-out;
   cursor: pointer;
 }
 /* #endregion */
@@ -1018,7 +994,6 @@ nav a:hover {
   align-items: flex-start;
   justify-content: center;
   background-color: var(--color-primary);
-  transition: background-color var(--color-switch-delay) ease;
   height: 100vh;
 }
 
@@ -1034,8 +1009,6 @@ nav a:hover {
   border-color: var(--color-accent);
   background-color: var(--color-primary);
   box-shadow: 0px 0px 10px var(--color-accent);
-  transition: border-color var(--color-switch-delay) ease,
-    background-color var(--color-switch-delay) ease;
 }
 /* #endregion */
 
@@ -1043,7 +1016,6 @@ nav a:hover {
 #about {
   text-align: center;
   background-color: var(--color-secondary);
-  transition: background-color var(--color-switch-delay) ease;
   width: 100%;
   min-height: 100vh;
   top: 6vh;
@@ -1054,7 +1026,6 @@ nav a:hover {
 #experience {
   text-align: center;
   background-color: var(--color-secondary);
-  transition: background-color var(--color-switch-delay) ease;
   width: 100%;
   font-size: 110%;
   min-height: 100vh;
@@ -1065,7 +1036,6 @@ nav a:hover {
 /* #region Projects section */
 .projects {
   background-color: var(--color-primary);
-  transition: background-color var(--color-switch-delay) ease;
   text-align: center;
   height: 94vh;
   top: 6vh;
@@ -1086,12 +1056,8 @@ nav a:hover {
   border-radius: 20px;
   border: solid 3px var(--color-tertiary);
   background-color: var(--color-secondary);
-  transition: background-color var(--color-switch-delay) ease;
   flex-direction: column;
   padding: 0 20px 20px 20px;
-  transition: background-color var(--color-switch-delay) ease,
-    border-color var(--color-switch-delay) ease,
-    opacity var(--div-fade-in-delay) ease-in-out;
 }
 
 .swiper-slide-active {
@@ -1129,7 +1095,6 @@ nav a:hover {
   border-style: solid;
   border-color: var(--color-accent);
   background-color: var(--color-primary);
-  transition: background-color var(--color-switch-delay) ease;
 }
 
 .project-status {
@@ -1145,17 +1110,14 @@ nav a:hover {
 
 .project-status i {
   margin-left: 0.8em;
-  transition: color var(--color-switch-delay) ease;
 }
 
 .project-status i.fa-check {
   color: var(--color-accent);
-  transition: color var(--color-switch-delay) ease;
 }
 
 .project-status i.fa-spinner {
   color: var(--color-accent);
-  transition: color var(--color-switch-delay) ease;
 }
 
 .project-img {
@@ -1204,7 +1166,6 @@ nav a:hover {
 
 .project-link i {
   margin-right: 0.8em;
-  transition: color var(--color-switch-delay) ease;
 }
 
 .swiper {
@@ -1233,10 +1194,6 @@ nav a:hover {
   margin: 0 auto;
 }
 
-.swiper-pagination-bullet {
-  transition: background-color var(--color-switch-delay) ease;
-}
-
 .swiper-pagination-bullet-active {
   background-color: var(--color-accent);
 }
@@ -1244,7 +1201,6 @@ nav a:hover {
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--color-accent);
-  transition: color var(--color-switch-delay) ease;
 }
 
 .swiper-button-next {
@@ -1262,7 +1218,6 @@ nav a:hover {
   text-align: center;
   background-color: var(--color-secondary);
   flex: 0.9;
-  transition: background-color var(--color-switch-delay) ease;
 }
 
 .contact-items {
@@ -1277,7 +1232,6 @@ nav a:hover {
   padding: 30px 15px;
   margin: 30px;
   font-size: 1.2em;
-  transition: border-color var(--color-switch-delay) ease;
 }
 
 .contact-item {
@@ -1286,12 +1240,10 @@ nav a:hover {
 
 .contact-item i {
   margin-right: 8px;
-  transition: color var(--color-switch-delay) ease;
 }
 
 .contact-item svg {
   margin-right: 8px;
-  transition: color var(--color-switch-delay) ease;
 }
 
 .contact-item hr {
@@ -1300,14 +1252,12 @@ nav a:hover {
   height: 2px;
   color: var(--color-accent);
   background-color: var(--color-accent);
-  transition: color var(--color-switch-delay) ease;
 }
 
 #note {
   margin-top: 5vh;
   font-size: 0.8em;
   color: var(--color-font);
-  transition: color var(--color-switch-delay) ease;
   border: var(--color-accent) solid 2px;
   border-radius: 10px;
   padding: 0 1em;
@@ -1318,7 +1268,6 @@ nav a:hover {
 footer {
   flex: 0.1;
   background-color: var(--color-primary);
-  transition: background-color var(--color-switch-delay) ease;
   color: var(--color-font);
   text-align: center;
   padding: 5vh;

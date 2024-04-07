@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // update dynamic texts
   updateDynamicTexts();
 
+  // Add transition to colored elements
+  addTransitionToColoredElements();
+
   // Add scroll events
   window.addEventListener("scroll", function () {
     resizeHeader();
@@ -208,4 +211,24 @@ function updateDynamicTexts() {
   // update the copyright footer
   const yearText = document.getElementById("copyright");
   yearText.innerHTML = new Date().getFullYear();
+}
+
+// Add transition to colored elements
+function addTransitionToColoredElements() {
+  const allElements = document.querySelectorAll("*");
+
+  allElements.forEach((element) => {
+    const styles = window.getComputedStyle(element);
+
+    // check if any of the color-related properties are not the default
+    if (
+      styles.color !== "rgb(0, 0, 0)" ||
+      styles.backgroundColor !== "rgba(0, 0, 0, 0)" ||
+      styles.borderColor !== "rgba(0, 0, 0, 0)"
+    ) {
+      // add transition
+      element.style.transition =
+        "background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease";
+    }
+  });
 }
