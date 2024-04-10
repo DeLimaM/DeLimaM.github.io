@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeHeader();
     refreshProgressBar();
   });
+  refreshProgressBar();
 
   // Add click events
   document.getElementById("hamburger").addEventListener("click", function () {
@@ -226,9 +227,8 @@ function addTransitionToColoredElements() {
       styles.backgroundColor !== "rgba(0, 0, 0, 0)" ||
       styles.borderColor !== "rgba(0, 0, 0, 0)"
     ) {
-      // add transition
-      element.style.transition =
-        "background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease";
+      // add transition without overwriting the existing ones
+      element.style.transition = "all 0.3s ease-in-out";
     }
   });
 }
