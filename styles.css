@@ -1033,6 +1033,17 @@ nav a:hover {
 }
 /* #endregion */
 
+/* #region Skills&Passions */
+#skills-passions {
+  text-align: center;
+  background-color: var(--color-secondary);
+  width: 100%;
+  font-size: 110%;
+  min-height: 100vh;
+  top: 6vh;
+}
+/* #endregion */
+
 /* #region Projects section */
 .projects {
   background-color: var(--color-primary);

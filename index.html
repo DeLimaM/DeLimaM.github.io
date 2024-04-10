@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <script type="text/javascript" src="static/swiper-bundle.js"></script>
+  <script type="text/javascript" src="static/tagcloud.js"></script>
   <script src="scripts.js"></script>
   <title>Martin De Lima</title>
 </head>
@@ -34,6 +35,7 @@
             <ul>
               <li><a class="link-about">Qui suis-je</a></li>
               <li><a class="link-experience">Experience & diplômes</a></li>
+              <li><a class="link-skills-passions">Points forts et intérêts</a></li>
             </ul>
           </li>
           <li>
@@ -207,6 +209,27 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="skills-passions" class="stacking-section">
+    <div class="skills-passions-content section-content">
+      <h2>Points forts et intérêts</h2>
+      <div class="grid">
+        <div class="cell" id="cell-skills">
+          <div class="cell-title">Points forts</div>
+          <div class="cell-content">
+            <div class="tag-cloud" id="skills">
+            </div>
+          </div>
+        </div>
+        <div class="cell" id="cell-passions">
+          <div class="cell-title">Intérêts</div>
+          <div class="cell-content">
+            <div class="tag-cloud" id="passions">
+            </div>
           </div>
         </div>
       </div>

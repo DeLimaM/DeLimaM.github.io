@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   refreshProgressBar();
 
+  // Start the tag cloud
+  startTagCloud();
+
   // Add click events
   document.getElementById("hamburger").addEventListener("click", function () {
     toggleDropdown();
@@ -72,6 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".link-experience").forEach((item) => {
     item.addEventListener("click", function () {
       scrollToSection("experience");
+    });
+  });
+  document.querySelectorAll(".link-skills-passions").forEach((item) => {
+    item.addEventListener("click", function () {
+      scrollToSection("skills-passions");
     });
   });
 
@@ -186,7 +194,10 @@ function refreshProgressBar() {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
-  let progressInterval = Math.round(scrolled / 25) * 25;
+  let percentagePerSection =
+    100 / Math.max(document.querySelectorAll("section").length - 1, 1);
+  let progressInterval =
+    Math.round(scrolled / percentagePerSection) * percentagePerSection;
   document.getElementById("progress-bar").style.width = progressInterval + "%";
 }
 
@@ -231,4 +242,36 @@ function addTransitionToColoredElements() {
       element.style.transition = "all 0.3s ease-in-out";
     }
   });
+}
+
+// Start the tag cloud
+function startTagCloud() {
+  var options = {
+    radius: 200,
+    maxSpeed: "slow",
+    initSpeed: "slow",
+    itemClass: "tag",
+  };
+
+  var container = ".tag-cloud#skills";
+  var texts = [
+    "Développement Web",
+    "Autonomie",
+    "Curiosité",
+    "Investissement",
+    "Esprit d'équipe",
+    "Créativité",
+  ];
+  TagCloud(container, texts, options);
+
+  var container = ".tag-cloud#passions";
+  var texts = [
+    "Sciences",
+    "Technologie",
+    "Hardware",
+    "Jeux Vidéos",
+    "Cinéma",
+    "Spatial",
+  ];
+  TagCloud(container, texts, options);
 }
