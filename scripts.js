@@ -255,7 +255,6 @@ function startTagCloud() {
 
   var container = ".tag-cloud#skills";
   var texts = [
-    "Développement Web",
     "Autonomie",
     "Curiosité",
     "Investissement",
