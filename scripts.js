@@ -271,6 +271,8 @@ function startTagCloud() {
     "Jeux Vidéos",
     "Cinéma",
     "Spatial",
+    "Data",
+    "Développement Web",
   ];
   TagCloud(container, texts, options);
 }
