@@ -191,17 +191,17 @@
 .dark-theme {
   --color-primary: #1a1a1a;
   --color-secondary: #333333;
-  --color-tertiary: #263d3d;
+  --color-tertiary: #15e0cf;
   --color-accent: #38d8a3;
   --color-font: #f5f5f5;
 }
 
 .light-theme {
-  --color-primary: #ffffff;
-  --color-secondary: #fdf8ea;
-  --color-tertiary: #ccd5ae;
-  --color-accent: #95721f;
-  --color-font: #333333;
+  --color-primary: #e6e6e6;
+  --color-secondary: #cccccc;
+  --color-tertiary: #1fead9;
+  --color-accent: #28c893;
+  --color-font: #0a0a0a;
 }
 /* #endregion */
 
@@ -261,7 +261,7 @@ h3 {
 .link {
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
   position: relative;
-  color: var(--color-accent);
+  color: var(--color-font);
   text-decoration: none;
   display: inline-block;
 }
@@ -309,12 +309,12 @@ h3 {
   box-sizing: border-box;
   position: sticky;
   overflow: hidden;
-  border-top: var(--color-accent) 1px solid;
+  border-top: var(--color-tertiary) 1px solid;
   box-shadow: 0px -20px 4em var(--color-primary);
 }
 
 #bottom-section {
-  background-color: var(--color-secondary);
+  background: linear-gradient(var(--color-primary), var(--color-secondary));
   height: 94vh;
   display: flex;
   width: 100%;
@@ -333,7 +333,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1vw;
-  padding: 0 2vw;
+  padding: 4vh 2vw;
   max-width: 100%;
   justify-content: center;
 }
@@ -1015,7 +1015,12 @@ nav a:hover {
 /* #region About section */
 #about {
   text-align: center;
-  background-color: var(--color-secondary);
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary)
+  );
   width: 100%;
   min-height: 100vh;
   top: 6vh;
@@ -1025,7 +1030,12 @@ nav a:hover {
 /* #region Experience section */
 #experience {
   text-align: center;
-  background-color: var(--color-secondary);
+  background: linear-gradient(
+    to bottom,
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-secondary)
+  );
   width: 100%;
   font-size: 110%;
   min-height: 100vh;
@@ -1036,7 +1046,11 @@ nav a:hover {
 /* #region Skills&Passions */
 #skills-passions {
   text-align: center;
-  background-color: var(--color-secondary);
+  background: linear-gradient(
+    to bottom,
+    var(--color-secondary),
+    var(--color-primary)
+  );
   width: 100%;
   font-size: 110%;
   min-height: 100vh;
@@ -1065,7 +1079,7 @@ nav a:hover {
   max-width: 90vw;
   position: relative;
   border-radius: 20px;
-  border: solid 3px var(--color-tertiary);
+  border: solid 3px var(--color-secondary);
   background-color: var(--color-secondary);
   flex-direction: column;
   padding: 0 20px 20px 20px;
@@ -1227,15 +1241,10 @@ nav a:hover {
 /* #region Contact section */
 #contact {
   text-align: center;
-  background-color: var(--color-secondary);
   flex: 0.9;
 }
 
 .contact-items {
-  border-style: solid;
-  border-color: var(--color-primary);
-  border-width: 3px;
-  border-radius: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1278,14 +1287,9 @@ nav a:hover {
 /* #region Footer */
 footer {
   flex: 0.1;
-  background-color: var(--color-primary);
   color: var(--color-font);
   text-align: center;
   padding: 5vh;
-  border: var(--color-secondary);
-  border-radius: 1px;
-  border-top-style: solid;
-  border-width: 2px;
   box-sizing: border-box;
 }
 
