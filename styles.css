@@ -314,7 +314,7 @@ h3 {
 }
 
 #bottom-section {
-  background: linear-gradient(var(--color-primary), var(--color-secondary));
+  background: linear-gradient(var(--color-secondary), var(--color-primary));
   height: 94vh;
   display: flex;
   width: 100%;
@@ -1018,7 +1018,6 @@ nav a:hover {
   background: linear-gradient(
     to bottom,
     var(--color-primary),
-    var(--color-primary),
     var(--color-secondary)
   );
   width: 100%;
@@ -1033,8 +1032,7 @@ nav a:hover {
   background: linear-gradient(
     to bottom,
     var(--color-secondary),
-    var(--color-primary),
-    var(--color-secondary)
+    var(--color-primary)
   );
   width: 100%;
   font-size: 110%;
@@ -1048,8 +1046,8 @@ nav a:hover {
   text-align: center;
   background: linear-gradient(
     to bottom,
-    var(--color-secondary),
-    var(--color-primary)
+    var(--color-primary),
+    var(--color-secondary)
   );
   width: 100%;
   font-size: 110%;
@@ -1059,8 +1057,24 @@ nav a:hover {
 /* #endregion */
 
 /* #region Projects section */
+
+#projects-perso {
+  background: linear-gradient(
+    to bottom,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+}
+
+#projects-edu {
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+}
+
 .projects {
-  background-color: var(--color-primary);
   text-align: center;
   height: 94vh;
   top: 6vh;
