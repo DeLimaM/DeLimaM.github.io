@@ -947,13 +947,13 @@ nav ul li:hover ul {
   background-color: var(--color-primary);
   border: 2px solid var(--color-accent);
   border-radius: 0.5em;
-  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 nav a {
   color: var(--color-font);
   text-decoration: none;
   user-select: none;
+  padding: 2px;
   margin: 1.5vw;
   border-radius: 5px;
   border: none;
@@ -975,7 +975,7 @@ nav a:hover {
 
 .menu-item-dropdown {
   color: var(--color-font);
-  padding: 0 10px;
+  padding: 0 15px;
   margin: 0 -15px;
   font-weight: bold;
   position: relative;
