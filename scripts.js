@@ -1,5 +1,3 @@
-setInterval(updateClock, 100);
-
 //on page load
 document.addEventListener("DOMContentLoaded", function () {
   // initialize swipers
@@ -123,22 +121,6 @@ function toggleTheme() {
     body.classList.add("dark-theme");
   }
   localStorage.setItem("theme", body.classList);
-}
-
-// update the clock
-function updateClock() {
-  let now = new Date();
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
-
-  hours = hours < 10 ? "0" + hours : hours;
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  seconds = seconds < 10 ? "0" + seconds : seconds;
-
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = " : " + minutes;
-  document.getElementById("seconds").innerHTML = " : " + seconds;
 }
 
 // toggle the dropdown menu
