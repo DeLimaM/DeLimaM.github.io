@@ -107,14 +107,20 @@
         <div class="cell" id="langages">
           <div class="cell-title">Langages</div>
           <div class="cell-content">
+            <div class="cell-content-item" id="c-logo">
+              <img src="/icons/languages/c-logo.svg" alt="the c logo" />
+            </div>
+            <div class="cell-content-item" id="cpp-logo">
+              <img src="/icons/languages/cpp-logo.svg" alt="the c++ logo" />
+            </div>
+            <div class="cell-content-item" id="csharp-logo">
+              <img src="/icons/languages/csharp-logo.svg" alt="the csharp logo" />
+            </div>
             <div class="cell-content-item" id="python-logo">
               <img src="/icons/languages/python-logo.svg" alt="the python logo" />
             </div>
             <div class="cell-content-item" id="js-logo">
               <img src="/icons/languages/javascript-logo.svg" alt="the javascript logo" />
-            </div>
-            <div class="cell-content-item" id="csharp-logo">
-              <img src="/icons/languages/csharp-logo.svg" alt="the csharp logo" />
             </div>
             <div class="cell-content-item" id="java-logo">
               <img src="/icons/languages/java-logo.svg" alt="the java logo" />
@@ -124,9 +130,12 @@
             </div>
           </div>
         </div>
-        <div class="cell" id="ide">
+        <div class="cell" id="techs">
           <div class="cell-title">Technologies & Frameworks connus</div>
           <div class="cell-content">
+            <div class="cell-content-item" id="react">
+              <img src="/icons/techs/typescript-logo.svg" alt="the typescript logo" />
+            </div>
             <div class="cell-content-item" id="react">
               <img src="/icons/frameworks/react-logo.svg" alt="the react logo" />
             </div>
@@ -250,6 +259,36 @@
         <div class="swiper-wrapper swiper-wrapper-perso">
           <div class="swiper-slide">
             <div class="project-title">
+              Visualiseur de d'algorithmes de tri en C
+            </div>
+            <div class="project-content">
+              <div class="project-img">
+                <img src="images/sortviz.gif" alt="gif of the visualizer in action" />
+              </div>
+              <div class="project-textcontent">
+                <div class="project-status">Technologies utilisées : C, Unix</div>
+                <div class="project-description">
+                  <p>
+                    C'est un petit programme écrit en C qui permet de visualiser un algorithme
+                    de tri, directement depuis le terminal. Il prends en charge les algorithmes les
+                    plus connus, comme le tri à bulles, le tri par insertion, le tri par sélection,
+                    le tri rapide, et le tri fusion.
+                    <br />
+                    Il m'a permis de me familiariser avec le langage C, et d'approfondir ma connaissance
+                    du bas niveau. J'ai aussi pu découvrir les problématiques de performance et de gestion des signaux,
+                    ainsi que de gestion de la mémoire.
+                  </p>
+                </div>
+                <div class="project-link">
+                  <i class="fab fa-github"></i>
+                  <a class="link" target="_blank"
+                    href="https://github.com/DeLimaM/SortsVisualizer">github.com/DeLimaM/SortsVisualizer</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="project-title">
               Planificateur de tâches en React et Typescript
             </div>
             <div class="project-content">
@@ -257,9 +296,7 @@
                 <img src="images/Todos.PNG" alt="Screenshot of this app" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">
-                  Terminé<i class="fa-solid fa-check"></i>
-                </div>
+                <div class="project-status">Technologies utilisées : React, Typescript, HTML, CSS</div>
                 <div class="project-description">
                   <p>
                     C'est une application web réalisée en Typescript utilisant
@@ -285,9 +322,7 @@
                 <img src="images/SitePortfolio.PNG" alt="Screenshot of this website" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">
-                  Terminé<i class="fa-solid fa-check"></i>
-                </div>
+                <div class="project-status">Technologies utilisées : Javascript, HTML, CSS</div>
                 <div class="project-description">
                   <p>
                     C'est un site portfolio réalisé durant l'été 2023, servant
@@ -319,9 +354,7 @@
                 <img src="images/iCloudAlbumManager.PNG" alt="Screenshot of the main page of the app" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">
-                  Terminé<i class="fa-solid fa-check"></i>
-                </div>
+                <div class="project-status">Technologies utilisées : Python, Javascript, HTML, CSS</div>
                 <div class="project-description">
                   <p>
                     C'est un projet commencé durant l'été 2023, qui représente
@@ -368,7 +401,7 @@
                 <img src="images/but2s4_01.png" alt="Screenshot of the web app" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">Langages utilisés : PHP, Javascript</div>
+                <div class="project-status">Technologies utilisées : PHP, Javascript</div>
                 <div class="project-description">
                   <p>
                     Ce projet est un audit réalisé sur une application web réalisée
@@ -400,7 +433,7 @@
                 <img src="images/but2s3_01.png" alt="Screenshot of the game" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">Langage utilisé : C#</div>
+                <div class="project-status">Technologie utilisée : C#</div>
                 <div class="project-description">
                   <p>
                     Il s'agit d'un jeu de carte réalisé dans le cadre d'un
@@ -429,7 +462,7 @@
                 <img src="images/but1s2_01.png" alt="Screenshot of the game" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">Langage utilisé : C#</div>
+                <div class="project-status">Technologie utilisée : C#</div>
                 <div class="project-description">
                   <p>
                     Il s'agit d'un petit jeu en 2D réalisé en C# avec l'aide
@@ -459,7 +492,7 @@
                 <img src="images/but1s2_02.png" alt="Screenshot app used to display taverns created by graphs" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">Langage utilisé : C#</div>
+                <div class="project-status">Technologie utilisée : C#</div>
                 <div class="project-description">
                   <p>
                     La problématique de ce projet était de colorier un graphe
@@ -490,7 +523,7 @@
                 <img src="images/but1s2_03.png" alt="Screenshot of the site" />
               </div>
               <div class="project-textcontent">
-                <div class="project-status">Langages utilisés : HTML,CSS</div>
+                <div class="project-status">Technologies utilisées : HTML,CSS</div>
                 <div class="project-description">
                   <p>
                     Ce projet avait pour but de nous faire travailler en
