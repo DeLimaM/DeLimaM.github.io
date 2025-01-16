@@ -207,7 +207,7 @@ function updateDynamicTexts() {
   yearText.innerHTML = new Date().getFullYear();
 }
 
-// Add transition to colored elements
+// add transition to colored elements
 function addTransitionToColoredElements() {
   const allElements = document.querySelectorAll("*");
 
@@ -251,10 +251,9 @@ function startTagCloud() {
     "Technologie",
     "Hardware",
     "Jeux Vidéos",
-    "Cinéma",
-    "Spatial",
     "Data",
     "Développement Web",
+    "Développement Bas Niveau",
   ];
   TagCloud(container, texts, options);
 }

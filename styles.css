@@ -416,7 +416,9 @@ td {
   padding: 0.1em 0.2em;
   border-right: var(--color-tertiary) 2px solid;
   border-left: var(--color-tertiary) 2px solid;
-  transition: border-color 0.1s ease, background-color 0.1s ease;
+  transition:
+    border-color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 tr td:first-child {
@@ -1136,7 +1138,7 @@ nav a:hover {
   background-color: var(--color-primary);
 }
 
-.project-status {
+.project-techs {
   font-size: 1em;
   flex: 1;
   display: flex;
@@ -1147,15 +1149,15 @@ nav a:hover {
   border-bottom-color: var(--color-accent);
 }
 
-.project-status i {
+.project-techs i {
   margin-left: 0.8em;
 }
 
-.project-status i.fa-check {
+.project-techs i.fa-check {
   color: var(--color-accent);
 }
 
-.project-status i.fa-spinner {
+.project-techs i.fa-spinner {
   color: var(--color-accent);
 }
 
