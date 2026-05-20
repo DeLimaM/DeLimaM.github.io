@@ -413,10 +413,12 @@ thead td {
 }
 
 td {
-  padding: 0.1em 0.2em;
+  padding: 0.4em 0.2em;
   border-right: var(--color-tertiary) 2px solid;
   border-left: var(--color-tertiary) 2px solid;
-  transition: border-color 0.1s ease, background-color 0.1s ease;
+  transition:
+    border-color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 tr td:first-child {
