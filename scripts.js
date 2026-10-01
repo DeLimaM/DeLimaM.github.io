@@ -1,110 +1,103 @@
+const TAG_CLOUDS = {
+  "#skills": [
+    "Autonomie",
+    "Curiosité",
+    "Investissement",
+    "Esprit d'équipe",
+    "Créativité",
+    "Compétences techniques",
+    "Résolution de problèmes",
+  ],
+  "#passions": [
+    "Automobile",
+    "Spatial",
+    "Sciences",
+    "Technologie",
+    "Hardware",
+    "Jeux Vidéos",
+    "Data",
+    "Développement Web",
+    "Développement Bas Niveau",
+  ],
+};
+
+let tagClouds = [];
+
 //on page load
 document.addEventListener("DOMContentLoaded", function () {
-  // initialize swipers
   initSwiper("edu");
   initSwiper("perso");
-
-  // set the saved theme
   setSavedTheme();
-
-  // update projects links based on the device
-  updateProjectsLinks();
-
-  // update dynamic texts
   updateDynamicTexts();
+  watchSectionHeights();
+  startTagClouds();
+  refreshHeader();
 
-  // Add transition to colored elements
-  addTransitionToColoredElements();
+  window.addEventListener("scroll", refreshHeader, { passive: true });
 
-  // Add scroll events
-  window.addEventListener("scroll", function () {
-    resizeHeader();
-    refreshProgressBar();
+  let resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(startTagClouds, 200);
   });
-  refreshProgressBar();
 
-  // Start the tag cloud
-  startTagCloud();
-
-  // Add click events
   document.getElementById("hamburger").addEventListener("click", function () {
     toggleDropdown();
   });
-  document.querySelectorAll(".menu-item-about").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("about");
+  document
+    .getElementById("theme-checkbox")
+    .addEventListener("change", function () {
+      toggleTheme();
+    });
+
+  // every internal anchor goes through scrollToSection
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      scrollToSection(link.hash.slice(1));
+      toggleDropdown(false);
     });
   });
-  document.querySelectorAll(".menu-item-projects").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("projects-perso");
-    });
-  });
-  document.querySelectorAll(".menu-item-contact").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("contact");
-    });
-  });
-  document.querySelectorAll(".menu-item-dropdown").forEach((item) => {
-    item.addEventListener("click", function () {
-      toggleDropdown();
+});
+
+// handle the header size and the progress bar
+function refreshHeader() {
+  const scrollValue = window.scrollY;
+  document
+    .getElementById("header")
+    .classList.toggle("small-header", scrollValue > 50);
+
+  const height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrolled = (scrollValue / height) * 100;
+  const percentagePerSection =
+    100 /
+    Math.max(document.querySelectorAll(".stacking-section").length - 1, 1);
+  const progressInterval =
+    Math.round(scrolled / percentagePerSection) * percentagePerSection;
+  document.getElementById("progress-bar").style.width = progressInterval + "%";
+}
+
+// publish each section height, used by the CSS to compute its sticky offset
+function watchSectionHeights() {
+  const observer = new ResizeObserver((entries) => {
+    entries.forEach((entry) => {
+      const section = entry.target;
+      section.style.setProperty("--section-h", section.offsetHeight + "px");
     });
   });
   document
-    .getElementById("theme-checkbox")
-    .addEventListener("click", function () {
-      toggleTheme();
-    });
-  document.querySelectorAll(".link-projects-perso").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("projects-perso");
-    });
-  });
-  document.querySelectorAll(".link-projects-edu").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("projects-edu");
-    });
-  });
-  document.querySelectorAll(".link-about").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("about");
-    });
-  });
-  document.querySelectorAll(".link-experience").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("experience");
-    });
-  });
-  document.querySelectorAll(".link-skills-passions").forEach((item) => {
-    item.addEventListener("click", function () {
-      scrollToSection("skills-passions");
-    });
-  });
-
-  const numberOfSections = document.querySelectorAll("section").length - 1;
-});
-
-// handle the resize event for the header
-function resizeHeader() {
-  let header = document.getElementById("header");
-  let toggle = document.getElementById("toggle-switch");
-  let scrollTreshold = 50;
-  let scrollValue = window.scrollY || document.documentElement.scrollTop;
-  if (scrollValue > scrollTreshold) {
-    header.classList.add("small-header");
-    toggle.classList.add("small-toggle");
-  } else {
-    header.classList.remove("small-header");
-    toggle.classList.remove("small-toggle");
-  }
+    .querySelectorAll(".stacking-section")
+    .forEach((section) => observer.observe(section));
 }
 
 // set the theme based on the saved theme
 function setSavedTheme() {
-  let body = document.querySelector("body");
-  let savedTheme = localStorage.getItem("theme");
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
-    body.classList = savedTheme;
+    body.className = savedTheme;
   }
   document.getElementById("theme-checkbox").checked =
     body.classList.contains("light-theme");
@@ -112,35 +105,31 @@ function setSavedTheme() {
 
 // toggle the theme
 function toggleTheme() {
-  let body = document.querySelector("body");
-  if (body.classList.contains("dark-theme")) {
-    body.classList.remove("dark-theme");
-    body.classList.add("light-theme");
-  } else {
-    body.classList.remove("light-theme");
-    body.classList.add("dark-theme");
-  }
-  localStorage.setItem("theme", body.classList);
+  const body = document.body;
+  body.classList.toggle("dark-theme");
+  body.classList.toggle("light-theme");
+  localStorage.setItem("theme", body.className);
 }
 
-// toggle the dropdown menu
-function toggleDropdown() {
-  let dropdown = document.getElementById("dropdown");
-  dropdown.style.display =
-    dropdown.style.display === "block" ? "none" : "block";
+// toggle the dropdown menu (force: true to open, false to close)
+function toggleDropdown(force) {
+  const isOpen = document
+    .getElementById("dropdown")
+    .classList.toggle("open", force);
+  document
+    .getElementById("hamburger")
+    .setAttribute("aria-expanded", String(isOpen));
 }
 
 // initialize the swiper
 function initSwiper(suffix) {
-  const swiper = new Swiper(".swiper-" + suffix, {
+  new Swiper(".swiper-" + suffix, {
     loop: true,
-    slidePerView: 1,
     centeredSlides: true,
     spaceBetween: 50,
 
     keyboard: {
       enabled: true,
-      onlyInViewport: false,
     },
 
     pagination: {
@@ -156,108 +145,61 @@ function initSwiper(suffix) {
 }
 
 // scroll to a section
+// The sections are sticky: their position is only reliable when measured
+// from the top of the page, hence the scroll to 0 first.
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
-  window.scrollTo(0, 0, (behavior = "instant"));
+  window.scrollTo({ top: 0, behavior: "instant" });
   const yValue =
-    section.getBoundingClientRect().top +
-    window.scrollY -
-    (6 * window.innerHeight) / 100;
-  window.scrollTo({
-    top: yValue,
-    behavior: "instant",
-  });
+    section.getBoundingClientRect().top -
+    parseFloat(getComputedStyle(section).scrollMarginTop);
+  window.scrollTo({ top: yValue, behavior: "instant" });
 }
 
-// refresh the progress bar
-function refreshProgressBar() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  let percentagePerSection =
-    100 / Math.max(document.querySelectorAll("section").length - 1, 1);
-  let progressInterval =
-    Math.round(scrolled / percentagePerSection) * percentagePerSection;
-  document.getElementById("progress-bar").style.width = progressInterval + "%";
-}
-
-// update projects links
-function updateProjectsLinks() {
-  const links = document.querySelectorAll(".project-link .link");
-  var mediaQuery = window.matchMedia("(max-width: 767px)");
-
-  if (mediaQuery.matches) {
-    links.forEach((link) => {
-      link.innerHTML = "Lien Github";
-    });
-  }
-}
-
-// update the .dynamic class texts
+// update the dynamic texts
 function updateDynamicTexts() {
-  // update the age
-  const ageText = document.getElementById("age");
   const diff = new Date(Date.now() - new Date("2004-03-22"));
-  ageText.innerHTML = Math.abs(diff.getUTCFullYear() - 1970);
-
-  // update the copyright footer
-  const yearText = document.getElementById("copyright");
-  yearText.innerHTML = new Date().getFullYear();
+  document.getElementById("age").textContent = Math.abs(
+    diff.getUTCFullYear() - 1970
+  );
+  document.getElementById("copyright").textContent = new Date().getFullYear();
 }
 
-// add transition to colored elements
-function addTransitionToColoredElements() {
-  const allElements = document.querySelectorAll("*");
-
-  allElements.forEach((element) => {
-    const styles = window.getComputedStyle(element);
-
-    // check if any of the color-related properties are not the default
-    if (
-      styles.color !== "rgb(0, 0, 0)" ||
-      styles.backgroundColor !== "rgba(0, 0, 0, 0)" ||
-      styles.borderColor !== "rgba(0, 0, 0, 0)"
-    ) {
-      // add transition without overwriting the existing ones
-      element.style.transition = "all 0.3s ease-in-out";
-    }
+// (re)start the tag clouds, sized to fit their cell
+function startTagClouds() {
+  // side by side, each cloud can use the screen height; stacked, only half of it
+  const grid = document.querySelector("#skills-passions .grid");
+  const stacked =
+    getComputedStyle(grid).gridTemplateColumns.split(" ").length === 1;
+  const radii = Object.keys(TAG_CLOUDS).map((selector) => {
+    const box = document.querySelector(selector).parentElement;
+    const fontSize = parseFloat(getComputedStyle(box).fontSize);
+    // leave room for the longest word on both sides of the sphere
+    const radius = Math.min(
+      box.clientWidth / 2 - 4 * fontSize,
+      window.innerHeight * (stacked ? 0.15 : 0.28)
+    );
+    return Math.round(Math.max(radius, 90));
   });
-}
 
-// Start the tag cloud
-function startTagCloud() {
-  var options = {
-    radius: 200,
-    maxSpeed: "slow",
-    initSpeed: "slow",
-    itemClass: "tag",
-  };
+  // nothing to do if the size did not change (e.g. mobile address bar)
+  if (
+    tagClouds.length &&
+    tagClouds.every((cloud, i) => cloud.config.radius === radii[i])
+  ) {
+    return;
+  }
 
-  var container = ".tag-cloud#skills";
-  var texts = [
-    "Autonomie",
-    "Curiosité",
-    "Investissement",
-    "Esprit d'équipe",
-    "Créativité",
-    "Compétences techniques",
-    "Résolution de problèmes",
-  ];
-  TagCloud(container, texts, options);
-
-  var container = ".tag-cloud#passions";
-  var texts = [
-    "Automobile",
-    "Spatial",
-    "Sciences",
-    "Technologie",
-    "Hardware",
-    "Jeux Vidéos",
-    "Data",
-    "Développement Web",
-    "Développement Bas Niveau",
-  ];
-  TagCloud(container, texts, options);
+  tagClouds.forEach((cloud) => {
+    cloud.pause();
+    cloud.destroy();
+  });
+  tagClouds = Object.entries(TAG_CLOUDS).map(([selector, texts], i) =>
+    TagCloud(selector, texts, {
+      radius: radii[i],
+      maxSpeed: "slow",
+      initSpeed: "slow",
+      itemClass: "tag",
+    })
+  );
 }
