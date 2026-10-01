@@ -242,11 +242,15 @@ function startTagCloud() {
     "Investissement",
     "Esprit d'équipe",
     "Créativité",
+    "Compétences techniques",
+    "Résolution de problèmes",
   ];
   TagCloud(container, texts, options);
 
   var container = ".tag-cloud#passions";
   var texts = [
+    "Automobile",
+    "Spatial",
     "Sciences",
     "Technologie",
     "Hardware",

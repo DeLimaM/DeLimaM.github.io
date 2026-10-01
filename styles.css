@@ -1053,8 +1053,11 @@ nav a:hover {
   );
   width: 100%;
   font-size: 110%;
-  min-height: 100vh;
+  min-height: 94vh;
   top: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /* #endregion */
 
