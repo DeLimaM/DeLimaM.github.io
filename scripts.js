@@ -1,36 +1,72 @@
 const TAG_CLOUDS = {
-  "#skills": [
-    "Autonomie",
-    "Curiosité",
-    "Investissement",
-    "Esprit d'équipe",
-    "Créativité",
-    "Compétences techniques",
-    "Résolution de problèmes",
-  ],
-  "#passions": [
-    "Automobile",
-    "Spatial",
-    "Sciences",
-    "Technologie",
-    "Hardware",
-    "Jeux Vidéos",
-    "Data",
-    "Développement Web",
-    "Développement Bas Niveau",
-  ],
+  "#skills": {
+    fr: [
+      "Autonomie",
+      "Curiosité",
+      "Investissement",
+      "Esprit d'équipe",
+      "Créativité",
+      "Compétences techniques",
+      "Résolution de problèmes",
+    ],
+    en: [
+      "Autonomy",
+      "Curiosity",
+      "Commitment",
+      "Team spirit",
+      "Creativity",
+      "Technical skills",
+      "Problem solving",
+    ],
+  },
+  "#passions": {
+    fr: [
+      "Automobile",
+      "Spatial",
+      "Sciences",
+      "Technologie",
+      "Hardware",
+      "Jeux Vidéos",
+      "Data",
+      "Développement Web",
+      "Développement Bas Niveau",
+    ],
+    en: [
+      "Cars",
+      "Space",
+      "Science",
+      "Technology",
+      "Hardware",
+      "Video games",
+      "Data",
+      "Web development",
+      "Low-level development",
+    ],
+  },
 };
 
+// attributes holding French text, translated by a data-en-* twin
+// (alt -> data-en-alt, data-label -> data-en-label); "text" is the text content
+const TRANSLATED_ATTRIBUTES = [
+  "alt",
+  "title",
+  "aria-label",
+  "content",
+  "data-label",
+  "text",
+];
+
 let tagClouds = [];
+let tagCloudsLanguage = null;
 
 //on page load
 document.addEventListener("DOMContentLoaded", function () {
   initSwiper("edu");
   initSwiper("perso");
   setSavedTheme();
+  setLanguage(document.documentElement.lang);
   updateDynamicTexts();
   watchSectionHeights();
-  startTagClouds();
   refreshHeader();
 
   window.addEventListener("scroll", refreshHeader, { passive: true });
@@ -48,6 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("theme-checkbox")
     .addEventListener("change", function () {
       toggleTheme();
+    });
+  document
+    .getElementById("lang-checkbox")
+    .addEventListener("change", function () {
+      toggleLanguage();
     });
 
   // every internal anchor goes through scrollToSection
@@ -111,6 +152,51 @@ function toggleTheme() {
   localStorage.setItem("theme", body.className);
 }
 
+// switch the language, and remember it
+function toggleLanguage() {
+  const lang = document.documentElement.lang === "en" ? "fr" : "en";
+  localStorage.setItem("lang", lang);
+  setLanguage(lang);
+}
+
+// show the page in a language: the CSS hides the elements of the other one,
+// the translated attributes and the tag clouds are updated here
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.getElementById("lang-checkbox").checked = lang === "en";
+
+  TRANSLATED_ATTRIBUTES.forEach((attribute) => {
+    const key = attribute.replace(/^data-/, "");
+    document.querySelectorAll(`[data-en-${key}]`).forEach((element) => {
+      // the French text is the original one, saved before its first change
+      if (!element.hasAttribute(`data-fr-${key}`)) {
+        element.setAttribute(`data-fr-${key}`, readAttribute(element, attribute));
+      }
+      writeAttribute(
+        element,
+        attribute,
+        element.getAttribute(`data-${lang}-${key}`)
+      );
+    });
+  });
+
+  startTagClouds();
+}
+
+function readAttribute(element, attribute) {
+  return attribute === "text"
+    ? element.textContent
+    : element.getAttribute(attribute);
+}
+
+function writeAttribute(element, attribute, value) {
+  if (attribute === "text") {
+    element.textContent = value;
+  } else {
+    element.setAttribute(attribute, value);
+  }
+}
+
 // toggle the dropdown menu (force: true to open, false to close)
 function toggleDropdown(force) {
   const isOpen = document
@@ -159,9 +245,10 @@ function scrollToSection(sectionId) {
 // update the dynamic texts
 function updateDynamicTexts() {
   const diff = new Date(Date.now() - new Date("2004-03-22"));
-  document.getElementById("age").textContent = Math.abs(
-    diff.getUTCFullYear() - 1970
-  );
+  const age = Math.abs(diff.getUTCFullYear() - 1970);
+  document.querySelectorAll(".age").forEach((element) => {
+    element.textContent = age;
+  });
   document.getElementById("copyright").textContent = new Date().getFullYear();
 }
 
@@ -182,9 +269,12 @@ function startTagClouds() {
     return Math.round(Math.max(radius, 90));
   });
 
-  // nothing to do if the size did not change (e.g. mobile address bar)
+  // nothing to do if neither the size (e.g. mobile address bar) nor the
+  // language changed
+  const lang = document.documentElement.lang;
   if (
     tagClouds.length &&
+    tagCloudsLanguage === lang &&
     tagClouds.every((cloud, i) => cloud.config.radius === radii[i])
   ) {
     return;
@@ -194,8 +284,9 @@ function startTagClouds() {
     cloud.pause();
     cloud.destroy();
   });
+  tagCloudsLanguage = lang;
   tagClouds = Object.entries(TAG_CLOUDS).map(([selector, texts], i) =>
-    TagCloud(selector, texts, {
+    TagCloud(selector, texts[lang], {
       radius: radii[i],
       maxSpeed: "slow",
       initSpeed: "slow",

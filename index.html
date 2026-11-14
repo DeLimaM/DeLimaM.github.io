@@ -5,8 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Site portfolio de Martin De Lima, étudiant en BUT Informatique à Dijon et alternant développeur Talend chez APRR" />
-  <title>Portfolio de Martin De Lima - Développeur à Dijon</title>
+    content="Site portfolio de Martin De Lima, élève ingénieur Informatique et Réseaux à Polytech Dijon et alternant développeur Data chez APRR"
+    data-en-content="Portfolio of Martin De Lima, Computer Science and Networks engineering student at Polytech Dijon and work-study Data developer at APRR" />
+  <title data-en-text="Martin De Lima's portfolio - Developer in Dijon">Portfolio de Martin De Lima - Développeur à Dijon</title>
+  <script>
+    // pick the language before the first paint, so the other one never flashes
+    (function () {
+      const lang =
+        localStorage.getItem("lang") ||
+        (navigator.language.startsWith("fr") ? "fr" : "en");
+      document.documentElement.lang = lang === "en" ? "en" : "fr";
+    })();
+  </script>
   <link rel="icon" href="icons/page/Space.ico" />
   <link rel="preload" href="fonts/Iosevka.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="static/swiper-bundle.css" />
@@ -39,44 +49,57 @@
 
   <header id="header">
     <div class="header-content">
-      <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="dropdown"
-        aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav" aria-label="Navigation principale">
+      <div class="header-start">
+        <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="dropdown"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <label class="lang-switch" title="Switch to English" data-en-title="Passer en français">
+          <input type="checkbox" id="lang-checkbox" aria-label="English" />
+          <span class="lang-option" aria-hidden="true">FR</span>
+          <span class="lang-option" aria-hidden="true">EN</span>
+        </label>
+      </div>
+      <nav class="main-nav" aria-label="Navigation principale" data-en-aria-label="Main navigation">
         <ul>
           <li>
-            <a href="#about">Présentation</a>
+            <a href="#about"><span lang="fr">Présentation</span><span lang="en">About</span></a>
             <ul>
-              <li><a href="#about">Qui suis-je</a></li>
-              <li><a href="#experience">Experience & diplômes</a></li>
-              <li><a href="#skills-passions">Points forts et intérêts</a></li>
+              <li><a href="#about"><span lang="fr">Qui suis-je</span><span lang="en">About me</span></a></li>
+              <li><a href="#experience"><span lang="fr">Expérience & diplômes</span><span lang="en">Experience &
+                    education</span></a></li>
+              <li><a href="#skills-passions"><span lang="fr">Points forts et intérêts</span><span lang="en">Strengths
+                    & interests</span></a></li>
             </ul>
           </li>
           <li>
-            <a href="#projects-perso">Projets</a>
+            <a href="#projects-perso"><span lang="fr">Projets</span><span lang="en">Projects</span></a>
             <ul>
-              <li><a href="#projects-perso">Projets perso</a></li>
-              <li><a href="#projects-edu">Projets éducatifs</a></li>
+              <li><a href="#projects-perso"><span lang="fr">Projets perso</span><span lang="en">Personal
+                    projects</span></a></li>
+              <li><a href="#projects-edu"><span lang="fr">Projets éducatifs</span><span lang="en">School
+                    projects</span></a></li>
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <label class="theme-switch" title="Changer de thème">
-        <input type="checkbox" id="theme-checkbox" aria-label="Thème clair" />
+      <label class="theme-switch" title="Changer de thème" data-en-title="Toggle theme">
+        <input type="checkbox" id="theme-checkbox" aria-label="Thème clair" data-en-aria-label="Light theme" />
         <span class="slider"></span>
       </label>
     </div>
     <nav class="dropdown" id="dropdown" aria-label="Navigation">
-      <a href="#about">Qui suis-je</a>
-      <a href="#experience">Expérience & diplômes</a>
-      <a href="#skills-passions">Points forts et intérêts</a>
-      <a href="#projects-perso">Projets personnels</a>
-      <a href="#projects-edu">Projets éducatifs</a>
-      <a href="#contact">Contact et liens</a>
+      <a href="#about"><span lang="fr">Qui suis-je</span><span lang="en">About me</span></a>
+      <a href="#experience"><span lang="fr">Expérience & diplômes</span><span lang="en">Experience &
+          education</span></a>
+      <a href="#skills-passions"><span lang="fr">Points forts et intérêts</span><span lang="en">Strengths &
+          interests</span></a>
+      <a href="#projects-perso"><span lang="fr">Projets personnels</span><span lang="en">Personal projects</span></a>
+      <a href="#projects-edu"><span lang="fr">Projets éducatifs</span><span lang="en">School projects</span></a>
+      <a href="#contact"><span lang="fr">Contact et liens</span><span lang="en">Contact & links</span></a>
     </nav>
     <div class="progress-container">
       <div class="progress-bar" id="progress-bar"></div>
@@ -99,32 +122,50 @@
   <section id="about" class="stacking-section">
     <div class="grid">
       <div class="cell" id="cell-me">
-        <h2 class="cell-title">Qui suis-je ?</h2>
+        <h2 class="cell-title"><span lang="fr">Qui suis-je ?</span><span lang="en">About me</span></h2>
         <div class="cell-content">
-          <p>
-            Je suis un étudiant en informatique de <span id="age">0</span> ans, qui a soif
+          <p lang="fr">
+            Je suis un étudiant en informatique de <span class="age">0</span> ans, qui a soif
             d'apprendre et de découvrir de nouvelles choses.
           </p>
-          <p>
+          <p lang="en">
+            I am a <span class="age">0</span>-year-old computer science student, eager to learn
+            and to discover new things.
+          </p>
+          <p lang="fr">
             Actuellement en 2ème année de cycle ingénieur au sein de Polytech Dijon pour un diplôme d'ingénieur
             Informatique et Réseaux option Cybersécurité,
             je suis en alternance au sein d'<a href="https://voyage.aprr.fr/" class="link">APRR</a> en tant que
             développeur Data.
           </p>
-          <p>
+          <p lang="en">
+            Currently in the second year of the engineering program at Polytech Dijon, working towards an
+            engineering degree in Computer Science and Networks with a Cybersecurity major,
+            I am a work-study Data developer at <a href="https://voyage.aprr.fr/" class="link">APRR</a>.
+          </p>
+          <p lang="fr">
             J'aime passer le temps en travaillant sur des projets
             personnels, qui me permettent de gagner en expérience et en
             compétences. Parmi les derniers en date, ce site, qui servira de
             vitrine pour mes projets.
           </p>
-          <p>
+          <p lang="en">
+            I like spending my time on personal projects, which help me gain
+            experience and skills. One of the latest is this website, which
+            showcases my projects.
+          </p>
+          <p lang="fr">
             Curieux, je suis toujours à la recherche de nouveaux défis et de nouvelles
             technologies à découvrir.
+          </p>
+          <p lang="en">
+            Curious by nature, I am always looking for new challenges and new
+            technologies to discover.
           </p>
         </div>
       </div>
       <div class="cell" id="langages">
-        <h2 class="cell-title">Langages</h2>
+        <h2 class="cell-title"><span lang="fr">Langages</span><span lang="en">Languages</span></h2>
         <div class="cell-content logos">
           <img src="icons/languages/c-logo.svg" alt="C" />
           <img src="icons/languages/cpp-logo.svg" alt="C++" />
@@ -136,7 +177,8 @@
         </div>
       </div>
       <div class="cell" id="techs">
-        <h2 class="cell-title">Technologies & Frameworks connus</h2>
+        <h2 class="cell-title"><span lang="fr">Technologies & Frameworks connus</span><span lang="en">Technologies &
+            Frameworks</span></h2>
         <div class="cell-content logos">
           <img src="icons/techs/typescript-logo.svg" alt="TypeScript" />
           <img src="icons/frameworks/react-logo.svg" alt="React" />
@@ -153,79 +195,125 @@
   <section id="experience" class="stacking-section">
     <div class="grid">
       <div class="cell" id="cell-experience">
-        <h2 class="cell-title">Expérience</h2>
+        <h2 class="cell-title"><span lang="fr">Expérience</span><span lang="en">Experience</span></h2>
         <div class="cell-content">
           <table>
             <thead>
               <tr>
-                <th>Type d'expérience</th>
-                <th>Entreprise</th>
-                <th>Sujets abordés</th>
+                <th><span lang="fr">Type d'expérience</span><span lang="en">Type</span></th>
+                <th><span lang="fr">Entreprise</span><span lang="en">Company</span></th>
+                <th><span lang="fr">Sujets abordés</span><span lang="en">Topics</span></th>
                 <th>Date</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Type">Stage</td>
-                <td data-label="Entreprise"><a href="https://www.michelin.com/" class="link">Michelin</a>, Département
-                  Ingénierie</td>
-                <td data-label="Sujets">Observation du monde professionel (Stage de 3ème)</td>
-                <td data-label="Date">11 Février 2019 - 17 Février 2019</td>
+                <td data-label="Type">
+                  <span lang="fr">Stage</span><span lang="en">Internship</span>
+                </td>
+                <td data-label="Entreprise" data-en-label="Company"><a href="https://www.michelin.com/"
+                    class="link">Michelin</a>, <span lang="fr">Département Ingénierie</span><span lang="en">Engineering
+                    department</span></td>
+                <td data-label="Sujets" data-en-label="Topics">
+                  <span lang="fr">Observation du monde professionnel (Stage de 3ème)</span>
+                  <span lang="en">Discovering the professional world (middle school internship)</span>
+                </td>
+                <td data-label="Date">
+                  <span lang="fr">11 Février 2019 - 17 Février 2019</span>
+                  <span lang="en">February 11, 2019 - February 17, 2019</span>
+                </td>
               </tr>
               <tr>
-                <td data-label="Type">Stage</td>
-                <td data-label="Entreprise"><a href="https://voyage.aprr.fr/" class="link">APRR</a>, Département Data
+                <td data-label="Type">
+                  <span lang="fr">Stage</span><span lang="en">Internship</span>
                 </td>
-                <td data-label="Sujets">Déploiement d'une stack ELK, Développement de flux Talend</td>
-                <td data-label="Date">Janvier 2024 - Mars 2024</td>
+                <td data-label="Entreprise" data-en-label="Company"><a href="https://voyage.aprr.fr/"
+                    class="link">APRR</a>, <span lang="fr">Département Data</span><span lang="en">Data
+                    department</span></td>
+                <td data-label="Sujets" data-en-label="Topics">
+                  <span lang="fr">Déploiement d'une stack ELK, Développement de flux Talend</span>
+                  <span lang="en">Deployment of an ELK stack, Development of Talend jobs</span>
+                </td>
+                <td data-label="Date">
+                  <span lang="fr">Janvier 2024 - Mars 2024</span>
+                  <span lang="en">January 2024 - March 2024</span>
+                </td>
               </tr>
               <tr>
-                <td data-label="Type">Alternance <br> (en cours)</td>
-                <td data-label="Entreprise"><a href="https://voyage.aprr.fr/" class="link">APRR</a>, Département Data
+                <td data-label="Type">
+                  <span lang="fr">Alternance <br> (en cours)</span>
+                  <span lang="en">Work-study <br> (ongoing)</span>
                 </td>
-                <td data-label="Sujets">Supervision de la stack Data :<br />
-                  Développement de flux Talend, Modélisation & déploiement Snowflake, Développement
-                  de rapports PowerBi</td>
-                <td data-label="Date">Août 2024 - Maintenant</td>
+                <td data-label="Entreprise" data-en-label="Company"><a href="https://voyage.aprr.fr/"
+                    class="link">APRR</a>, <span lang="fr">Département Data</span><span lang="en">Data
+                    department</span></td>
+                <td data-label="Sujets" data-en-label="Topics">
+                  <span lang="fr">Supervision de la stack Data :<br />
+                    Développement de flux Talend, Modélisation & déploiement Snowflake, Développement
+                    de rapports PowerBi</span>
+                  <span lang="en">Supervision of the Data stack:<br />
+                    Development of Talend jobs, Snowflake modeling & deployment, Development
+                    of PowerBi reports</span>
+                </td>
+                <td data-label="Date">
+                  <span lang="fr">Août 2024 - Maintenant</span>
+                  <span lang="en">August 2024 - Present</span>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div class="cell" id="cell-diplomes">
-        <h2 class="cell-title">Diplômes et Formations</h2>
+        <h2 class="cell-title"><span lang="fr">Diplômes et Formations</span><span lang="en">Education</span></h2>
         <div class="cell-content">
           <table>
             <thead>
               <tr>
-                <th>Diplôme</th>
-                <th>Etablissement</th>
+                <th><span lang="fr">Diplôme</span><span lang="en">Degree</span></th>
+                <th><span lang="fr">Établissement</span><span lang="en">School</span></th>
                 <th>Date</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Diplôme">Baccalauréat Général</td>
-                <td data-label="Etablissement"><a href="https://lyc-janot-curie-sens.eclat-bfc.fr/" class="link">Lycée
-                    Catherine et Raymond Janot, 89100 Sens</a></td>
+                <td data-label="Diplôme" data-en-label="Degree">
+                  <span lang="fr">Baccalauréat Général</span>
+                  <span lang="en">French Baccalaureate (general track)</span>
+                </td>
+                <td data-label="Établissement" data-en-label="School"><a
+                    href="https://lyc-janot-curie-sens.eclat-bfc.fr/" class="link"><span lang="fr">Lycée Catherine et
+                      Raymond Janot</span><span lang="en">Catherine et Raymond Janot high school</span>, 89100
+                    Sens</a></td>
                 <td data-label="Date">2019-2022</td>
               </tr>
               <tr>
-                <td data-label="Diplôme">DUT Informatique</td>
-                <td data-label="Etablissement"><a href="https://iutdijon.u-bourgogne.fr/www/" class="link">IUT de
-                    Dijon-Auxerre-Nevers</a></td>
+                <td data-label="Diplôme" data-en-label="Degree">
+                  <span lang="fr">DUT Informatique</span>
+                  <span lang="en">DUT in Computer Science (2-year technical degree)</span>
+                </td>
+                <td data-label="Établissement" data-en-label="School"><a href="https://iutdijon.u-bourgogne.fr/www/"
+                    class="link">IUT de Dijon-Auxerre-Nevers</a></td>
                 <td data-label="Date">2022-2024</td>
               </tr>
               <tr>
-                <td data-label="Diplôme">BUT Informatique</td>
-                <td data-label="Etablissement"><a href="https://iutdijon.u-bourgogne.fr/www/" class="link">IUT de
-                    Dijon-Auxerre-Nevers</a></td>
+                <td data-label="Diplôme" data-en-label="Degree">
+                  <span lang="fr">BUT Informatique</span>
+                  <span lang="en">BUT in Computer Science (Bachelor's degree)</span>
+                </td>
+                <td data-label="Établissement" data-en-label="School"><a href="https://iutdijon.u-bourgogne.fr/www/"
+                    class="link">IUT de Dijon-Auxerre-Nevers</a></td>
                 <td data-label="Date">2022-2025</td>
               </tr>
               <tr>
-                <td data-label="Diplôme">Diplôme d'ingénieur Informatique et Réseaux, option Cybersécurité <br> (en
-                  cours)</td>
-                <td data-label="Etablissement"><a href="https://polytech.ube.fr/" class="link">Polytech Dijon</a></td>
+                <td data-label="Diplôme" data-en-label="Degree">
+                  <span lang="fr">Diplôme d'ingénieur Informatique et Réseaux, option Cybersécurité <br> (en
+                    cours)</span>
+                  <span lang="en">Engineering degree in Computer Science and Networks, Cybersecurity major <br>
+                    (ongoing)</span>
+                </td>
+                <td data-label="Établissement" data-en-label="School"><a href="https://polytech.ube.fr/"
+                    class="link">Polytech Dijon</a></td>
                 <td data-label="Date">2025-2028</td>
               </tr>
             </tbody>
@@ -238,13 +326,13 @@
   <section id="skills-passions" class="stacking-section">
     <div class="grid">
       <div class="cell" id="cell-skills">
-        <h2 class="cell-title">Points forts</h2>
+        <h2 class="cell-title"><span lang="fr">Points forts</span><span lang="en">Strengths</span></h2>
         <div class="cell-content">
           <div class="tag-cloud" id="skills"></div>
         </div>
       </div>
       <div class="cell" id="cell-passions">
-        <h2 class="cell-title">Intérêts</h2>
+        <h2 class="cell-title"><span lang="fr">Intérêts</span><span lang="en">Interests</span></h2>
         <div class="cell-content">
           <div class="tag-cloud" id="passions"></div>
         </div>
@@ -253,32 +341,52 @@
   </section>
 
   <section id="projects-perso" class="stacking-section projects">
-    <h2>Projets personnels</h2>
+    <h2><span lang="fr">Projets personnels</span><span lang="en">Personal projects</span></h2>
     <div class="swiper swiper-perso">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="project-title">Hackathon Cybersécurité de Polytech Dijon</div>
+          <div class="project-title">
+            <span lang="fr">Hackathon Cybersécurité de Polytech Dijon</span>
+            <span lang="en">Polytech Dijon Cybersecurity Hackathon</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/hackathon_2026.png" alt="Picture of my team and I with our 2nd place trophies"
-                loading="lazy" />
+              <img src="images/hackathon_2026.png" alt="Mon équipe et moi avec nos trophées de 2ème place"
+                data-en-alt="My team and I with our 2nd place trophies" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : RootMe, HashCat, BurpSuite</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : RootMe, HashCat, BurpSuite</span>
+                <span lang="en">Technologies used: RootMe, HashCat, BurpSuite</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   En janvier 2026, j'ai eu l'occasion de participer au Hackathon Cybersécurité de Polytech Dijon,
-                  auxquel j'avais déjà pu prendre part en 2025 lors de ma 3ème année de BUT (3ème place).
+                  auquel j'avais déjà pu prendre part en 2025 lors de ma 3ème année de BUT (3ème place).
                   Ce hackathon, organisé avec la plateforme d'éducation à la cybersécurité <a class="link"
-                    target="_blank" href="https://root-me.pro/">RootMe Pro</a>, consiste en la résolution de challenge
+                    target="_blank" href="https://root-me.pro/">RootMe Pro</a>, consiste en la résolution de challenges
                   divers : cryptanalyse, forensique, stéganographie, web...
                   <br>
                   Après une après-midi d'épreuves plus difficiles les unes que les autres, mon équipe de choc et moi
                   même avons obtenu une 2ème place bien méritée.
                   <br>
                   Cet évènement m'a permis de renforcer mes connaissances dans l'utilisation d'outils comme hashcat,
-                  ou encore BurpSuite, mais aussi de mettre en pratique mes capacités en cybesécurité offensive.
+                  ou encore BurpSuite, mais aussi de mettre en pratique mes capacités en cybersécurité offensive.
                   Je compte bien participer aux prochaines éditions afin de pourchasser cette 1ère place !
+                </p>
+                <p lang="en">
+                  In January 2026, I took part in the Polytech Dijon Cybersecurity Hackathon, which I had
+                  already joined in 2025 during my 3rd year of BUT (3rd place).
+                  This hackathon, organized with the cybersecurity education platform <a class="link"
+                    target="_blank" href="https://root-me.pro/">RootMe Pro</a>, consists in solving various
+                  challenges: cryptanalysis, forensics, steganography, web...
+                  <br>
+                  After an afternoon of increasingly difficult challenges, my amazing team and I
+                  earned a well-deserved 2nd place.
+                  <br>
+                  This event helped me strengthen my skills with tools such as hashcat and BurpSuite,
+                  and put my offensive cybersecurity abilities into practice.
+                  I fully intend to take part in the next editions to chase that 1st place!
                 </p>
               </div>
               <div class="project-link">
@@ -291,19 +399,32 @@
           <div class="project-title">Pathfinder</div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/Pathfinder.gif" alt="gif of the pathfinder in action" loading="lazy" />
+              <img src="images/Pathfinder.gif" alt="Animation du pathfinder en action"
+                data-en-alt="Animation of the pathfinder in action" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : C++, Unix, Make</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : C++, Unix, Make</span>
+                <span lang="en">Technologies used: C++, Unix, Make</span>
+              </div>
               <div class="project-description">
-                <p>
-                  C'est une application permettant de visualiser de plusieurs algorithmes de pathfinding
+                <p lang="fr">
+                  C'est une application permettant de visualiser plusieurs algorithmes de pathfinding
                   (comme Dijkstra, A*, etc.) sur un graphe.
                   <br />
-                  Implémentée en C++, m'a permis de revoir mes connaissances en théorie des graphes
+                  Implémentée en C++, elle m'a permis de revoir mes connaissances en théorie des graphes
                   et en algorithmique, et de les mettre en pratique. J'ai également pu approfondir mes
                   connaissances en C++, et ai pu appliquer une approche orientée objet sur un projet
                   bas niveau, pour varier de mes projets précédents en C.
+                </p>
+                <p lang="en">
+                  An application that visualizes several pathfinding algorithms
+                  (such as Dijkstra, A*, etc.) on a graph.
+                  <br />
+                  Written in C++, it allowed me to review my knowledge of graph theory
+                  and algorithms, and to put it into practice. I also deepened my C++ skills,
+                  and applied an object-oriented approach to a low-level project,
+                  as a change from my previous C projects.
                 </p>
               </div>
               <div class="project-link">
@@ -318,12 +439,16 @@
           <div class="project-title">WebSnake</div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/WebSnake.gif" alt="gif of the snake game in action" loading="lazy" />
+              <img src="images/WebSnake.gif" alt="Animation du jeu Snake en action"
+                data-en-alt="Animation of the snake game in action" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : C, Unix, Javascript, Websocket, Make</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : C, Unix, Javascript, Websocket, Make</span>
+                <span lang="en">Technologies used: C, Unix, Javascript, Websocket, Make</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   C'est un petit jeu de Snake qui se joue dans le navigateur, et a pour particularité d'être
                   intégralement rendu sur le serveur,
                   via une connexion websocket. Le client ne fait que transmettre les inputs au serveur, qui lui
@@ -333,6 +458,16 @@
                   le protocole HTTP, la gestion des requêtes et des réponses, et les websockets.
                   J'ai également pu approfondir ma connaissance des problématiques de performance et de gestion de la
                   mémoire, ainsi que de mise en place d'un projet en C un peu plus complexe.
+                </p>
+                <p lang="en">
+                  A small Snake game played in the browser, whose particularity is to be rendered
+                  entirely on the server, through a websocket connection. The client only sends the inputs
+                  to the server, which sends back the rendered game.
+                  <br />
+                  It let me continue exploring the C language, and get more familiar with
+                  the HTTP protocol, request and response handling, and websockets.
+                  I also deepened my understanding of performance and memory management issues,
+                  and of setting up a somewhat more complex C project.
                 </p>
               </div>
               <div class="project-link">
@@ -347,14 +482,18 @@
           <div class="project-title">SortsVisualizer</div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/sortviz.gif" alt="gif of the visualizer in action" loading="lazy" />
+              <img src="images/sortviz.gif" alt="Animation du visualiseur en action"
+                data-en-alt="Animation of the visualizer in action" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : C, Unix, Make</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : C, Unix, Make</span>
+                <span lang="en">Technologies used: C, Unix, Make</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   C'est un petit programme écrit en C qui permet de visualiser un algorithme
-                  de tri, directement depuis le terminal, et depuis une fenêtre dédiée. Il prends en charge les
+                  de tri, directement depuis le terminal, et depuis une fenêtre dédiée. Il prend en charge les
                   algorithmes les
                   plus connus, comme le tri à bulles, le tri par insertion, le tri par sélection,
                   le tri rapide, et le tri fusion.
@@ -362,6 +501,16 @@
                   Il m'a permis de me familiariser avec le langage C, et d'approfondir ma connaissance
                   du bas niveau. J'ai aussi pu découvrir les problématiques de performance et de gestion de la stack,
                   ainsi que de gestion de la mémoire.
+                </p>
+                <p lang="en">
+                  A small program written in C that visualizes a sorting algorithm,
+                  directly in the terminal or in a dedicated window. It supports the
+                  best-known algorithms, such as bubble sort, insertion sort, selection sort,
+                  quicksort and merge sort.
+                  <br />
+                  It got me familiar with the C language and deepened my understanding
+                  of low-level programming. I also discovered performance, stack management
+                  and memory management issues.
                 </p>
               </div>
               <div class="project-link">
@@ -373,15 +522,22 @@
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="project-title">Planificateur de tâches en React et Typescript</div>
+          <div class="project-title">
+            <span lang="fr">Planificateur de tâches en React et Typescript</span>
+            <span lang="en">Task planner in React and Typescript</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/Todos.PNG" alt="Screenshot of this app" loading="lazy" />
+              <img src="images/Todos.PNG" alt="Capture d'écran de l'application"
+                data-en-alt="Screenshot of this app" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : React, Typescript, HTML, CSS</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : React, Typescript, HTML, CSS</span>
+                <span lang="en">Technologies used: React, Typescript, HTML, CSS</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   C'est une application web réalisée en Typescript utilisant
                   React, qui permet de planifier ses tâches. Elle m'a permis
                   de découvrir React et Typescript, et d'approfondir mes
@@ -389,6 +545,14 @@
                   <br />
                   Ce projet m'a permis de me familiariser avec l'utilisation
                   de React et Nodejs, et la gestion d'états et d'une application client-serveur plus généralement.
+                </p>
+                <p lang="en">
+                  A web application written in Typescript with React,
+                  for planning your tasks. It introduced me to React and
+                  Typescript, and deepened my web development skills.
+                  <br />
+                  This project got me familiar with React and Nodejs, and with
+                  state management and client-server applications in general.
                 </p>
               </div>
               <div class="project-link">
@@ -399,27 +563,46 @@
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="project-title">Site portfolio</div>
+          <div class="project-title">
+            <span lang="fr">Site portfolio</span>
+            <span lang="en">Portfolio website</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/SitePortfolio.PNG" alt="Screenshot of this website" loading="lazy" />
+              <img src="images/SitePortfolio.PNG" alt="Capture d'écran de ce site"
+                data-en-alt="Screenshot of this website" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : Javascript, HTML, CSS</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : Javascript, HTML, CSS</span>
+                <span lang="en">Technologies used: Javascript, HTML, CSS</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   C'est un site portfolio réalisé durant l'été 2023, servant
                   à me présenter moi-même et mes projets. Il est réalisé en
                   HTML/CSS/JS, avec l'aide de la librairie
                   <a class="link" target="_blank" href="https://swiperjs.com/">SwiperJS</a>
                   pour le slider.
                   <br />
-                  Il est hébergé sur GitHub Pages, et est disponible
+                  Il est hébergé sur GitHub Pages, et est disponible à
                   l'adresse à laquelle vous vous trouvez. Ce projet m'a
                   permis de me familiariser avec le développement web,
                   notamment avec le Javascript. Je continue de l'améliorer
                   et le mettre à jour au fur et à mesure de mon
                   apprentissage.
+                </p>
+                <p lang="en">
+                  A portfolio website made during the summer of 2023, to
+                  introduce myself and my projects. It is built with
+                  HTML/CSS/JS, with the help of the
+                  <a class="link" target="_blank" href="https://swiperjs.com/">SwiperJS</a>
+                  library for the slider.
+                  <br />
+                  It is hosted on GitHub Pages, at the very address you are
+                  visiting. This project got me familiar with web
+                  development, especially Javascript. I keep improving
+                  and updating it as I learn.
                 </p>
               </div>
               <div class="project-link">
@@ -434,12 +617,16 @@
           <div class="project-title">iCloudAlbumManager</div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/iCloudAlbumManager.PNG" alt="Screenshot of the main page of the app" loading="lazy" />
+              <img src="images/iCloudAlbumManager.PNG" alt="Capture d'écran de la page principale de l'application"
+                data-en-alt="Screenshot of the main page of the app" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : Python, Javascript, HTML, CSS</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : Python, Javascript, HTML, CSS</span>
+                <span lang="en">Technologies used: Python, Javascript, HTML, CSS</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   C'est un projet commencé durant l'été 2023, qui représente
                   ma première tentative dans la réalisation d'un logiciel :
                   une application permettant de gérer localement ses albums
@@ -454,6 +641,21 @@
                   beaucoup appris en travaillant sur ce projet, qui
                   me permet de découvrir la structure d'une application web,
                   mais aussi d'approfondir mes connaissances en Javascript.
+                </p>
+                <p lang="en">
+                  A project started during the summer of 2023, which is
+                  my first attempt at building a full piece of software:
+                  an application to manage your iCloud photo albums locally.
+                  <br />
+                  The backend is written in Python, with the help of the
+                  <a class="link" target="_blank" href="https://github.com/picklepete/pyicloud">PyiCloud</a>
+                  library.
+                  <br />
+                  The frontend is written in HTML/CSS/JS, with the help of
+                  <a class="link" target="_blank" href="https://flask.palletsprojects.com/en/3.0.x/">Flask</a>.
+                  I learned a lot working on this project, which shows me
+                  how a web application is structured, and deepens my
+                  Javascript skills.
                 </p>
               </div>
               <div class="project-link">
@@ -472,19 +674,26 @@
   </section>
 
   <section id="projects-edu" class="stacking-section projects">
-    <h2>Projets éducatifs</h2>
+    <h2><span lang="fr">Projets éducatifs</span><span lang="en">School projects</span></h2>
     <div class="swiper swiper-edu">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="project-title">Un audit d'une application web</div>
+          <div class="project-title">
+            <span lang="fr">Un audit d'une application web</span>
+            <span lang="en">Auditing a web application</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/but2s4_01.png" alt="Screenshot of the web app" loading="lazy" />
+              <img src="images/but2s4_01.png" alt="Capture d'écran de l'application web"
+                data-en-alt="Screenshot of the web app" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : PHP, Javascript</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : PHP, Javascript</span>
+                <span lang="en">Technologies used: PHP, Javascript</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   Ce projet est un audit réalisé sur une application web réalisée
                   par des étudiants.
                   L'objectif était de l'analyser et de l'améliorer sur plusieurs
@@ -500,22 +709,47 @@
                   Techniquement, j'ai surtout approfondi mes connaissances des
                   échanges client-serveur et du PHP et Javascript.
                 </p>
+                <p lang="en">
+                  An audit of a web application built by students.
+                  The goal was to analyze it and improve it on several
+                  key points:
+                  <br>
+                  Performance, Software quality, Security, Data quality,
+                  Environmental impact, Ergonomics,
+                  and Accessibility.
+                  <br>
+                  It taught me the importance of documenting code,
+                  and of carefully planning a software feature
+                  before implementing it.
+                  Technically, I mostly deepened my knowledge of
+                  client-server exchanges, PHP and Javascript.
+                </p>
               </div>
-              <div class="project-link">Seconde année de BUT, Semestre 4</div>
+              <div class="project-link">
+                <span lang="fr">Seconde année de BUT, Semestre 4</span>
+                <span lang="en">Second year of BUT, Semester 4</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="project-title">Un jeu de cartes en C#</div>
+          <div class="project-title">
+            <span lang="fr">Un jeu de cartes en C#</span>
+            <span lang="en">A card game in C#</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/but2s3_01.png" alt="Screenshot of the game" loading="lazy" />
+              <img src="images/but2s3_01.png" alt="Capture d'écran du jeu"
+                data-en-alt="Screenshot of the game" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologie utilisée : C#</div>
+              <div class="project-techs">
+                <span lang="fr">Technologie utilisée : C#</span>
+                <span lang="en">Technology used: C#</span>
+              </div>
               <div class="project-description">
-                <p>
-                  Il s'agit d'un jeu de carte réalisé dans le cadre d'un
+                <p lang="fr">
+                  Il s'agit d'un jeu de cartes réalisé dans le cadre d'un
                   travail de groupe en C# et WPF.
                   <br />
                   Ce projet a été réalisé en utilisant la méthode Agile et
@@ -524,24 +758,45 @@
                   communication avec un client.
                   <br />
                   Techniquement, ce programme a été très formateur, car il
-                  nous a permis de concrétiser nos apprentissages théorique
+                  nous a permis de concrétiser nos apprentissages théoriques
                   en une application complète.
                 </p>
+                <p lang="en">
+                  A card game made as a group project in C# and WPF.
+                  <br />
+                  This project followed the Agile method and Scrum,
+                  which introduced me to the challenges of project
+                  management, and of communicating with a client.
+                  <br />
+                  Technically, this program was very instructive, as it
+                  let us turn our theoretical knowledge into a complete
+                  application.
+                </p>
               </div>
-              <div class="project-link">Seconde année de BUT, Semestre 3</div>
+              <div class="project-link">
+                <span lang="fr">Seconde année de BUT, Semestre 3</span>
+                <span lang="en">Second year of BUT, Semester 3</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="project-title">Un petit jeu en 2D</div>
+          <div class="project-title">
+            <span lang="fr">Un petit jeu en 2D</span>
+            <span lang="en">A small 2D game</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/but1s2_01.png" alt="Screenshot of the game" loading="lazy" />
+              <img src="images/but1s2_01.png" alt="Capture d'écran du jeu"
+                data-en-alt="Screenshot of the game" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologie utilisée : C#</div>
+              <div class="project-techs">
+                <span lang="fr">Technologie utilisée : C#</span>
+                <span lang="en">Technology used: C#</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   Il s'agit d'un petit jeu en 2D réalisé en C# avec l'aide
                   d'un framework fourni par l'IUT.
                   <br />
@@ -555,22 +810,44 @@
                   programme, mais ai aussi approfondi mes connaissances en
                   C# et en programmation orientée objet.
                 </p>
+                <p lang="en">
+                  A small 2D game made in C# with a framework provided
+                  by the IUT.
+                  <br />
+                  This project was very instructive, as it got me familiar
+                  with the constraints of video game development, and of
+                  teamwork. I learned to deal with deadlines, task
+                  distribution, communication, etc.
+                  <br />
+                  Technically, I mostly learned how to structure a
+                  program well, and deepened my knowledge of C# and
+                  object-oriented programming.
+                </p>
               </div>
-              <div class="project-link">Première année de BUT, Semestre 2</div>
+              <div class="project-link">
+                <span lang="fr">Première année de BUT, Semestre 2</span>
+                <span lang="en">First year of BUT, Semester 2</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="project-title">Algorithmes et graphes</div>
+          <div class="project-title">
+            <span lang="fr">Algorithmes et graphes</span>
+            <span lang="en">Algorithms and graphs</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/but1s2_02.png" alt="Screenshot app used to display taverns created by graphs"
-                loading="lazy" />
+              <img src="images/but1s2_02.png" alt="Capture d'écran de l'application affichant des tavernes créées par des graphes"
+                data-en-alt="Screenshot of the app used to display taverns created by graphs" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologie utilisée : C#</div>
+              <div class="project-techs">
+                <span lang="fr">Technologie utilisée : C#</span>
+                <span lang="en">Technology used: C#</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   La problématique de ce projet était de colorier un graphe
                   à travers 4 heuristiques : les algorithmes de coloration
                   glouton, DSATUR, Welsh-Powell et Largest Degree Ordering.
@@ -583,21 +860,43 @@
                   manipuler des graphes, mais ai aussi approfondi mes
                   connaissances en C# et en programmation orientée objet.
                 </p>
+                <p lang="en">
+                  The goal of this project was to color a graph with
+                  4 heuristics: the greedy, DSATUR, Welsh-Powell and
+                  Largest Degree Ordering coloring algorithms.
+                  <br />
+                  This project let me put the notions seen in class into
+                  practice, and get familiar with performance issues.
+                  <br />
+                  Technically, I mostly learned to model and manipulate
+                  graphs, and deepened my knowledge of C# and
+                  object-oriented programming.
+                </p>
               </div>
-              <div class="project-link">Première année de BUT, Semestre 2</div>
+              <div class="project-link">
+                <span lang="fr">Première année de BUT, Semestre 2</span>
+                <span lang="en">First year of BUT, Semester 2</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="project-title">Organisation d'un travail d'équipe</div>
+          <div class="project-title">
+            <span lang="fr">Organisation d'un travail d'équipe</span>
+            <span lang="en">Organizing teamwork</span>
+          </div>
           <div class="project-content">
             <div class="project-img">
-              <img src="images/but1s2_03.png" alt="Screenshot of the site" loading="lazy" />
+              <img src="images/but1s2_03.png" alt="Capture d'écran du site"
+                data-en-alt="Screenshot of the site" loading="lazy" />
             </div>
             <div class="project-textcontent">
-              <div class="project-techs">Technologies utilisées : HTML,CSS</div>
+              <div class="project-techs">
+                <span lang="fr">Technologies utilisées : HTML, CSS</span>
+                <span lang="en">Technologies used: HTML, CSS</span>
+              </div>
               <div class="project-description">
-                <p>
+                <p lang="fr">
                   Ce projet avait pour but de nous faire travailler en
                   équipe sur la création d'une start-up comprenant un site
                   vitrine.
@@ -610,8 +909,22 @@
                   Techniquement, j'ai surtout approfondi mes connaissances
                   en HTML et CSS.
                 </p>
+                <p lang="en">
+                  The goal of this project was to make us work as a team
+                  on creating a start-up, including its showcase website.
+                  <br />
+                  This project taught me about teamwork, project management
+                  and meeting deadlines. We also faced the challenge of
+                  distributing tasks.
+                  <br />
+                  Technically, I mostly deepened my knowledge of
+                  HTML and CSS.
+                </p>
               </div>
-              <div class="project-link">Première année de BUT, Semestre 2</div>
+              <div class="project-link">
+                <span lang="fr">Première année de BUT, Semestre 2</span>
+                <span lang="en">First year of BUT, Semester 2</span>
+              </div>
             </div>
           </div>
         </div>
@@ -624,11 +937,11 @@
 
   <section id="contact" class="stacking-section">
     <div class="contact-content">
-      <h2>Contact et liens</h2>
+      <h2><span lang="fr">Contact et liens</span><span lang="en">Contact & links</span></h2>
       <ul class="contact-items">
         <li class="cell contact-item">
           <svg class="icon" aria-hidden="true"><use href="#icon-phone" /></svg>
-          <span class="contact-label">Téléphone</span>
+          <span class="contact-label"><span lang="fr">Téléphone</span><span lang="en">Phone</span></span>
           <a class="link" href="tel:+33768262629">07 68 26 26 29</a>
         </li>
         <li class="cell contact-item">
@@ -650,13 +963,21 @@
         </li>
       </ul>
       <p id="note">
-        Malentendant et porteur d'appareils auditifs, je préfère être
-        contacté par message écrit, mais peut néanmoins répondre au
-        téléphone.
+        <span lang="fr">
+          Malentendant et porteur d'appareils auditifs, je préfère être
+          contacté par message écrit, mais je peux néanmoins répondre au
+          téléphone.
+        </span>
+        <span lang="en">
+          Being hard of hearing and wearing hearing aids, I prefer to be
+          contacted in writing, but I can still answer the phone.
+        </span>
       </p>
     </div>
     <footer>
-      <p>&copy; <span id="copyright">0</span> Martin De Lima. Tous droits réservés.</p>
+      <p>&copy; <span id="copyright">0</span> Martin De Lima.
+        <span lang="fr">Tous droits réservés.</span><span lang="en">All rights reserved.</span>
+      </p>
     </footer>
   </section>
 </body>

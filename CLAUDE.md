@@ -22,7 +22,16 @@ branche `main` (racine du dépôt). Pas de build, pas de dépendance npm.
 
 ## Conventions
 
-- Contenu du site en français ; code, commentaires et noms en anglais.
+- Contenu du site en français et en anglais ; code, commentaires et noms en anglais.
+- Bilingue : chaque texte existe en double, `<span lang="fr">…</span><span lang="en">…</span>`
+  (ou `<p lang="…">`), et le CSS masque la langue absente de `<html lang>`. Les
+  attributs (`alt`, `title`, `aria-label`, `content`, `data-label`, texte du
+  `<title>` via `data-en-text`) gardent le français et portent l'anglais dans
+  `data-en-*` ; `setLanguage` les échange. Les nuages de tags sont dans
+  `TAG_CLOUDS` (`fr`/`en`). Langue : choix mémorisé (`localStorage.lang`),
+  sinon celle du navigateur ; fixée par un script en `<head>` avant l'affichage.
+  Piège : tout élément portant `lang` est masqué dans l'autre langue — ne pas
+  en mettre sur un texte à afficher dans les deux.
 - Couleurs uniquement via les variables de thème (`.dark-theme` /
   `.light-theme` sur `<body>`, choix mémorisé dans `localStorage`).
 - Tailles fluides (`clamp()`, `vh`/`svh`) : la police de base suit la taille
