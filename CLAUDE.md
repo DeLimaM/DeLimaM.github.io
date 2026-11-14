@@ -49,8 +49,11 @@ branche `main` (racine du dépôt). Pas de build, pas de dépendance npm.
   l'écran serait recouverte par la suivante avant d'avoir été lue. Le JS
   publie `--section-h` (ResizeObserver) et le CSS colle alors la section par
   son bas. Ne jamais donner de hauteur fixe à une section dont le contenu
-  peut dépasser (seules `#presentation` et `.projects` en ont une ; le texte
-  des projets défile en interne).
+  peut dépasser (seules `#presentation`, `#experience` et `.projects` en ont
+  une ; les tableaux d'expérience et le texte des projets défilent en interne).
+- **En-tête collant dans une zone qui défile** : Chrome le colle sous le
+  `padding-top` du conteneur, d'où un `margin-top` sur le tableau
+  d'expérience à la place.
 - **Débordement rogné, pas défilé** : `body` (`overflow-x: hidden`) et les
   sections (`overflow: hidden`) coupent ce qui dépasse en largeur. Un
   débordement ne se voit donc pas comme une barre de défilement : chercher

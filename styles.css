@@ -576,8 +576,45 @@ input:checked + .slider::before {
 /* #endregion */
 
 /* #region Experience section */
+/* the section keeps the screen height: each table scrolls inside its cell,
+   the space going first to the table that needs it */
+#experience {
+  height: calc(100vh - var(--header-h));
+  height: calc(100svh - var(--header-h));
+}
+
 #experience .grid {
+  min-height: 0;
   grid-template-columns: 1fr;
+  grid-template-rows: minmax(0, auto) minmax(0, auto);
+}
+
+#experience .cell {
+  min-height: 0;
+}
+
+/* the bottom fade hints at the hidden rows; it covers only the bottom
+   padding once scrolled to the end */
+#experience .cell-content {
+  min-height: 0;
+  overflow-y: auto;
+  justify-content: safe center;
+  padding-top: 0;
+  padding-bottom: 1.5em;
+  mask-image: linear-gradient(black calc(100% - 1.5em), transparent);
+}
+
+/* the sticky header sticks below the scroller padding: the top space is
+   a margin instead, which scrolls away */
+#experience table {
+  margin-top: 1em;
+}
+
+#experience thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--color-primary);
 }
 
 table {
