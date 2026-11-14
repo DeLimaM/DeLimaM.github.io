@@ -65,27 +65,7 @@ branche `main` (racine du dépôt). Pas de build, pas de dépendance npm.
 ## Vérifier le rendu
 
 Pas d'outil dans le dépôt : l'outillage de capture vit hors du repo (scratchpad
-de session). Méthode qui a servi :
+de session).
 
-- Servir la racine du dépôt (`python3 -m http.server`).
-- Chrome est installé (`/usr/bin/google-chrome`) : le piloter en headless avec
-  Playwright (venv jetable, `executable_path` vers ce Chrome, aucun navigateur
-  à télécharger).
-- Formats : 1920×1080, 2560×1440, 1920×1200, 1440×900, 1366×768, tablette
-  820×1180, iPhone 390×844, Android 360×800.
-- Pour chaque section, appeler `scrollToSection(id)` dans la page puis
-  capturer ; si la section dépasse l'écran, capturer aussi sa fin.
-- Contrôles : aucune erreur JS (`pageerror`), aucun élément hors écran en
-  largeur (hors `.swiper-wrapper` et `.lines`).
-
-Après toute modification de mise en page : regarder au moins 1080p, 1366×768
+Après toute modification de mise en page : regarder au moins 1080p, 2560x1440, 1366×768
 et iPhone.
-
-## État (vérifié le 01/10)
-
-- Tous les formats ci-dessus passent les contrôles (aucune erreur JS, rien
-  hors écran) ; menus, thème clair persistant et navigation testés à 1080p et iPhone.
-- Reste lourd, non traité : `images/WebSnake.gif` (7,3 Mo), `sortviz.gif`
-  (2,4 Mo), `Pathfinder.gif` (1,3 Mo), `hackathon_2026.png` (1,2 Mo),
-  `icons/page/Space.ico` (266 Ko). Les images des projets sont en
-  `loading="lazy"`, donc chargées seulement à l'affichage de leur diapositive.
