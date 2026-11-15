@@ -63,6 +63,7 @@ let tagCloudsLanguage = null;
 document.addEventListener("DOMContentLoaded", function () {
   initSwiper("edu");
   initSwiper("perso");
+  initSwiper("pro");
   setSavedTheme();
   setLanguage(document.documentElement.lang);
   updateDynamicTexts();

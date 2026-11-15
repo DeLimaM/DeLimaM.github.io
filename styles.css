@@ -409,13 +409,14 @@ input:checked + .slider::before {
 
 #about,
 #skills-passions,
-#projects-edu {
+#projects-pro,
+#contact {
   background: linear-gradient(var(--color-primary), var(--color-secondary));
 }
 
 #experience,
 #projects-perso,
-#contact {
+#projects-edu {
   background: linear-gradient(var(--color-secondary), var(--color-primary));
 }
 /* #endregion */

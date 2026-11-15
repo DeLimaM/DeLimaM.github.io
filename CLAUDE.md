@@ -7,7 +7,7 @@ branche `main` (racine du dépôt). Pas de build, pas de dépendance npm.
 
 - `index.html` : page unique. Sections dans l'ordre : `#presentation`,
   `#about`, `#experience`, `#skills-passions`, `#projects-perso`,
-  `#projects-edu`, `#contact` (le footer est dans `#contact`).
+  `#projects-pro`, `#projects-edu`, `#contact` (le footer est dans `#contact`).
 - `styles.css` : tout le style, organisé en `/* #region … */`.
 - `scripts.js` : carrousels, thème, navigation, nuages de tags.
 - `static/` : bibliothèques tierces vendorisées (Swiper 10.0.4, TagCloud
